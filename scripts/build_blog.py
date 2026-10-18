@@ -147,10 +147,10 @@ def tags_html(p):
 def head_bits(index_html):
     icon = re.search(r'<link rel="icon"[^>]*>', index_html)
     fonts = re.search(r'<link rel="stylesheet" href="https://fonts\.googleapis\.com[^>]*>', index_html)
-    share = re.search(r'<link rel="stylesheet" href="https://api\.fontshare\.com[^>]*>', index_html)
+    share = re.findall(r'<link rel="stylesheet" href="https://api\.fontshare\.com[^>]*>', index_html)
     links = (fonts.group(0) if fonts else "")
     if share:
-        links += '\n<link rel="preconnect" href="https://api.fontshare.com" crossorigin>\n' + share.group(0)
+        links += '\n<link rel="preconnect" href="https://api.fontshare.com" crossorigin>\n' + "\n".join(share)
     return (icon.group(0) if icon else ""), links
 
 
