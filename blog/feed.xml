@@ -6,7 +6,7 @@
   <atom:link href="https://vishal-sarvade.vercel.app/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Sun, 18 Oct 2026 23:30:29 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 18 Oct 2026 23:34:49 +0000</lastBuildDate>
   <item>
     <title>Redshift data sharing: what producer and consumer clusters really share</title>
     <link>https://vishal-sarvade.vercel.app/blog/redshift-data-sharing-producer-consumer/</link>
