@@ -369,6 +369,7 @@ footer{border-top:1px solid var(--rule);padding-block:28px 40px;font-family:var(
 .author p{font-size:15px;color:var(--ink-2)}
 .author b{color:var(--ink);font-weight:600}
 .post-nav{margin-top:28px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:15px}
+.sf{margin:0 0 6px}.sf img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 40%;border-radius:8px}.sf figcaption{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin-top:8px}
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:13px;padding:10px 14px;border-radius:8px;z-index:80}
 </style>
 <style>body{margin:0}[hidden]{display:none!important}</style>
@@ -414,7 +415,7 @@ footer{border-top:1px solid var(--rule);padding-block:28px 40px;font-family:var(
       <ul class="also">
         <li><span>build <a href="#ai">AI tools for data teams</a>, like a natural-language-to-SQL agent that shows its SQL</span></li>
         <li><span>write about Redshift and applied AI on <a href="https://www.linkedin.com/in/vishalkumarsarvade/" target="_blank" rel="noopener">LinkedIn</a></span></li>
-        <li><span>have <a href="#writing">a book on the way</a> about turning AI agents into measurable business value</span></li>
+        <li><span>publish a short note every day on <a href="#blog">AI agent adoption</a>, with every source linked</span></li>
       </ul>
       <div class="cta-row">
         <a class="btn btn-primary" href="#work">See selected work
@@ -440,7 +441,7 @@ footer{border-top:1px solid var(--rule);padding-block:28px 40px;font-family:var(
   <div class="wrap paths-grid">
     <div class="path"><span class="eyebrow">Professional</span><h2>Selected work</h2><p>Nine problems solved on real systems, each with the result and the stack.</p><a href="#work">See the work →</a></div>
     <div class="path"><span class="eyebrow">Architecture</span><h2>The platform I run</h2><p>From source systems to dashboards, for about 63 operating companies.</p><a href="#platform">See the platform →</a></div>
-    <div class="path"><span class="eyebrow">Writing</span><h2>Book, posts and builds</h2><p>A book on the way, posts on Redshift and applied AI, and tools built in public.</p><a href="#writing">Read and browse →</a></div>
+    <div class="path"><span class="eyebrow">Writing</span><h2>Blog, posts and builds</h2><p>A daily note on AI agent adoption, posts on Redshift and applied AI, and tools built in public.</p><a href="#blog">Read the blog →</a></div>
   </div>
 </nav>
 
@@ -856,18 +857,12 @@ footer{border-top:1px solid var(--rule);padding-block:28px 40px;font-family:var(
       </div>
     </div>
     <div class="write-grid">
-      <div class="book">
-        <div class="cover" aria-hidden="true">
-          <div><div class="ct">The AI Efficiency Playbook</div><div class="rule"></div></div>
-          <div class="ca">Vishal Kumar Sarvade</div>
-        </div>
+      <div class="book" style="grid-template-columns:1fr">
         <div>
-          <span class="soon">Forthcoming</span>
-          <h3>The AI Efficiency Playbook</h3>
-          <p class="sub">How small and mid-sized businesses can turn AI agents and automation into measurable business value. Ten chapters built on one seven-step framework.</p>
-          <ol class="steps" aria-label="The framework">
-            <li>Identify</li><li>Assess</li><li>Prioritize</li><li>Pilot</li><li>Measure</li><li>Improve</li><li>Scale</li>
-          </ol>
+          <span class="soon">Daily</span>
+          <h3>Field notes on AI agent adoption</h3>
+          <p class="sub">One short, sourced note a day on how companies are putting AI agents into production, and what data and engineering teams should take from it.</p>
+          <div class="bl-foot"><a href="/blog/">Read the blog →</a><a href="/blog/feed.xml">RSS feed</a></div>
         </div>
       </div>
       <div class="lists">
@@ -919,6 +914,7 @@ footer{border-top:1px solid var(--rule);padding-block:28px 40px;font-family:var(
         <p>I lead a team of ten. I care about standards, root causes and numbers you can trace back to their source.</p>
       </div>
       <aside class="facts" aria-label="Quick facts">
+        <figure class="sf"><img src="assets/vishal-sf.jpg" width="1100" height="1467" alt="Vishal at the Golden Gate Bridge, San Francisco"><figcaption>Golden Gate Bridge, San Francisco</figcaption></figure>
         <dl>
           <dt>Based in</dt><dd>San Francisco Bay Area</dd>
           <dt>Now</dt><dd>Technical Architect, Grid Dynamics</dd>

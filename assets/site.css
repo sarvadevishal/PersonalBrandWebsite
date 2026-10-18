@@ -348,4 +348,5 @@ footer{border-top:1px solid var(--rule);padding-block:28px 40px;font-family:var(
 .author p{font-size:15px;color:var(--ink-2)}
 .author b{color:var(--ink);font-weight:600}
 .post-nav{margin-top:28px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:15px}
+.sf{margin:0 0 6px}.sf img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 40%;border-radius:8px}.sf figcaption{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin-top:8px}
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:13px;padding:10px 14px;border-radius:8px;z-index:80}
