@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<script>try{var t=localStorage.getItem("site-theme");if(t==="classic"||t==="vibrant")document.documentElement.setAttribute("data-site-theme",t)}catch(e){}</script>
+<script>try{var t=localStorage.getItem("site-theme");if(t==="classic"||t==="vibrant"||t==="playful")document.documentElement.setAttribute("data-site-theme",t)}catch(e){}</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%230F1B2D%22/%3E%3Ctext x=%2216%22 y=%2221%22 font-family=%22monospace%22 font-size=%2213%22 fill=%22%23F8F6F1%22 text-anchor=%22middle%22%3EVS%3C/text%3E%3C/svg%3E">
 <title>Vishal Kumar Sarvade</title>
 <meta name="description" content="Technical Architect in the San Francisco Bay Area. 12+ years designing, tuning and modernizing cloud data platforms on Amazon Redshift, and applying AI to data engineering.">
@@ -16,6 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;family=Instrument+Serif:ital@0;1&amp;family=Space+Mono:wght@400;700&amp;display=swap">
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
 <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800,900&amp;display=swap">
 <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;display=swap">
@@ -532,6 +533,199 @@ html[data-site-theme="vibrant"] .band-foot p:nth-child(1){--dot:#34D399}html[dat
 html[data-site-theme="vibrant"] .band-foot p{color:#D6D3D1}
 html[data-site-theme="vibrant"] footer{background:#fff}
 html[data-site-theme="vibrant"] .toast{border-radius:999px}
+/* ===== Theme picker (all themes) ===== */
+.theme-pick{position:relative}
+.theme-caret{width:12px;height:12px;flex:none;opacity:.7}
+.theme-menu{position:absolute;right:0;top:calc(100% + 8px);min-width:236px;background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:6px;box-shadow:0 18px 40px -18px rgba(0,0,0,.35);z-index:70;display:grid;gap:2px}
+.theme-menu[hidden]{display:none}
+.theme-menu button{display:grid;grid-template-columns:18px 1fr;column-gap:10px;align-items:center;text-align:left;padding:9px 10px;border:0;background:transparent;border-radius:10px;cursor:pointer;font-family:var(--sans);font-size:14px;font-weight:600;color:var(--ink)}
+.theme-menu button:hover,.theme-menu button:focus-visible{background:var(--rule-2)}
+.theme-menu button[aria-checked="true"]{background:var(--accent-soft)}
+.theme-menu small{grid-column:2;font-size:12px;font-weight:400;color:var(--ink-3)}
+.theme-menu .sw{grid-row:1 / span 2;width:18px;height:18px;border-radius:50%}
+.sw-vibrant{background:linear-gradient(135deg,#059669 0 50%,#EA580C 50% 100%)}
+.sw-classic{background:linear-gradient(135deg,#0F1B2D 0 50%,#1F4ED6 50% 100%)}
+.sw-playful{background:conic-gradient(#1F7A70 0 33%,#F4D35E 0 66%,#EE6C4D 0)}
+@media (max-width:520px){.theme-caret{display:none}}
+/* hooks used only by Playful; neutral everywhere else */
+.acc,.hero .hl{font:inherit;color:inherit;letter-spacing:inherit}
+.sticker,.photo-tag,.marquee{display:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* ===== Playful theme: sticker-style, pastel bands, teal / sun / coral ===== */
+html[data-site-theme="playful"]{
+  --paper:#FFFBF2; --surface:#FFFFFF; --ink:#12263A; --ink-2:#2E4157; --ink-3:#556578;
+  --rule:#D9D0BE; --rule-2:#EEE7D8; --accent:#0F6B62; --accent-ink:#0B544D; --accent-soft:#D6F0EB;
+  --good:#1F7A70; --good-soft:#D6F0EB; --warn:#E05A3A; --track:#EFE8DA;
+  --night:#12263A; --night-2:#1B344C; --night-line:rgba(255,251,242,.2); --night-ink:#FFFBF2; --night-muted:#C9D4DF; --night-accent:#F4D35E;
+  --teal:#1F7A70; --sun:#F4D35E; --coral:#EE6C4D; --coral-soft:#FBD3C7; --lilac:#DCCBEE; --sky:#CBE6F8; --mint:#CDEBD5; --butter:#FFF1C4;
+  --display:"Bricolage Grotesque","DM Sans",system-ui,sans-serif; --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --mono:"Space Mono",ui-monospace,Menlo,Consolas,monospace; --serif-acc:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --radius:26px; --hard:6px 6px 0 var(--ink);
+}
+html[data-site-theme="playful"] h1,html[data-site-theme="playful"] h2,html[data-site-theme="playful"] h3{font-family:var(--display);font-weight:800;letter-spacing:-.025em}
+html[data-site-theme="playful"] .acc{font-family:var(--serif-acc);font-style:italic;font-weight:400;letter-spacing:0;color:var(--coral)}
+html[data-site-theme="playful"] .eyebrow{font-family:var(--mono);font-weight:700;letter-spacing:.14em;font-size:12px;color:var(--ink-2)}
+html[data-site-theme="playful"] .theme-dot{background:conic-gradient(#1F7A70 0 33%,#F4D35E 0 66%,#EE6C4D 0)}
+html[data-site-theme="playful"] .theme-btn{border:2px solid var(--ink);font-weight:700}
+html[data-site-theme="playful"] .theme-menu{border:2px solid var(--ink);box-shadow:5px 5px 0 var(--ink);border-radius:18px}
+html[data-site-theme="playful"] .theme-menu button[aria-checked="true"]{background:var(--butter)}
+/* nav */
+html[data-site-theme="playful"] .nav{background:rgba(255,251,242,.94);border-bottom:2px solid var(--ink)}
+html[data-site-theme="playful"] .nav-in{min-height:70px}
+html[data-site-theme="playful"] .brand{font-family:var(--display);font-weight:800}
+html[data-site-theme="playful"] .mark{border-radius:50%;background:var(--ink);color:var(--sun);width:34px;height:34px;font-family:var(--mono);font-weight:700}
+html[data-site-theme="playful"] .links a{font-weight:500;color:var(--ink)}
+html[data-site-theme="playful"] .links a:hover{background:var(--butter);color:var(--ink);border-radius:999px}
+html[data-site-theme="playful"] .links a[aria-current="true"]{box-shadow:inset 0 -3px 0 var(--coral)}
+html[data-site-theme="playful"] .links .btn-line{background:var(--sun);border:2px solid var(--ink);border-radius:999px;color:var(--ink);box-shadow:3px 3px 0 var(--ink)}
+html[data-site-theme="playful"] .menu-btn{border:2px solid var(--ink);border-radius:12px}
+/* buttons */
+html[data-site-theme="playful"] .btn{border-radius:999px;border:2px solid var(--ink);font-weight:700;box-shadow:4px 4px 0 var(--ink);transition:transform .15s ease,box-shadow .15s ease}
+html[data-site-theme="playful"] .btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+html[data-site-theme="playful"] .btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+html[data-site-theme="playful"] .btn-primary,html[data-site-theme="playful"] .btn-primary:hover{background:var(--sun);color:var(--ink)}
+html[data-site-theme="playful"] .btn-line,html[data-site-theme="playful"] .btn-line:hover{background:#fff;color:var(--ink);border-color:var(--ink)}
+/* hero */
+html[data-site-theme="playful"] .hero{background:var(--teal);border-bottom:2px solid var(--ink);overflow:hidden;padding-block:72px 84px}
+html[data-site-theme="playful"] .hero h1{color:#fff;font-size:clamp(42px,5.4vw,82px);line-height:.98;letter-spacing:-.035em}
+html[data-site-theme="playful"] .hero .hl{background:var(--sun);color:var(--ink);padding:0 .14em;border-radius:.2em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+html[data-site-theme="playful"] .hero h1 em{display:block;font-family:var(--serif-acc);font-style:italic;font-weight:400;color:var(--sun);font-size:.62em;letter-spacing:0;margin-top:14px;line-height:1.08}
+html[data-site-theme="playful"] .proof{color:var(--sun)}
+html[data-site-theme="playful"] .proof span:not(:last-child)::after{color:rgba(255,255,255,.55)}
+html[data-site-theme="playful"] .intro{color:#EAF6F3}
+html[data-site-theme="playful"] .intro strong{color:#fff}
+html[data-site-theme="playful"] .also{color:#E3F2EF}
+html[data-site-theme="playful"] .also li::before{background:var(--sun);border-radius:50%}
+html[data-site-theme="playful"] .hero a:not(.btn){color:#fff;text-decoration-color:var(--sun);text-decoration-thickness:2px}
+html[data-site-theme="playful"] .quiet-links a{border-bottom:2px solid var(--sun)}
+html[data-site-theme="playful"] .photo figure{border:2px solid var(--ink);border-radius:999px 999px 26px 26px;padding:0;overflow:hidden;box-shadow:10px 10px 0 var(--ink);background:var(--sun);position:relative;z-index:1}
+html[data-site-theme="playful"] .photo img{border-radius:0}
+html[data-site-theme="playful"] .deco{display:block;position:absolute;z-index:0;inset:auto}
+html[data-site-theme="playful"] .deco-a{width:96px;height:96px;border-radius:50%;background:var(--coral);border:2px solid var(--ink);left:-46px;top:-28px}
+html[data-site-theme="playful"] .deco-b{width:58px;height:58px;right:-26px;bottom:90px;background:var(--sun);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);z-index:2;animation:spin 18s linear infinite}
+html[data-site-theme="playful"] .float-chip{display:none}
+html[data-site-theme="playful"] .sticker{display:grid;place-items:center;position:absolute;right:-34px;top:-30px;width:124px;height:124px;border-radius:50%;background:var(--sun);border:2px solid var(--ink);z-index:3;box-shadow:4px 4px 0 var(--ink)}
+html[data-site-theme="playful"] .sticker svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 16s linear infinite}
+html[data-site-theme="playful"] .sticker text{font-family:var(--mono);font-size:9.6px;font-weight:700;letter-spacing:1px;fill:var(--ink)}
+html[data-site-theme="playful"] .sticker b{display:grid;justify-items:center;font-family:var(--display);font-weight:800;font-size:30px;line-height:.9;color:var(--ink)}
+html[data-site-theme="playful"] .sticker small{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:3px}
+html[data-site-theme="playful"] .photo-tag{display:inline-block;position:absolute;left:-30px;bottom:40px;z-index:3;background:#fff;border:2px solid var(--ink);border-radius:999px;padding:8px 14px;font-family:var(--sans);font-weight:700;font-size:13px;color:var(--ink);transform:rotate(-5deg);box-shadow:3px 3px 0 var(--ink)}
+@media (max-width:900px){html[data-site-theme="playful"] .hero{padding-block:36px 48px}html[data-site-theme="playful"] .deco,html[data-site-theme="playful"] .photo-tag{display:none}html[data-site-theme="playful"] .sticker{width:78px;height:78px;right:-30px;top:-18px}html[data-site-theme="playful"] .sticker text{font-size:0}html[data-site-theme="playful"] .sticker b{font-size:22px}html[data-site-theme="playful"] .photo figure{box-shadow:6px 6px 0 var(--ink)}}
+/* marquee */
+html[data-site-theme="playful"] .marquee{display:block;background:var(--sun);border-bottom:2px solid var(--ink);overflow:hidden;white-space:nowrap}
+html[data-site-theme="playful"] .marquee-track{display:inline-flex;align-items:center;gap:26px;padding:14px 0 14px 26px;animation:marquee 34s linear infinite}
+html[data-site-theme="playful"] .marquee span{font-family:var(--display);font-weight:800;font-size:22px;color:var(--ink);letter-spacing:-.01em}
+html[data-site-theme="playful"] .marquee i{font-style:normal;color:var(--coral);font-size:18px}
+/* paths */
+html[data-site-theme="playful"] .paths{background:#fff;border-top:0;border-bottom:2px solid var(--ink)}
+html[data-site-theme="playful"] .path .eyebrow{color:var(--coral)}
+html[data-site-theme="playful"] .path a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--sun);text-decoration-thickness:3px;text-underline-offset:5px}
+/* section bands */
+html[data-site-theme="playful"] section.section{padding-top:96px!important;border-top:2px solid var(--ink)}
+html[data-site-theme="playful"] #work{background:var(--paper);border-top:0}
+html[data-site-theme="playful"] #ai{background:var(--sky)}
+html[data-site-theme="playful"] #blog{background:var(--paper)}
+html[data-site-theme="playful"] #experience{background:#fff}
+html[data-site-theme="playful"] #principles{background:var(--butter)}
+html[data-site-theme="playful"] #toolkit{background:var(--paper)}
+html[data-site-theme="playful"] #writing{background:var(--mint)}
+html[data-site-theme="playful"] #about{background:var(--lilac)}
+html[data-site-theme="playful"] .sec-head h2{font-size:clamp(38px,5vw,66px);line-height:1}
+/* cards */
+html[data-site-theme="playful"] .card,html[data-site-theme="playful"] .bl-card,html[data-site-theme="playful"] .console,html[data-site-theme="playful"] .ruler,html[data-site-theme="playful"] .facts,html[data-site-theme="playful"] .book,html[data-site-theme="playful"] .author,html[data-site-theme="playful"] .pr,html[data-site-theme="playful"] .bl-empty{border:2px solid var(--ink);border-radius:var(--radius);box-shadow:var(--hard);background:#fff}
+html[data-site-theme="playful"] .card,html[data-site-theme="playful"] .bl-card,html[data-site-theme="playful"] .pr{transition:transform .15s ease,box-shadow .15s ease}
+html[data-site-theme="playful"] .card:hover,html[data-site-theme="playful"] .bl-card:hover,html[data-site-theme="playful"] .pr:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink);border-color:var(--ink)}
+html[data-site-theme="playful"] .card:nth-child(4n+1){background:var(--butter)}html[data-site-theme="playful"] .card:nth-child(4n+2){background:var(--coral-soft)}html[data-site-theme="playful"] .card:nth-child(4n+3){background:var(--mint)}html[data-site-theme="playful"] .card:nth-child(4n+4){background:var(--sky)}
+html[data-site-theme="playful"] .fig{background:#fff;border:2px solid var(--ink);border-radius:18px}
+html[data-site-theme="playful"] .tag{background:#fff;border:2px solid var(--ink);color:var(--ink);font-family:var(--mono);font-weight:700}
+html[data-site-theme="playful"] .card h3{font-size:25px;line-height:1.06}
+html[data-site-theme="playful"] .card p{color:var(--ink-2)}
+html[data-site-theme="playful"] .stack{border-top:1.5px dashed var(--ink);color:var(--ink-2)}
+html[data-site-theme="playful"] .chip{border:2px solid var(--ink);color:var(--ink);font-family:var(--mono);font-weight:700;background:#fff}
+html[data-site-theme="playful"] .chip[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+html[data-site-theme="playful"] .chip[aria-pressed="true"] .n{color:var(--sun)}
+html[data-site-theme="playful"] .squares i{background:var(--ink);opacity:1;border-radius:3px}
+html[data-site-theme="playful"] .fill.after{background:var(--teal)}html[data-site-theme="playful"] .fill.bad{background:var(--coral)}html[data-site-theme="playful"] .fill.before{background:#9AA5B1}
+html[data-site-theme="playful"] .big{font-family:var(--display);font-weight:800;letter-spacing:-.03em}
+html[data-site-theme="playful"] .share .node{stroke:var(--ink);stroke-width:1.5}html[data-site-theme="playful"] .share .node.prod{fill:var(--sun)}html[data-site-theme="playful"] .share .prod-t{fill:var(--ink)}html[data-site-theme="playful"] .share .link{stroke:var(--ink)}
+/* platform band */
+html[data-site-theme="playful"] .band{background:var(--ink)}
+html[data-site-theme="playful"] .band .acc{color:var(--sun)}
+html[data-site-theme="playful"] .band .eyebrow{color:var(--sun)}
+html[data-site-theme="playful"] .bstats{border:0;gap:14px}
+html[data-site-theme="playful"] .bstat,html[data-site-theme="playful"] .bstat+.bstat{padding:20px 22px;border:2px solid #0A1622;border-radius:22px;box-shadow:5px 5px 0 #050C13}
+html[data-site-theme="playful"] .bstat:nth-child(1){background:var(--sun)}html[data-site-theme="playful"] .bstat:nth-child(2){background:var(--coral-soft)}html[data-site-theme="playful"] .bstat:nth-child(3){background:var(--mint)}html[data-site-theme="playful"] .bstat:nth-child(4){background:var(--sky)}
+html[data-site-theme="playful"] .bstat b{color:var(--ink);font-family:var(--display);font-weight:800;font-size:38px}
+html[data-site-theme="playful"] .bstat span{color:var(--ink-2)}
+@media (max-width:760px){html[data-site-theme="playful"] .bstat:nth-child(n){border-top:2px solid #0A1622;padding-left:22px}}
+html[data-site-theme="playful"] .stage:nth-child(1){--pc:var(--sun)}html[data-site-theme="playful"] .stage:nth-child(2){--pc:var(--coral-soft)}html[data-site-theme="playful"] .stage:nth-child(3){--pc:var(--mint)}html[data-site-theme="playful"] .stage:nth-child(4){--pc:var(--sky)}
+html[data-site-theme="playful"] .stage-h{border-bottom:2px solid var(--pc);align-items:center}
+html[data-site-theme="playful"] .stage-h .eyebrow{color:var(--pc)}
+html[data-site-theme="playful"] .stage-h .step{color:var(--ink);background:var(--pc);padding:2px 9px;border-radius:999px;font-family:var(--mono);font-weight:700}
+html[data-site-theme="playful"] .stage + .stage::before{border-color:var(--sun)}
+html[data-site-theme="playful"] .pnode{background:var(--pc);border:2px solid #0A1622;border-radius:18px;box-shadow:4px 4px 0 #050C13}
+html[data-site-theme="playful"] .pnode b{color:var(--ink)}html[data-site-theme="playful"] .pnode span{color:var(--ink-2)}
+html[data-site-theme="playful"] .pnode.hot{background:var(--sun);box-shadow:6px 6px 0 var(--coral)}
+html[data-site-theme="playful"] .pnode.fade{opacity:1;background:transparent;border:2px dashed var(--pc);box-shadow:none}html[data-site-theme="playful"] .pnode.fade b{color:var(--night-ink)}html[data-site-theme="playful"] .pnode.fade span{color:var(--night-muted)}
+html[data-site-theme="playful"] .portals em{background:#fff;border:1.5px solid var(--ink);color:var(--ink);border-radius:999px;padding:2px 8px}
+html[data-site-theme="playful"] .band-foot{border-top:2px dashed var(--night-line)}
+html[data-site-theme="playful"] .band-foot b{color:var(--sun)}
+/* AI */
+html[data-site-theme="playful"] .guards span,html[data-site-theme="playful"] .kit-row .items span{border:2px solid var(--ink);border-radius:999px;background:#fff;font-family:var(--mono);font-weight:700;font-size:12px;color:var(--ink);padding:6px 12px}
+html[data-site-theme="playful"] .q{background:var(--ink);border-radius:20px 20px 6px 20px}
+html[data-site-theme="playful"] .read{border-left-color:var(--coral)}
+html[data-site-theme="playful"] pre.sql{border:2px solid var(--ink);border-radius:16px;background:var(--butter)}
+html[data-site-theme="playful"] .builds{border-top:2px solid var(--ink)}
+html[data-site-theme="playful"] .build{border-bottom:1.5px dashed var(--ink)}
+html[data-site-theme="playful"] .status{border:2px solid var(--ink);border-radius:999px;padding:3px 10px;background:#fff;font-family:var(--mono);font-weight:700;color:var(--ink)}
+html[data-site-theme="playful"] .status.done{background:var(--mint)}html[data-site-theme="playful"] .status.wip{background:var(--sun)}
+/* experience */
+html[data-site-theme="playful"] .seg{border:2px solid var(--ink);color:var(--ink);border-radius:999px}
+html[data-site-theme="playful"] .seg.r1{background:var(--sky)}html[data-site-theme="playful"] .seg.r2{background:var(--lilac)}html[data-site-theme="playful"] .seg.r3{background:var(--mint)}html[data-site-theme="playful"] .seg.r4{background:var(--sun)}
+html[data-site-theme="playful"] .seg.d1{background:var(--coral-soft);border-color:var(--ink);color:var(--ink)}html[data-site-theme="playful"] .seg.d2{background:var(--butter);border-color:var(--ink);color:var(--ink)}
+html[data-site-theme="playful"] .roles{border-top:2px solid var(--ink)}
+html[data-site-theme="playful"] .job{border-bottom:1.5px dashed var(--ink);position:relative}
+html[data-site-theme="playful"] .when b{font-family:var(--mono);font-weight:700}
+html[data-site-theme="playful"] .job li::marker{color:var(--coral)}
+/* principles, toolkit, writing */
+html[data-site-theme="playful"] .principles{border:0;gap:18px}
+html[data-site-theme="playful"] .pr:nth-child(3n+1) h3::before,html[data-site-theme="playful"] .pr:nth-child(3n+2) h3::before,html[data-site-theme="playful"] .pr:nth-child(3n+3) h3::before{content:"";display:block;width:34px;height:8px;border-radius:999px;margin-bottom:14px;background:var(--coral)}
+html[data-site-theme="playful"] .pr:nth-child(3n+2) h3::before{background:var(--teal)}html[data-site-theme="playful"] .pr:nth-child(3n+3) h3::before{background:var(--sun)}
+html[data-site-theme="playful"] .kit{border-top:2px solid var(--ink)}
+html[data-site-theme="playful"] .kit-row{border-bottom:1.5px dashed var(--ink)}
+html[data-site-theme="playful"] .kit-row.poc .items span{border-style:dashed;background:transparent;color:var(--ink-2)}
+html[data-site-theme="playful"] .soon{background:var(--sun);color:var(--ink);border:2px solid var(--ink);font-family:var(--mono);font-weight:700}
+html[data-site-theme="playful"] .list h3{font-family:var(--mono);font-weight:700;color:var(--ink)}
+html[data-site-theme="playful"] .list ul{border-top:2px solid var(--ink)}
+html[data-site-theme="playful"] .list li{border-bottom:1.5px dashed rgba(18,38,58,.35)}
+/* blog */
+html[data-site-theme="playful"] .bl-card:nth-child(3n+1){background:var(--sun)}html[data-site-theme="playful"] .bl-card:nth-child(3n+2){background:var(--sky)}html[data-site-theme="playful"] .bl-card:nth-child(3n+3){background:var(--lilac)}
+html[data-site-theme="playful"] .bl-tags span{background:#fff;border:1.5px solid var(--ink);color:var(--ink);font-family:var(--mono);font-weight:700}
+html[data-site-theme="playful"] .bl-more{color:var(--ink);border-top:1.5px dashed var(--ink)}
+html[data-site-theme="playful"] .bl-foot a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--coral);text-decoration-thickness:3px;text-underline-offset:5px}
+html[data-site-theme="playful"] .page-head{background:var(--sky);border-bottom:2px solid var(--ink)}
+html[data-site-theme="playful"] .bl-list{border-top:2px solid var(--ink)}
+html[data-site-theme="playful"] .bl-row{border-bottom:1.5px dashed var(--ink)}
+html[data-site-theme="playful"] .post .dek{font-family:var(--serif-acc);font-style:italic;font-size:26px;color:var(--ink-2)}
+html[data-site-theme="playful"] .post-code{background:var(--ink);color:#F3F6F9;border:2px solid var(--ink);border-radius:18px;box-shadow:var(--hard)}
+html[data-site-theme="playful"] .post-body sup a{color:var(--coral)}
+html[data-site-theme="playful"] .sources{border-top:2px solid var(--ink)}
+/* about */
+html[data-site-theme="playful"] .bio{font-family:var(--sans);font-size:20px;line-height:1.65}
+html[data-site-theme="playful"] .sf img{border:2px solid var(--ink);border-radius:18px}
+html[data-site-theme="playful"] .copy{border:2px solid var(--ink);border-radius:999px;background:var(--sun);font-weight:700}
+/* contact + footer */
+html[data-site-theme="playful"] .contact{background:var(--coral);border-top:2px solid var(--ink);color:var(--ink)}
+html[data-site-theme="playful"] .contact .eyebrow{color:var(--ink)}
+html[data-site-theme="playful"] .contact h2{color:var(--ink);font-size:clamp(44px,6.4vw,92px);line-height:.95}
+html[data-site-theme="playful"] .contact .acc{color:#fff}
+html[data-site-theme="playful"] .contact p.lede{color:var(--ink)}
+html[data-site-theme="playful"] .mail-addr{background:#fff;border:2px solid var(--ink);border-radius:16px;box-shadow:5px 5px 0 var(--ink);color:var(--ink)}
+html[data-site-theme="playful"] footer{background:var(--ink);color:var(--night-muted);border-top:0}
+html[data-site-theme="playful"] .foot a{color:var(--paper)}
+html[data-site-theme="playful"] .toast{background:var(--ink);border-radius:999px}
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:13px;padding:10px 14px;border-radius:8px;z-index:80}
 </style>
 <style>body{margin:0}[hidden]{display:none!important}</style>
@@ -554,7 +748,14 @@ html[data-site-theme="vibrant"] .toast{border-radius:999px}
       <a class="btn btn-line btn-sm" href="assets/Vishal-Kumar-Sarvade-Resume.pdf" download="Vishal-Kumar-Sarvade-Resume.pdf" data-resume style="margin-left:8px">Resume</a>
     </nav>
     <div class="nav-tools">
-      <button class="theme-btn" type="button" aria-label="Switch design theme"><span class="theme-dot" aria-hidden="true"></span><span class="theme-name">Vibrant</span></button>
+      <div class="theme-pick">
+        <button class="theme-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Design theme"><span class="theme-dot" aria-hidden="true"></span><span class="theme-name">Vibrant</span><svg class="theme-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <div class="theme-menu" role="menu" aria-label="Choose a design theme" hidden>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme="vibrant"><span class="sw sw-vibrant" aria-hidden="true"></span>Vibrant<small>Default · emerald and orange</small></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme="classic"><span class="sw sw-classic" aria-hidden="true"></span>Classic<small>Editorial · navy and cobalt</small></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme="playful"><span class="sw sw-playful" aria-hidden="true"></span>Playful<small>Bold · teal, sun and coral</small></button>
+        </div>
+      </div>
       <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
@@ -574,7 +775,7 @@ html[data-site-theme="vibrant"] .toast{border-radius:999px}
   <div class="wrap hero-grid">
     <div>
       <div class="proof eyebrow" aria-label="Highlights"><span>12+ years</span><span>1 TB data mart</span><span>~63 operating companies</span><span>24x faster</span></div>
-      <h1 id="hero-title">I build the data platform a business runs on. <em>Then I make it faster, cheaper, and easier to trust.</em></h1>
+      <h1 id="hero-title">I build the <span class="hl">data platform</span> a business runs on. <em>Then I make it faster, cheaper, and easier to trust.</em></h1>
       <p class="intro">Hi, I'm <strong>Vishal Kumar Sarvade</strong>, a Technical Architect at Grid Dynamics with 12+ years in data engineering. Today I own a 1 TB Amazon Redshift data mart that about 63 operating companies report from, and I lead the ten engineers who keep it running.</p>
       <p class="intro" style="margin-top:14px">I also:</p>
       <ul class="also">
@@ -592,6 +793,8 @@ html[data-site-theme="vibrant"] .toast{border-radius:999px}
     <div class="photo">
       <div class="tilt">
       <span class="deco deco-a" aria-hidden="true"></span><span class="deco deco-b" aria-hidden="true"></span>
+      <span class="sticker" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="stkPath" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"/></defs><text><textPath href="#stkPath" textLength="280">DATA PLATFORMS ✦ AMAZON REDSHIFT ✦ APPLIED AI ✦</textPath></text></svg><b>12+<small>years</small></b></span>
+      <span class="photo-tag" aria-hidden="true">Technical Architect · SF Bay Area</span>
       <span class="float-chip chip-a" aria-hidden="true">Amazon Redshift</span><span class="float-chip chip-b" aria-hidden="true">AI agents</span>
       <figure>
         <img src="assets/vishal-headshot.jpg?v=2" width="962" height="1089" alt="Portrait of Vishal Kumar Sarvade">
@@ -600,6 +803,8 @@ html[data-site-theme="vibrant"] .toast{border-radius:999px}
     </div>
   </div>
 </section>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Amazon Redshift</span><i>✦</i><span>Data sharing</span><i>✦</i><span>Zero-ETL</span><i>✦</i><span>ETL modernization</span><i>✦</i><span>NL-to-SQL</span><i>✦</i><span>AI agents</span><i>✦</i><span>Data governance</span><i>✦</i><span>Looker</span><i>✦</i><span>Power BI</span><i>✦</i><span>Cost optimization</span><i>✦</i><span>Amazon Redshift</span><i>✦</i><span>Data sharing</span><i>✦</i><span>Zero-ETL</span><i>✦</i><span>ETL modernization</span><i>✦</i><span>NL-to-SQL</span><i>✦</i><span>AI agents</span><i>✦</i><span>Data governance</span><i>✦</i><span>Looker</span><i>✦</i><span>Power BI</span><i>✦</i><span>Cost optimization</span><i>✦</i></div></div>
 
 <!-- PATHS -->
 <nav class="paths" aria-label="Start here">
@@ -616,7 +821,7 @@ html[data-site-theme="vibrant"] .toast{border-radius:999px}
     <div class="sec-head">
       <div>
         <div class="eyebrow">Selected work</div>
-        <h2 id="work-title">Problems I've solved, with the numbers</h2>
+        <h2 id="work-title">Problems I've solved, with the <em class="acc">numbers</em></h2>
         <p class="lede">Real work for a global direct-selling business and, earlier, a healthcare technology company. Client names stay private; the numbers are real.</p>
       </div>
       <div class="filters" role="group" aria-label="Filter case studies">
@@ -757,7 +962,7 @@ html[data-site-theme="vibrant"] .toast{border-radius:999px}
     <div class="sec-head">
       <div>
         <div class="eyebrow">The platform I run</div>
-        <h2 id="platform-title">One warehouse for a global business</h2>
+        <h2 id="platform-title">One warehouse for a <em class="acc">global</em> business</h2>
         <p class="lede">I architected this data mart and lead the team that runs it. Every dashboard and report the business produces reads from it. Simplified, with client names removed.</p>
       </div>
     </div>
@@ -819,7 +1024,7 @@ html[data-site-theme="vibrant"] .toast{border-radius:999px}
     <div class="sec-head">
       <div>
         <div class="eyebrow">AI, applied</div>
-        <h2 id="ai-title">AI where it removes real work</h2>
+        <h2 id="ai-title">AI where it removes <em class="acc">real</em> work</h2>
         <p class="lede">I don't start with the model. I start with the question people keep asking, the business rule behind it and the data that answers it. Once I understand the root cause, I automate the part that repeats.</p>
       </div>
     </div>
@@ -868,7 +1073,7 @@ html[data-site-theme="vibrant"] .toast{border-radius:999px}
     <div class="sec-head">
       <div>
         <div class="eyebrow">Blog</div>
-        <h2 id="blog-title">Field notes on AI agent adoption</h2>
+        <h2 id="blog-title">Field notes on <em class="acc">AI agent</em> adoption</h2>
         <p class="lede">One short note a day on how companies are putting AI agents to work, with every source linked so you can check the numbers.</p>
       </div>
     </div>
@@ -893,7 +1098,7 @@ html[data-site-theme="vibrant"] .toast{border-radius:999px}
     <div class="sec-head">
       <div>
         <div class="eyebrow">Experience</div>
-        <h2 id="exp-title">Twelve years, two employers, one long thread</h2>
+        <h2 id="exp-title">Twelve years, two employers, one <em class="acc">long thread</em></h2>
         <p class="lede">I've worked on the same global data platform since 2018, first as an engineer building its pipelines and now as the architect who owns it.</p>
       </div>
     </div>
@@ -976,7 +1181,7 @@ html[data-site-theme="vibrant"] .toast{border-radius:999px}
     <div class="sec-head">
       <div>
         <div class="eyebrow">How I work</div>
-        <h2 id="pr-title">Six habits behind the work</h2>
+        <h2 id="pr-title">Six habits behind the <em class="acc">work</em></h2>
       </div>
     </div>
     <div class="principles">
@@ -996,7 +1201,7 @@ html[data-site-theme="vibrant"] .toast{border-radius:999px}
     <div class="sec-head">
       <div>
         <div class="eyebrow">Toolkit</div>
-        <h2 id="kit-title">What I use in production</h2>
+        <h2 id="kit-title">What I use in <em class="acc">production</em></h2>
       </div>
     </div>
     <div class="kit">
@@ -1018,7 +1223,7 @@ html[data-site-theme="vibrant"] .toast{border-radius:999px}
     <div class="sec-head">
       <div>
         <div class="eyebrow">Writing, learning and building</div>
-        <h2 id="wr-title">Outside the day job</h2>
+        <h2 id="wr-title">Outside the <em class="acc">day job</em></h2>
       </div>
     </div>
     <div class="write-grid">
@@ -1067,7 +1272,7 @@ html[data-site-theme="vibrant"] .toast{border-radius:999px}
     <div class="sec-head">
       <div>
         <div class="eyebrow">About</div>
-        <h2 id="about-title">The longer version</h2>
+        <h2 id="about-title">The <em class="acc">longer</em> version</h2>
       </div>
     </div>
     <div class="about-grid">
@@ -1101,7 +1306,7 @@ html[data-site-theme="vibrant"] .toast{border-radius:999px}
 <section class="contact" id="contact" aria-labelledby="contact-title">
   <div class="wrap">
     <div class="eyebrow">Contact</div>
-    <h2 id="contact-title" style="margin-top:10px">Let's talk data platforms.</h2>
+    <h2 id="contact-title" style="margin-top:10px">Let's talk <em class="acc">data platforms</em>.</h2>
     <p class="lede">The fastest way to reach me is email or LinkedIn.</p>
     <div class="mail">
       <a class="mail-addr" id="emailAddr" href="mailto:sarvade1.vishalkumar@gmail.com" style="text-decoration:none">sarvade1.vishalkumar@gmail.com</a>
@@ -1173,6 +1378,6 @@ html[data-site-theme="vibrant"] .toast{border-radius:999px}
   });});
 })();
 </script>
-<script src="assets/theme.js?v=1" defer></script>
+<script src="assets/theme.js?v=2" defer></script>
 </body>
 </html>

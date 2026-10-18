@@ -155,9 +155,9 @@ def tags_html(p):
 
 def head_bits(index_html):
     icon = re.search(r'<link rel="icon"[^>]*>', index_html)
-    fonts = re.search(r'<link rel="stylesheet" href="https://fonts\.googleapis\.com[^>]*>', index_html)
+    fonts = re.findall(r'<link rel="stylesheet" href="https://fonts\.googleapis\.com[^>]*>', index_html)
     share = re.findall(r'<link rel="stylesheet" href="https://api\.fontshare\.com[^>]*>', index_html)
-    links = (fonts.group(0) if fonts else "")
+    links = "\n".join(fonts)
     if share:
         links += '\n<link rel="preconnect" href="https://api.fontshare.com" crossorigin>\n' + "\n".join(share)
     return (icon.group(0) if icon else ""), links
@@ -179,7 +179,14 @@ def nav_html():
 {desk}
     </nav>
     <div class="nav-tools">
-      <button class="theme-btn" type="button" aria-label="Switch design theme"><span class="theme-dot" aria-hidden="true"></span><span class="theme-name">Vibrant</span></button>
+      <div class="theme-pick">
+        <button class="theme-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Design theme"><span class="theme-dot" aria-hidden="true"></span><span class="theme-name">Vibrant</span><svg class="theme-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <div class="theme-menu" role="menu" aria-label="Choose a design theme" hidden>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme="vibrant"><span class="sw sw-vibrant" aria-hidden="true"></span>Vibrant<small>Default · emerald and orange</small></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme="classic"><span class="sw sw-classic" aria-hidden="true"></span>Classic<small>Editorial · navy and cobalt</small></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme="playful"><span class="sw sw-playful" aria-hidden="true"></span>Playful<small>Bold · teal, sun and coral</small></button>
+        </div>
+      </div>
       <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
@@ -201,7 +208,7 @@ FOOTER = f'''<footer>
 (function(){{var b=document.getElementById('menuBtn'),m=document.getElementById('mobileMenu');
 b.addEventListener('click',function(){{var o=m.hidden;m.hidden=!o;b.setAttribute('aria-expanded',String(o));b.setAttribute('aria-label',o?'Close menu':'Open menu');}});}})();
 </script>
-<script src="/assets/theme.js?v=1" defer></script>'''
+<script src="/assets/theme.js?v=2" defer></script>'''
 
 
 def page(title, description, canonical_path, body, icon, fonts, og_type="website", extra_head=""):
@@ -211,7 +218,7 @@ def page(title, description, canonical_path, body, icon, fonts, og_type="website
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<script>try{{var t=localStorage.getItem("site-theme");if(t==="classic"||t==="vibrant")document.documentElement.setAttribute("data-site-theme",t)}}catch(e){{}}</script>
+<script>try{{var t=localStorage.getItem("site-theme");if(t==="classic"||t==="vibrant"||t==="playful")document.documentElement.setAttribute("data-site-theme",t)}}catch(e){{}}</script>
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(description)}">
 <meta name="author" content="{AUTHOR}">

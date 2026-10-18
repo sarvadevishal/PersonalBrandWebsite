@@ -1,26 +1,43 @@
-/* Design theme switch (Vibrant default, Classic original) and the Vibrant hero tilt. */
+/* Design themes: Vibrant (default), Classic (original) and Playful. Picker in the nav; choice saved per browser. */
 (function () {
   var root = document.documentElement;
-  var names = { vibrant: "Vibrant", classic: "Classic" };
-  function current() { return root.getAttribute("data-site-theme") === "classic" ? "classic" : "vibrant"; }
+  var names = { vibrant: "Vibrant", classic: "Classic", playful: "Playful" };
+  var colors = { vibrant: "#FAFAF9", classic: "#F8F6F1", playful: "#FFFBF2" };
+  function current() { var t = root.getAttribute("data-site-theme"); return names[t] ? t : "vibrant"; }
   function sync() {
-    var t = current(), other = t === "vibrant" ? "classic" : "vibrant";
-    document.querySelectorAll(".theme-btn").forEach(function (b) {
-      var n = b.querySelector(".theme-name"); if (n) n.textContent = names[t];
-      b.setAttribute("aria-label", "Design theme: " + names[t] + ". Switch to " + names[other]);
-      b.setAttribute("title", "Switch to " + names[other] + " theme");
-    });
-    var m = document.querySelector('meta[name="theme-color"]');
-    if (m) m.setAttribute("content", t === "vibrant" ? "#FAFAF9" : "#F8F6F1");
+    var t = current();
+    document.querySelectorAll(".theme-btn .theme-name").forEach(function (n) { n.textContent = names[t]; });
+    document.querySelectorAll(".theme-btn").forEach(function (b) { b.setAttribute("aria-label", "Design theme: " + names[t] + ". Choose another theme"); });
+    document.querySelectorAll(".theme-menu [data-theme]").forEach(function (o) { o.setAttribute("aria-checked", String(o.getAttribute("data-theme") === t)); });
+    var m = document.querySelector('meta[name="theme-color"]'); if (m) m.setAttribute("content", colors[t]);
   }
-  document.querySelectorAll(".theme-btn").forEach(function (b) {
-    b.addEventListener("click", function () {
-      var next = current() === "vibrant" ? "classic" : "vibrant";
-      root.setAttribute("data-site-theme", next);
-      try { localStorage.setItem("site-theme", next); } catch (e) {}
-      var t = document.querySelector(".tilt"); if (t) t.style.transform = "";
-      sync();
+  function setTheme(t) {
+    root.setAttribute("data-site-theme", t);
+    try { localStorage.setItem("site-theme", t); } catch (e) {}
+    var tilt = document.querySelector(".tilt"); if (tilt) tilt.style.transform = "";
+    sync();
+  }
+  document.querySelectorAll(".theme-pick").forEach(function (pick) {
+    var btn = pick.querySelector(".theme-btn"), menu = pick.querySelector(".theme-menu");
+    if (!btn || !menu) return;
+    function close() { menu.hidden = true; btn.setAttribute("aria-expanded", "false"); }
+    function open() {
+      menu.hidden = false; btn.setAttribute("aria-expanded", "true");
+      var on = menu.querySelector('[aria-checked="true"]') || menu.querySelector("button"); if (on) on.focus();
+    }
+    btn.addEventListener("click", function (e) { e.stopPropagation(); menu.hidden ? open() : close(); });
+    menu.addEventListener("click", function (e) {
+      var o = e.target.closest("[data-theme]"); if (!o) return;
+      setTheme(o.getAttribute("data-theme")); close(); btn.focus();
     });
+    menu.addEventListener("keydown", function (e) {
+      var items = [].slice.call(menu.querySelectorAll("[data-theme]")), i = items.indexOf(document.activeElement);
+      if (e.key === "ArrowDown") { e.preventDefault(); items[(i + 1) % items.length].focus(); }
+      if (e.key === "ArrowUp") { e.preventDefault(); items[(i - 1 + items.length) % items.length].focus(); }
+      if (e.key === "Escape") { close(); btn.focus(); }
+    });
+    document.addEventListener("click", function (e) { if (!pick.contains(e.target)) close(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !menu.hidden) { close(); btn.focus(); } });
   });
   sync();
 
