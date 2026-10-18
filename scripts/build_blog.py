@@ -180,11 +180,11 @@ def nav_html():
     </nav>
     <div class="nav-tools">
       <div class="theme-pick">
-        <button class="theme-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Design theme"><span class="theme-dot" aria-hidden="true"></span><span class="theme-name">Vibrant</span><svg class="theme-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <button class="theme-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Design theme"><span class="theme-dot" aria-hidden="true"></span><span class="theme-name">Playful</span><svg class="theme-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
         <div class="theme-menu" role="menu" aria-label="Choose a design theme" hidden>
-          <button type="button" role="menuitemradio" aria-checked="false" data-theme="vibrant"><span class="sw sw-vibrant" aria-hidden="true"></span>Vibrant<small>Default · emerald and orange</small></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme="vibrant"><span class="sw sw-vibrant" aria-hidden="true"></span>Vibrant<small>Modern · emerald and orange</small></button>
           <button type="button" role="menuitemradio" aria-checked="false" data-theme="classic"><span class="sw sw-classic" aria-hidden="true"></span>Classic<small>Editorial · navy and cobalt</small></button>
-          <button type="button" role="menuitemradio" aria-checked="false" data-theme="playful"><span class="sw sw-playful" aria-hidden="true"></span>Playful<small>Bold · teal, sun and coral</small></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme="playful"><span class="sw sw-playful" aria-hidden="true"></span>Playful<small>Default · teal, sun and coral</small></button>
         </div>
       </div>
       <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
@@ -208,13 +208,13 @@ FOOTER = f'''<footer>
 (function(){{var b=document.getElementById('menuBtn'),m=document.getElementById('mobileMenu');
 b.addEventListener('click',function(){{var o=m.hidden;m.hidden=!o;b.setAttribute('aria-expanded',String(o));b.setAttribute('aria-label',o?'Close menu':'Open menu');}});}})();
 </script>
-<script src="/assets/theme.js?v=2" defer></script>'''
+<script src="/assets/theme.js?v=3" defer></script>'''
 
 
 def page(title, description, canonical_path, body, icon, fonts, og_type="website", extra_head=""):
     url = SITE_URL + canonical_path
     return f'''<!doctype html>
-<html lang="en" data-site-theme="vibrant">
+<html lang="en" data-site-theme="playful">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -229,7 +229,7 @@ def page(title, description, canonical_path, body, icon, fonts, og_type="website
 <meta property="og:description" content="{esc(description)}">
 <meta property="og:url" content="{url}">
 <meta property="og:image" content="{SITE_URL}/assets/vishal-headshot.jpg?v=2">
-<meta name="theme-color" content="#F8F6F1">
+<meta name="theme-color" content="#FFFBF2">
 {icon}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

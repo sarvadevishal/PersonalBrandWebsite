@@ -1,9 +1,9 @@
-/* Design themes: Vibrant (default), Classic (original) and Playful. Picker in the nav; choice saved per browser. */
+/* Design themes: Playful (default), Vibrant and Classic (original). Picker in the nav; choice saved per browser. */
 (function () {
   var root = document.documentElement;
   var names = { vibrant: "Vibrant", classic: "Classic", playful: "Playful" };
   var colors = { vibrant: "#FAFAF9", classic: "#F8F6F1", playful: "#FFFBF2" };
-  function current() { var t = root.getAttribute("data-site-theme"); return names[t] ? t : "vibrant"; }
+  function current() { var t = root.getAttribute("data-site-theme"); return names[t] ? t : "playful"; }
   function sync() {
     var t = current();
     document.querySelectorAll(".theme-btn .theme-name").forEach(function (n) { n.textContent = names[t]; });
