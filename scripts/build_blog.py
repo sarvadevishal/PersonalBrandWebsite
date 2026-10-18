@@ -81,11 +81,20 @@ def load_posts():
         if not (isinstance(p["tags"], list) and 1 <= len(p["tags"]) <= 4 and all(isinstance(t, str) and t for t in p["tags"])):
             fail(name, "tags must be a list of 1 to 4 strings")
         body = p["body"]
-        if not (isinstance(body, list) and 2 <= len(body) <= 8 and all(isinstance(x, str) and x.strip() for x in body)):
-            fail(name, "body must be a list of 2 to 8 non-empty paragraphs")
-        words = sum(len(x.split()) for x in body)
-        if not (150 <= words <= 450):
-            fail(name, f"body is {words} words; keep it between 150 and 450")
+        # Blocks: a string is a paragraph; {"h2": "..."} is a section heading; {"code": "...", "lang": "sql"} is a code block.
+        def ok_block(x):
+            if isinstance(x, str):
+                return bool(x.strip())
+            return isinstance(x, dict) and ((set(x) == {"h2"} and isinstance(x["h2"], str) and x["h2"].strip())
+                                            or (set(x) <= {"code", "lang"} and isinstance(x.get("code"), str) and x["code"].strip()))
+        long_form = any(isinstance(x, dict) for x in body)
+        max_blocks, max_words = (40, 1400) if long_form else (8, 450)
+        if not (isinstance(body, list) and 2 <= len(body) <= max_blocks and all(ok_block(x) for x in body)):
+            fail(name, f"body must be a list of 2 to {max_blocks} blocks (paragraph strings, {{'h2'}} headings or {{'code'}} blocks)")
+        prose = [x for x in body if isinstance(x, str)] + [x["h2"] for x in body if isinstance(x, dict) and "h2" in x]
+        words = sum(len(x.split()) for x in prose)
+        if not (150 <= words <= max_words):
+            fail(name, f"body is {words} words; keep it between 150 and {max_words}")
         sources = p["sources"]
         if not (isinstance(sources, list) and 2 <= len(sources) <= 6):
             fail(name, "sources must list 2 to 6 entries")
@@ -97,7 +106,7 @@ def load_posts():
                 fail(name, f"source {i} url must start with https://")
             if "date" in s and s["date"] and not DATE_RE.match(s["date"]):
                 fail(name, f"source {i} date must be YYYY-MM-DD")
-        cited = {int(n) for x in body for n in CITE_RE.findall(x)}
+        cited = {int(n) for x in body if isinstance(x, str) for n in CITE_RE.findall(x)}
         if not cited:
             fail(name, "body must cite sources with [1], [2] markers")
         bad = sorted(n for n in cited if n < 1 or n > len(sources))
@@ -106,7 +115,7 @@ def load_posts():
         unused = sorted(set(range(1, len(sources) + 1)) - cited)
         if unused:
             fail(name, f"sources {unused} are never cited in the body")
-        texts = [p["title"], p["summary"], *p["tags"], *body] + [s["title"] for s in sources] + [s["publisher"] for s in sources]
+        texts = [p["title"], p["summary"], *p["tags"], *prose] + [s["title"] for s in sources] + [s["publisher"] for s in sources]
         for t in texts:
             if DASH_RE.search(t):
                 fail(name, f"remove em dashes, en dashes and double hyphens: {t[:60]!r}")
@@ -299,7 +308,13 @@ def post_page(p, newer, older, icon, fonts):
     srcs = "\n".join(
         f'''        <li id="src-{i}"><b>{esc(s["publisher"])}</b>{(" · " + nice_date(s["date"])) if s.get("date") else ""}<br><a href="{esc(s["url"])}" target="_blank" rel="noopener">{esc(s["title"])}</a></li>'''
         for i, s in enumerate(p["sources"], 1))
-    paras = "\n".join(f"        <p>{para_html(x)}</p>" for x in p["body"])
+    def block_html(x):
+        if isinstance(x, str):
+            return f"        <p>{para_html(x)}</p>"
+        if "h2" in x:
+            return f"        <h2>{esc(x['h2'])}</h2>"
+        return f'        <pre class="post-code"><code>{esc(x["code"])}</code></pre>'
+    paras = "\n".join(block_html(x) for x in p["body"])
     nav_bits = []
     if older:
         nav_bits.append(f'<a href="/blog/{older["slug"]}/">← {esc(older["title"])}</a>')

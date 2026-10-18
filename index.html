@@ -361,6 +361,9 @@ footer{border-top:1px solid var(--rule);padding-block:28px 40px;font-family:var(
 .post .dek{font-family:var(--display);font-style:italic;font-size:22px;line-height:1.45;color:var(--ink-2);margin:18px 0 16px}
 .post-body{margin-top:32px;display:grid;gap:20px;font-size:18px;line-height:1.72;color:var(--ink)}
 .post-body sup{line-height:0}
+.post-body h2{font-size:clamp(24px,2.6vw,30px);line-height:1.15;margin-top:18px}
+.post-code{margin:0;background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:16px 18px;font-family:var(--mono);font-size:14px;line-height:1.6;color:var(--ink);overflow-x:auto;white-space:pre}
+html[data-site-theme="vibrant"] .post-code{border-radius:18px;background:#1C1917;color:#E7E5E4;border-color:#1C1917}
 .post-body sup a{font-family:var(--mono);font-size:11.5px;font-weight:500;text-decoration:none;padding:0 2px}
 .sources{margin-top:44px;padding-top:24px;border-top:1px solid var(--rule)}
 .sources ol{margin:14px 0 0;padding-left:24px;display:grid;gap:14px}
@@ -871,11 +874,11 @@ html[data-site-theme="vibrant"] .toast{border-radius:999px}
     </div>
 <!--BLOG:START-->
     <div class="bl-grid">
-      <a class="bl-card" href="blog/agent-governance-confidence-vs-controls/index.html">
-        <div class="bl-meta"><time datetime="2026-10-18">Oct 18, 2026</time><span>2 min read</span><span>3 sources</span></div>
-        <h3>Agent governance: confidence is high, controls are not</h3>
-        <p>A new survey of 858 executives finds 82% believe they can govern AI agents. Only 5% have automated controls, audit trails and human review points in place.</p>
-        <div class="bl-tags"><span>Governance</span><span>Enterprise adoption</span></div>
+      <a class="bl-card" href="blog/redshift-data-sharing-producer-consumer/index.html">
+        <div class="bl-meta"><time datetime="2026-10-18">Oct 18, 2026</time><span>4 min read</span><span>4 sources</span></div>
+        <h3>Redshift data sharing: what producer and consumer clusters really share</h3>
+        <p>Data sharing let us retire nightly sync jobs between four Redshift clusters. It isolates compute well. It does not make the producer invisible, and that is the part worth planning for.</p>
+        <div class="bl-tags"><span>Amazon Redshift</span><span>Data architecture</span></div>
         <span class="bl-more">Read the note →</span>
       </a>
     </div>

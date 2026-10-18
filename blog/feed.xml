@@ -6,13 +6,13 @@
   <atom:link href="https://vishal-sarvade.vercel.app/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>One short note a day on how companies are putting AI agents to work, with every source linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Sun, 18 Oct 2026 20:34:15 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 18 Oct 2026 23:04:10 +0000</lastBuildDate>
   <item>
-    <title>Agent governance: confidence is high, controls are not</title>
-    <link>https://vishal-sarvade.vercel.app/blog/agent-governance-confidence-vs-controls/</link>
-    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/agent-governance-confidence-vs-controls/</guid>
+    <title>Redshift data sharing: what producer and consumer clusters really share</title>
+    <link>https://vishal-sarvade.vercel.app/blog/redshift-data-sharing-producer-consumer/</link>
+    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/redshift-data-sharing-producer-consumer/</guid>
     <pubDate>Sun, 18 Oct 2026 18:00:00 +0000</pubDate>
-    <description>A new survey of 858 executives finds 82% believe they can govern AI agents. Only 5% have automated controls, audit trails and human review points in place.</description>
+    <description>Data sharing let us retire nightly sync jobs between four Redshift clusters. It isolates compute well. It does not make the producer invisible, and that is the part worth planning for.</description>
   </item>
 </channel>
 </rss>

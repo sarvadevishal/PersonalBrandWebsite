@@ -1,0 +1,71 @@
+{
+  "slug": "redshift-data-sharing-producer-consumer",
+  "date": "2026-10-18",
+  "title": "Redshift data sharing: what producer and consumer clusters really share",
+  "summary": "Data sharing let us retire nightly sync jobs between four Redshift clusters. It isolates compute well. It does not make the producer invisible, and that is the part worth planning for.",
+  "tags": [
+    "Amazon Redshift",
+    "Data architecture"
+  ],
+  "body": [
+    "The platform I work on used to run four Redshift clusters that were kept in step by sync jobs. Data landed on one cluster, and every night it was copied to the clusters that reported on it. When we moved the estate from DC2 to RA3 and set up data sharing, with one producer and three consumers, those jobs went away. Consumers started reading live data instead of yesterday's copy.",
+    "That change is the best argument for data sharing I know. It is also where a lot of teams stop thinking. So here is how the model works, what it isolates, and what it quietly leaves to you.",
+    {
+      "h2": "How the model works"
+    },
+    "A producer owns the data. It creates a datashare, adds schemas, tables, views or SQL functions, and grants the share to one or more consumers. Each consumer creates a database from the share and queries it like any other database. Nothing is copied. AWS describes it as sharing live data across clusters, workgroups, accounts and Regions without manually moving or copying it, with transactional consistency for every consumer [1].",
+    "It is no longer read only, either. Objects can be shared for writes, so a consumer with the right grants can insert or update data on the producer. Producers and consumers can be provisioned clusters or Serverless workgroups, in any mix [1].",
+    {
+      "h2": "What it isolates"
+    },
+    "Compute. Queries run on the consumer's own nodes, and AWS is explicit that queries on a consumer cluster have no impact on the performance or activity of the producer [2]. That is what lets finance, data science and a customer-facing dashboard each get a cluster sized and scheduled for its own work, without fighting over one set of queues.",
+    {
+      "h2": "What it does not make free"
+    },
+    "The producer is still part of every consumer query. Consumers cache block metadata from the producer and refresh it on demand, the first time an object is queried after it changes [2]. Frequent DDL on a shared table forces consumers to re-cache the full block metadata for that object on the next read, and a full VACUUM churns more metadata than VACUUM RECLUSTER, which is why AWS recommends the latter where you can [2].",
+    "None of this shows up on a consumer CPU chart. It shows up as a first query after a load that runs slower than the rest, and as request traffic on the producer that nobody planned for.",
+    {
+      "h2": "Watch the producer side"
+    },
+    "Every request a consumer makes is recorded on the producer in SYS_DATASHARE_USAGE_PRODUCER, with the consumer namespace, the request type, the object and the time [3]. A weekly look at it tells you which consumer is growing, which objects are hot, and whether month-end looks different from an ordinary week.",
+    {
+      "code": "SELECT DATE_TRUNC('day', record_time) AS day,\n       consumer_namespace,\n       request_type,\n       COUNT(*) AS requests\nFROM sys_datashare_usage_producer\nWHERE record_time >= DATEADD(day, -30, GETDATE())\nGROUP BY 1, 2, 3\nORDER BY 1, 4 DESC;",
+      "lang": "sql"
+    },
+    "Put the output next to your business calendar. The days to worry about are the ones where two consumers peak at the same time.",
+    {
+      "h2": "Sizing the pair"
+    },
+    "Size the two sides separately. AWS suggests growing consumers in steps of 2x while you test, trying the producer at half its original size once the read workloads have moved off it, and then replaying both workloads together [4]. Turn on concurrency scaling for consumer queues where you expect heavy load, and build materialized views on the producer for tables that change often [2].",
+    "The split also lets you match each workload to the right kind of compute. On the same platform, write jobs on Redshift Serverless once slowed from about 10 seconds to 10 to 15 minutes. We traced it to base capacity being set equal to the maximum, and the design we recommended kept writes on a provisioned RA3 producer with reporting on a Serverless consumer over data sharing.",
+    {
+      "h2": "Before you attach the next consumer"
+    },
+    "Agree who owns the producer and its maintenance windows. Keep DDL on shared objects rare and scheduled. Prefer VACUUM RECLUSTER. Review SYS_DATASHARE_USAGE_PRODUCER every week. And size for the busiest overlap on your calendar.",
+    "Data sharing removed a whole class of jobs from our platform, and I would make the same call again. Just treat the producer as a shared service with tenants, because that is what it becomes the day the second consumer goes live."
+  ],
+  "sources": [
+    {
+      "title": "Data sharing in Amazon Redshift",
+      "publisher": "AWS Documentation",
+      "url": "https://docs.aws.amazon.com/redshift/latest/dg/datashare-overview.html"
+    },
+    {
+      "title": "Amazon Redshift data sharing best practices and considerations",
+      "publisher": "AWS Big Data Blog",
+      "date": "2022-08-17",
+      "url": "https://aws.amazon.com/blogs/big-data/amazon-redshift-data-sharing-best-practices-and-considerations/"
+    },
+    {
+      "title": "SYS_DATASHARE_USAGE_PRODUCER",
+      "publisher": "AWS Documentation",
+      "url": "https://docs.aws.amazon.com/redshift/latest/dg/SYS_DATASHARE_USAGE_PRODUCER.html"
+    },
+    {
+      "title": "How to get best price performance from your Amazon Redshift Data Sharing deployment",
+      "publisher": "AWS Big Data Blog",
+      "date": "2022-12-20",
+      "url": "https://aws.amazon.com/blogs/big-data/how-to-get-best-price-performance-from-your-amazon-redshift-data-sharing-deployment"
+    }
+  ]
+}

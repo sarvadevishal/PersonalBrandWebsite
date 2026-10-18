@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" data-site-theme="vibrant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>try{var t=localStorage.getItem("site-theme");if(t==="classic"||t==="vibrant")document.documentElement.setAttribute("data-site-theme",t)}catch(e){}</script>
+<title>Redshift data sharing: what producer and consumer clusters really share · Vishal Kumar Sarvade</title>
+<meta name="description" content="Data sharing let us retire nightly sync jobs between four Redshift clusters. It isolates compute well. It does not make the producer invisible, and that is the part worth planning for.">
+<meta name="author" content="Vishal Kumar Sarvade">
+<meta name="generator" content="build_blog.py">
+<link rel="canonical" href="https://vishal-sarvade.vercel.app/blog/redshift-data-sharing-producer-consumer/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redshift data sharing: what producer and consumer clusters really share · Vishal Kumar Sarvade">
+<meta property="og:description" content="Data sharing let us retire nightly sync jobs between four Redshift clusters. It isolates compute well. It does not make the producer invisible, and that is the part worth planning for.">
+<meta property="og:url" content="https://vishal-sarvade.vercel.app/blog/redshift-data-sharing-producer-consumer/">
+<meta property="og:image" content="https://vishal-sarvade.vercel.app/assets/vishal-headshot.jpg?v=2">
+<meta name="theme-color" content="#F8F6F1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%230F1B2D%22/%3E%3Ctext x=%2216%22 y=%2221%22 font-family=%22monospace%22 font-size=%2213%22 fill=%22%23F8F6F1%22 text-anchor=%22middle%22%3EVS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800,900&amp;display=swap">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="alternate" type="application/rss+xml" title="Field notes on AI agent adoption" href="../../blog/feed.xml">
+<meta property="article:published_time" content="2026-10-18">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Redshift data sharing: what producer and consumer clusters really share", "description": "Data sharing let us retire nightly sync jobs between four Redshift clusters. It isolates compute well. It does not make the producer invisible, and that is the part worth planning for.", "datePublished": "2026-10-18", "dateModified": "2026-10-18", "author": {"@type": "Person", "name": "Vishal Kumar Sarvade", "url": "https://vishal-sarvade.vercel.app/"}, "mainEntityOfPage": "https://vishal-sarvade.vercel.app/blog/redshift-data-sharing-producer-consumer/", "keywords": "Amazon Redshift, Data architecture", "citation": ["https://docs.aws.amazon.com/redshift/latest/dg/datashare-overview.html", "https://aws.amazon.com/blogs/big-data/amazon-redshift-data-sharing-best-practices-and-considerations/", "https://docs.aws.amazon.com/redshift/latest/dg/SYS_DATASHARE_USAGE_PRODUCER.html", "https://aws.amazon.com/blogs/big-data/how-to-get-best-price-performance-from-your-amazon-redshift-data-sharing-deployment"]}</script>
+<style>body{margin:0}[hidden]{display:none!important}</style>
+</head>
+<body>
+<span id="top"></span>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../../index.html" aria-label="Vishal Kumar Sarvade, home"><span class="mark" aria-hidden="true">VS</span>Vishal Kumar Sarvade</a>
+    <nav class="links" aria-label="Sections">
+      <a href="../../index.html#work">Work</a>
+      <a href="../../index.html#platform">Platform</a>
+      <a href="../../index.html#ai">AI</a>
+      <a href="../../blog/index.html" aria-current="true">Blog</a>
+      <a href="../../index.html#experience">Experience</a>
+      <a href="../../index.html#writing">Writing</a>
+      <a href="../../index.html#about">About</a>
+      <a href="../../index.html#contact">Contact</a>
+    </nav>
+    <div class="nav-tools">
+      <button class="theme-btn" type="button" aria-label="Switch design theme"><span class="theme-dot" aria-hidden="true"></span><span class="theme-name">Vibrant</span></button>
+      <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="wrap mobile-menu" id="mobileMenu" hidden>
+    <a href="../../index.html#work">Work</a><a href="../../index.html#platform">Platform</a><a href="../../index.html#ai">AI</a><a href="../../blog/index.html">Blog</a><a href="../../index.html#experience">Experience</a><a href="../../index.html#writing">Writing</a><a href="../../index.html#about">About</a><a href="../../index.html#contact">Contact</a>
+  </div>
+</header>
+<main id="main">
+<section class="section" style="padding-top:56px">
+  <div class="wrap">
+    <article class="post">
+      <div class="eyebrow"><a href="../../blog/index.html" style="color:inherit;text-decoration:none">Blog</a> · <time datetime="2026-10-18">Oct 18, 2026</time> · 4 min read</div>
+      <h1>Redshift data sharing: what producer and consumer clusters really share</h1>
+      <p class="dek">Data sharing let us retire nightly sync jobs between four Redshift clusters. It isolates compute well. It does not make the producer invisible, and that is the part worth planning for.</p>
+      <div class="bl-tags"><span>Amazon Redshift</span><span>Data architecture</span></div>
+      <div class="post-body">
+        <p>The platform I work on used to run four Redshift clusters that were kept in step by sync jobs. Data landed on one cluster, and every night it was copied to the clusters that reported on it. When we moved the estate from DC2 to RA3 and set up data sharing, with one producer and three consumers, those jobs went away. Consumers started reading live data instead of yesterday&#x27;s copy.</p>
+        <p>That change is the best argument for data sharing I know. It is also where a lot of teams stop thinking. So here is how the model works, what it isolates, and what it quietly leaves to you.</p>
+        <h2>How the model works</h2>
+        <p>A producer owns the data. It creates a datashare, adds schemas, tables, views or SQL functions, and grants the share to one or more consumers. Each consumer creates a database from the share and queries it like any other database. Nothing is copied. AWS describes it as sharing live data across clusters, workgroups, accounts and Regions without manually moving or copying it, with transactional consistency for every consumer<sup><a href="#src-1" aria-label="Source 1">1</a></sup>.</p>
+        <p>It is no longer read only, either. Objects can be shared for writes, so a consumer with the right grants can insert or update data on the producer. Producers and consumers can be provisioned clusters or Serverless workgroups, in any mix<sup><a href="#src-1" aria-label="Source 1">1</a></sup>.</p>
+        <h2>What it isolates</h2>
+        <p>Compute. Queries run on the consumer&#x27;s own nodes, and AWS is explicit that queries on a consumer cluster have no impact on the performance or activity of the producer<sup><a href="#src-2" aria-label="Source 2">2</a></sup>. That is what lets finance, data science and a customer-facing dashboard each get a cluster sized and scheduled for its own work, without fighting over one set of queues.</p>
+        <h2>What it does not make free</h2>
+        <p>The producer is still part of every consumer query. Consumers cache block metadata from the producer and refresh it on demand, the first time an object is queried after it changes<sup><a href="#src-2" aria-label="Source 2">2</a></sup>. Frequent DDL on a shared table forces consumers to re-cache the full block metadata for that object on the next read, and a full VACUUM churns more metadata than VACUUM RECLUSTER, which is why AWS recommends the latter where you can<sup><a href="#src-2" aria-label="Source 2">2</a></sup>.</p>
+        <p>None of this shows up on a consumer CPU chart. It shows up as a first query after a load that runs slower than the rest, and as request traffic on the producer that nobody planned for.</p>
+        <h2>Watch the producer side</h2>
+        <p>Every request a consumer makes is recorded on the producer in SYS_DATASHARE_USAGE_PRODUCER, with the consumer namespace, the request type, the object and the time<sup><a href="#src-3" aria-label="Source 3">3</a></sup>. A weekly look at it tells you which consumer is growing, which objects are hot, and whether month-end looks different from an ordinary week.</p>
+        <pre class="post-code"><code>SELECT DATE_TRUNC(&#x27;day&#x27;, record_time) AS day,
+       consumer_namespace,
+       request_type,
+       COUNT(*) AS requests
+FROM sys_datashare_usage_producer
+WHERE record_time &gt;= DATEADD(day, -30, GETDATE())
+GROUP BY 1, 2, 3
+ORDER BY 1, 4 DESC;</code></pre>
+        <p>Put the output next to your business calendar. The days to worry about are the ones where two consumers peak at the same time.</p>
+        <h2>Sizing the pair</h2>
+        <p>Size the two sides separately. AWS suggests growing consumers in steps of 2x while you test, trying the producer at half its original size once the read workloads have moved off it, and then replaying both workloads together<sup><a href="#src-4" aria-label="Source 4">4</a></sup>. Turn on concurrency scaling for consumer queues where you expect heavy load, and build materialized views on the producer for tables that change often<sup><a href="#src-2" aria-label="Source 2">2</a></sup>.</p>
+        <p>The split also lets you match each workload to the right kind of compute. On the same platform, write jobs on Redshift Serverless once slowed from about 10 seconds to 10 to 15 minutes. We traced it to base capacity being set equal to the maximum, and the design we recommended kept writes on a provisioned RA3 producer with reporting on a Serverless consumer over data sharing.</p>
+        <h2>Before you attach the next consumer</h2>
+        <p>Agree who owns the producer and its maintenance windows. Keep DDL on shared objects rare and scheduled. Prefer VACUUM RECLUSTER. Review SYS_DATASHARE_USAGE_PRODUCER every week. And size for the busiest overlap on your calendar.</p>
+        <p>Data sharing removed a whole class of jobs from our platform, and I would make the same call again. Just treat the producer as a shared service with tenants, because that is what it becomes the day the second consumer goes live.</p>
+      </div>
+      <section class="sources" aria-labelledby="src-title">
+        <div class="eyebrow" id="src-title">Sources</div>
+        <ol>
+        <li id="src-1"><b>AWS Documentation</b><br><a href="https://docs.aws.amazon.com/redshift/latest/dg/datashare-overview.html" target="_blank" rel="noopener">Data sharing in Amazon Redshift</a></li>
+        <li id="src-2"><b>AWS Big Data Blog</b> · Aug 17, 2022<br><a href="https://aws.amazon.com/blogs/big-data/amazon-redshift-data-sharing-best-practices-and-considerations/" target="_blank" rel="noopener">Amazon Redshift data sharing best practices and considerations</a></li>
+        <li id="src-3"><b>AWS Documentation</b><br><a href="https://docs.aws.amazon.com/redshift/latest/dg/SYS_DATASHARE_USAGE_PRODUCER.html" target="_blank" rel="noopener">SYS_DATASHARE_USAGE_PRODUCER</a></li>
+        <li id="src-4"><b>AWS Big Data Blog</b> · Dec 20, 2022<br><a href="https://aws.amazon.com/blogs/big-data/how-to-get-best-price-performance-from-your-amazon-redshift-data-sharing-deployment" target="_blank" rel="noopener">How to get best price performance from your Amazon Redshift Data Sharing deployment</a></li>
+        </ol>
+      </section>
+      <aside class="author" aria-label="About the author">
+        <img src="../../assets/vishal-headshot.jpg?v=2" width="64" height="64" alt="">
+        <p><b>Vishal Kumar Sarvade</b> is a Technical Architect in the San Francisco Bay Area with 12+ years building cloud data platforms on Amazon Redshift. <a href="../../index.html">More about him</a> · <a href="https://www.linkedin.com/in/vishalkumarsarvade/" target="_blank" rel="noopener">LinkedIn</a></p>
+      </aside>
+      <nav class="post-nav" aria-label="More posts"><span></span></nav>
+      <div class="bl-foot"><a href="../../blog/index.html">All posts</a><a href="../../blog/feed.xml">RSS feed</a></div>
+    </article>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Vishal Kumar Sarvade · Building data platforms since 2014</span>
+    <span><a href="../../blog/feed.xml">RSS</a> · <a href="#top">Back to top</a></span>
+  </div>
+</footer>
+<script>
+(function(){var b=document.getElementById('menuBtn'),m=document.getElementById('mobileMenu');
+b.addEventListener('click',function(){var o=m.hidden;m.hidden=!o;b.setAttribute('aria-expanded',String(o));b.setAttribute('aria-label',o?'Close menu':'Open menu');});})();
+</script>
+<script src="../../assets/theme.js?v=1" defer></script>
+</body>
+</html>
