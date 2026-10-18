@@ -203,7 +203,7 @@ def page(title, description, canonical_path, body, icon, fonts, og_type="website
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(description)}">
 <meta property="og:url" content="{url}">
-<meta property="og:image" content="{SITE_URL}/assets/vishal-headshot.jpg">
+<meta property="og:image" content="{SITE_URL}/assets/vishal-headshot.jpg?v=2">
 <meta name="theme-color" content="#F8F6F1">
 {icon}
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -325,7 +325,7 @@ def post_page(p, newer, older, icon, fonts):
         </ol>
       </section>
       <aside class="author" aria-label="About the author">
-        <img src="/assets/vishal-headshot.jpg" width="64" height="64" alt="">
+        <img src="/assets/vishal-headshot.jpg?v=2" width="64" height="64" alt="">
         <p><b>{AUTHOR}</b> is a Technical Architect in the San Francisco Bay Area with 12+ years building cloud data platforms on Amazon Redshift. <a href="/">More about him</a> · <a href="https://www.linkedin.com/in/vishalkumarsarvade/" target="_blank" rel="noopener">LinkedIn</a></p>
       </aside>
       <nav class="post-nav" aria-label="More posts">{"".join(nav_bits)}</nav>
