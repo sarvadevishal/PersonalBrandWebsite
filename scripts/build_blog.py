@@ -225,6 +225,19 @@ def page(title, description, canonical_path, body, icon, fonts, og_type="website
 '''
 
 
+
+
+def relativize(text, prefix):
+    """Turn root-relative links into relative ones ending in index.html, so pages
+    work from a local folder (file://) as well as on Vercel."""
+    def fix(m):
+        attr, path = m.group(1), m.group(2)
+        base, sep, frag = path.partition("#")
+        if base == "" or base.endswith("/"):
+            base += "index.html"
+        return f'{attr}="{prefix}{base}{sep}{frag}"'
+    return re.sub(r'(href|src)="/(?!/)([^"]*)"', fix, text)
+
 # ---------- renderers ----------
 
 def card_html(p):
@@ -384,7 +397,7 @@ def main():
         return 1
     a, rest = index_html.split(start, 1)
     _, b = rest.split(end, 1)
-    index_html = a + start + "\n" + home_block(posts) + "\n" + end + b
+    index_html = relativize(a + start + "\n" + home_block(posts) + "\n" + end + b, "")
     index_path.write_text(index_html, encoding="utf-8")
 
     icon, fonts = head_bits(index_html)
@@ -393,13 +406,13 @@ def main():
     for d in BLOG_DIR.iterdir():
         if d.is_dir() and d.name not in live and (d / "index.html").exists() and GENERATOR in (d / "index.html").read_text(encoding="utf-8"):
             shutil.rmtree(d)
-    (BLOG_DIR / "index.html").write_text(index_page(posts, icon, fonts), encoding="utf-8")
+    (BLOG_DIR / "index.html").write_text(relativize(index_page(posts, icon, fonts), "../"), encoding="utf-8")
     for i, p in enumerate(posts):
         newer = posts[i - 1] if i > 0 else None
         older = posts[i + 1] if i + 1 < len(posts) else None
         out = BLOG_DIR / p["slug"]
         out.mkdir(exist_ok=True)
-        (out / "index.html").write_text(post_page(p, newer, older, icon, fonts), encoding="utf-8")
+        (out / "index.html").write_text(relativize(post_page(p, newer, older, icon, fonts), "../../"), encoding="utf-8")
     (BLOG_DIR / "feed.xml").write_text(rss(posts), encoding="utf-8")
     (ROOT / "sitemap.xml").write_text(sitemap(posts), encoding="utf-8")
     print(f"Built {len(posts)} posts. Latest: {posts[0]['date']} {posts[0]['title']!r}" if posts else "Built 0 posts.")
