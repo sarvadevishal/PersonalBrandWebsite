@@ -27,9 +27,9 @@ POSTS_DIR = ROOT / "content" / "posts"
 BLOG_DIR = ROOT / "blog"
 SITE_URL = "https://vishal-sarvade.vercel.app"
 AUTHOR = "Vishal Kumar Sarvade"
-BLOG_TITLE = "Field notes on AI agent adoption"
-BLOG_DESC = ("One short note a day on how companies are putting AI agents to work, "
-             "with every source linked.")
+BLOG_TITLE = "Field notes on data and AI agents"
+BLOG_DESC = ("A short daily note on how companies are putting AI agents to work, plus longer "
+             "posts on Redshift and data architecture. Every source is linked.")
 GENERATOR = '<meta name="generator" content="build_blog.py">'
 
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")

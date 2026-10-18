@@ -2,13 +2,13 @@
   "slug": "redshift-data-sharing-producer-consumer",
   "date": "2026-10-18",
   "title": "Redshift data sharing: what producer and consumer clusters really share",
-  "summary": "Data sharing let us retire nightly sync jobs between four Redshift clusters. It isolates compute well. It does not make the producer invisible, and that is the part worth planning for.",
+  "summary": "Data sharing let us retire the sync jobs between four Redshift clusters. It isolates compute well. It does not make the producer invisible, and that is the part worth planning for.",
   "tags": [
     "Amazon Redshift",
     "Data architecture"
   ],
   "body": [
-    "The platform I work on used to run four Redshift clusters that were kept in step by sync jobs. Data landed on one cluster, and every night it was copied to the clusters that reported on it. When we moved the estate from DC2 to RA3 and set up data sharing, with one producer and three consumers, those jobs went away. Consumers started reading live data instead of yesterday's copy.",
+    "The platform I work on used to run four Redshift clusters that were kept in step by sync jobs. Data landed on one cluster, and sync jobs copied it to the clusters that reported on it. When we moved the estate from DC2 to RA3 and set up data sharing, with one producer and three consumers, those jobs went away. Consumers started reading live data instead of the last synced copy.",
     "That change is the best argument for data sharing I know. It is also where a lot of teams stop thinking. So here is how the model works, what it isolates, and what it quietly leaves to you.",
     {
       "h2": "How the model works"

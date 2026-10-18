@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <script>try{var t=localStorage.getItem("site-theme");if(t==="classic"||t==="vibrant"||t==="playful")document.documentElement.setAttribute("data-site-theme",t)}catch(e){}</script>
 <title>Redshift data sharing: what producer and consumer clusters really share · Vishal Kumar Sarvade</title>
-<meta name="description" content="Data sharing let us retire nightly sync jobs between four Redshift clusters. It isolates compute well. It does not make the producer invisible, and that is the part worth planning for.">
+<meta name="description" content="Data sharing let us retire the sync jobs between four Redshift clusters. It isolates compute well. It does not make the producer invisible, and that is the part worth planning for.">
 <meta name="author" content="Vishal Kumar Sarvade">
 <meta name="generator" content="build_blog.py">
 <link rel="canonical" href="https://vishal-sarvade.vercel.app/blog/redshift-data-sharing-producer-consumer/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redshift data sharing: what producer and consumer clusters really share · Vishal Kumar Sarvade">
-<meta property="og:description" content="Data sharing let us retire nightly sync jobs between four Redshift clusters. It isolates compute well. It does not make the producer invisible, and that is the part worth planning for.">
+<meta property="og:description" content="Data sharing let us retire the sync jobs between four Redshift clusters. It isolates compute well. It does not make the producer invisible, and that is the part worth planning for.">
 <meta property="og:url" content="https://vishal-sarvade.vercel.app/blog/redshift-data-sharing-producer-consumer/">
 <meta property="og:image" content="https://vishal-sarvade.vercel.app/assets/vishal-headshot.jpg?v=2">
 <meta name="theme-color" content="#FFFBF2">
@@ -24,9 +24,9 @@
 <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800,900&amp;display=swap">
 <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;display=swap">
 <link rel="stylesheet" href="../../assets/site.css">
-<link rel="alternate" type="application/rss+xml" title="Field notes on AI agent adoption" href="../../blog/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="Field notes on data and AI agents" href="../../blog/feed.xml">
 <meta property="article:published_time" content="2026-10-18">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Redshift data sharing: what producer and consumer clusters really share", "description": "Data sharing let us retire nightly sync jobs between four Redshift clusters. It isolates compute well. It does not make the producer invisible, and that is the part worth planning for.", "datePublished": "2026-10-18", "dateModified": "2026-10-18", "author": {"@type": "Person", "name": "Vishal Kumar Sarvade", "url": "https://vishal-sarvade.vercel.app/"}, "mainEntityOfPage": "https://vishal-sarvade.vercel.app/blog/redshift-data-sharing-producer-consumer/", "keywords": "Amazon Redshift, Data architecture", "citation": ["https://docs.aws.amazon.com/redshift/latest/dg/datashare-overview.html", "https://aws.amazon.com/blogs/big-data/amazon-redshift-data-sharing-best-practices-and-considerations/", "https://docs.aws.amazon.com/redshift/latest/dg/SYS_DATASHARE_USAGE_PRODUCER.html", "https://aws.amazon.com/blogs/big-data/how-to-get-best-price-performance-from-your-amazon-redshift-data-sharing-deployment"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Redshift data sharing: what producer and consumer clusters really share", "description": "Data sharing let us retire the sync jobs between four Redshift clusters. It isolates compute well. It does not make the producer invisible, and that is the part worth planning for.", "datePublished": "2026-10-18", "dateModified": "2026-10-18", "author": {"@type": "Person", "name": "Vishal Kumar Sarvade", "url": "https://vishal-sarvade.vercel.app/"}, "mainEntityOfPage": "https://vishal-sarvade.vercel.app/blog/redshift-data-sharing-producer-consumer/", "keywords": "Amazon Redshift, Data architecture", "citation": ["https://docs.aws.amazon.com/redshift/latest/dg/datashare-overview.html", "https://aws.amazon.com/blogs/big-data/amazon-redshift-data-sharing-best-practices-and-considerations/", "https://docs.aws.amazon.com/redshift/latest/dg/SYS_DATASHARE_USAGE_PRODUCER.html", "https://aws.amazon.com/blogs/big-data/how-to-get-best-price-performance-from-your-amazon-redshift-data-sharing-deployment"]}</script>
 <style>body{margin:0}[hidden]{display:none!important}</style>
 </head>
 <body>
@@ -69,10 +69,10 @@
     <article class="post">
       <div class="eyebrow"><a href="../../blog/index.html" style="color:inherit;text-decoration:none">Blog</a> · <time datetime="2026-10-18">Oct 18, 2026</time> · 4 min read</div>
       <h1>Redshift data sharing: what producer and consumer clusters really share</h1>
-      <p class="dek">Data sharing let us retire nightly sync jobs between four Redshift clusters. It isolates compute well. It does not make the producer invisible, and that is the part worth planning for.</p>
+      <p class="dek">Data sharing let us retire the sync jobs between four Redshift clusters. It isolates compute well. It does not make the producer invisible, and that is the part worth planning for.</p>
       <div class="bl-tags"><span>Amazon Redshift</span><span>Data architecture</span></div>
       <div class="post-body">
-        <p>The platform I work on used to run four Redshift clusters that were kept in step by sync jobs. Data landed on one cluster, and every night it was copied to the clusters that reported on it. When we moved the estate from DC2 to RA3 and set up data sharing, with one producer and three consumers, those jobs went away. Consumers started reading live data instead of yesterday&#x27;s copy.</p>
+        <p>The platform I work on used to run four Redshift clusters that were kept in step by sync jobs. Data landed on one cluster, and sync jobs copied it to the clusters that reported on it. When we moved the estate from DC2 to RA3 and set up data sharing, with one producer and three consumers, those jobs went away. Consumers started reading live data instead of the last synced copy.</p>
         <p>That change is the best argument for data sharing I know. It is also where a lot of teams stop thinking. So here is how the model works, what it isolates, and what it quietly leaves to you.</p>
         <h2>How the model works</h2>
         <p>A producer owns the data. It creates a datashare, adds schemas, tables, views or SQL functions, and grants the share to one or more consumers. Each consumer creates a database from the share and queries it like any other database. Nothing is copied. AWS describes it as sharing live data across clusters, workgroups, accounts and Regions without manually moving or copying it, with transactional consistency for every consumer<sup><a href="#src-1" aria-label="Source 1">1</a></sup>.</p>

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-  <title>Field notes on AI agent adoption · Vishal Kumar Sarvade</title>
+  <title>Field notes on data and AI agents · Vishal Kumar Sarvade</title>
   <link>https://vishal-sarvade.vercel.app/blog/</link>
   <atom:link href="https://vishal-sarvade.vercel.app/blog/feed.xml" rel="self" type="application/rss+xml"/>
-  <description>One short note a day on how companies are putting AI agents to work, with every source linked.</description>
+  <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Sun, 18 Oct 2026 23:25:36 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 18 Oct 2026 23:30:29 +0000</lastBuildDate>
   <item>
     <title>Redshift data sharing: what producer and consumer clusters really share</title>
     <link>https://vishal-sarvade.vercel.app/blog/redshift-data-sharing-producer-consumer/</link>
     <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/redshift-data-sharing-producer-consumer/</guid>
     <pubDate>Sun, 18 Oct 2026 18:00:00 +0000</pubDate>
-    <description>Data sharing let us retire nightly sync jobs between four Redshift clusters. It isolates compute well. It does not make the producer invisible, and that is the part worth planning for.</description>
+    <description>Data sharing let us retire the sync jobs between four Redshift clusters. It isolates compute well. It does not make the producer invisible, and that is the part worth planning for.</description>
   </item>
 </channel>
 </rss>
