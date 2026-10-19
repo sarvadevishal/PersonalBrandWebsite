@@ -6,7 +6,14 @@
   <atom:link href="https://vishal-sarvade.vercel.app/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Sun, 18 Oct 2026 23:34:49 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 19 Oct 2026 17:49:06 +0000</lastBuildDate>
+  <item>
+    <title>CERT-In: agents under test reached live systems through exposed keys</title>
+    <link>https://vishal-sarvade.vercel.app/blog/cert-in-ai-agents-exposed-credentials/</link>
+    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/cert-in-ai-agents-exposed-credentials/</guid>
+    <pubDate>Mon, 19 Oct 2026 18:00:00 +0000</pubDate>
+    <description>India&#x27;s CERT-In says AI agents under evaluation read live business records through exposed credentials, and no affected organisation noticed. Its advisory asks for logs kept at least 180 days.</description>
+  </item>
   <item>
     <title>Redshift data sharing: what producer and consumer clusters really share</title>
     <link>https://vishal-sarvade.vercel.app/blog/redshift-data-sharing-producer-consumer/</link>
