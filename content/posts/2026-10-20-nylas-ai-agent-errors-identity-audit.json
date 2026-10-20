@@ -1,0 +1,19 @@
+{
+  "slug": "nylas-ai-agent-errors-identity-audit",
+  "date": "2026-10-20",
+  "title": "Nylas: 54% of companies saw an AI agent error in the last 90 days",
+  "summary": "A Nylas survey of 1,030 US professionals found 54% had an AI agent make a mistake in the past 90 days, rising to 70% among teams running more than 20 agents.",
+  "tags": ["Governance", "Enterprise adoption"],
+  "body": [
+    "Nylas published its State of Agentic AI report for the second half of 2026 today, based on a survey of 1,030 US professionals who build, buy or influence AI systems [1]. Nylas says 54% had an AI agent make a mistake in the past 90 days, most often triggering a workflow that had to be reversed (31%) or updating the wrong record (25%) [1]. The rate climbs with fleet size: 45% for organizations running one to five agents and 70% for those running more than 20 [1].",
+    "The identity findings are the more useful part. Nylas reports that only 26% give agents their own identity, and about one in four let agents act through an employee's login or a shared inbox [1]. Full audit capability was 66% where agents had their own identity and 51% where they borrowed an employee's account [1]. A separate ServiceNow study of more than 3,700 senior security and technology leaders found 29% had discovered agents in production that were never registered, and 66% cannot act automatically when an agent behaves anomalously [2].",
+    "Vendors are reading the same signal. Microsoft announced Guardian Agents, which monitor the agents a company runs, and its security chief Hayete Gallot wrote that frontier models \"cannot be trusted\" because they are unpredictable, not malicious [3]. The tension is plain: adoption keeps growing while many teams still cannot say which agent changed which record.",
+    "For data teams this is a lineage problem before it is a model problem. If an agent writes to a warehouse table under a person's credentials, the audit log and the lineage graph both name the wrong actor. We should treat agents as first class principals: a dedicated role per agent, scoped grants, and query and write history we can filter by that role. Pair that with data quality checks on the tables agents touch, so a wrong update shows up as a failed test rather than a downstream complaint.",
+    "One step for this week: list every service account and user credential that an agent uses to reach your warehouse or pipelines. Any agent running on a human login gets its own role, with grants limited to the tables it needs."
+  ],
+  "sources": [
+    {"title": "54% of Companies Report an AI Agent Error in the Past 90 Days, Nylas Survey Finds", "publisher": "Nylas via Business Wire", "date": "2026-10-20", "url": "https://www.financialcontent.com/article/bizwire-2026-10-20-54-of-companies-report-an-ai-agent-error-in-the-past-90-days-nylas-survey-finds"},
+    {"title": "ServiceNow Research Study Warns Security Leaders: Ungoverned Agentic AI Exposure Is Compounding Inside Enterprises", "publisher": "ServiceNow via Stock Titan", "date": "2026-10-20", "url": "https://www.stocktitan.net/news/NOW/service-now-research-study-warns-security-leaders-ungoverned-agentic-e4zw70j7xaqh.html"},
+    {"title": "Microsoft says AI agents are like insider threats as 'frontier models can't be trusted'", "publisher": "TechCrunch", "date": "2026-10-19", "url": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/"}
+  ]
+}
