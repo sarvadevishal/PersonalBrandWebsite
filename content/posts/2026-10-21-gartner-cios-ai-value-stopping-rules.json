@@ -1,0 +1,19 @@
+{
+  "slug": "gartner-cios-ai-value-stopping-rules",
+  "date": "2026-10-21",
+  "title": "Gartner: only 13% of CIOs report significant value from AI",
+  "summary": "A Gartner survey of 2,002 CIOs found only 13% have realized significant or transformational value from AI, and just 17% have rules for shutting down low-value AI work already in production.",
+  "tags": ["ROI", "Cost", "Enterprise adoption"],
+  "body": [
+    "Gartner released results from its 2027 CIO and Technology Executive Agenda survey on October 19, covering 2,002 CIOs and technology executives surveyed from May through July 2026 [1]. Only 13% said their enterprise has realized significant or transformational value from AI, and Gartner puts the likelihood of use case success at roughly one in five [1]. The gap is in discipline: only 31% of CIOs have guidelines for when a pilot should not move to production, and only 17% have guidelines for abandoning low-value AI initiatives already running [1].",
+    "Money is moving toward agents anyway. Gartner's planning research projects average IT budget growth of 3.7% in 2027, while funding for agentic AI is expected to rise by an average of 31.8% [2]. It also reports that 37% of respondents have already deployed AI agents and another 34% plan to within 12 months [2]. Meanwhile 58% of CIOs face pressure to deliver AI cost improvement and 51% expect AI to raise total cost of ownership [1].",
+    "Gartner VP Analyst Alicia Mullery put it as \"Volume is not value\" and noted that AI costs \"are probabilistic and determined at run time\" [1]. That is the tension: funding grows fastest for the technology whose cost is hardest to predict. Rockingrobots, covering the survey, pointed out that the link between stopping rules and better outcomes is a correlation and does not prove the rules alone produce results [3]. Still, a team that cannot say when to stop an agent probably cannot say whether it is working.",
+    "For data teams, stopping rules depend on numbers we usually own. An agent's value case needs a baseline metric captured before launch, and its cost needs per-agent attribution: tokens, warehouse compute and storage tagged to the workload that caused them. Without that tagging, run time cost lands in a shared bucket and nobody can tell which agent to retire. Query history filtered by an agent's role, plus cost allocation tags on its pipelines, gives the evidence a kill decision needs.",
+    "One step for this week: pick one agent or AI pipeline in production and write down its success metric, its current monthly cost, and the threshold below which you would turn it off. If you cannot fill in all three, start with the cost tagging."
+  ],
+  "sources": [
+    {"title": "Gartner Survey Finds Only 13% of CIOs Say Their Enterprise Has Realized Significant or Transformational Value from AI", "publisher": "Gartner", "date": "2026-10-19", "url": "https://www.gartner.com/en/newsroom/press-releases/2026-10-19-gartner-survey-finds-only-13-percent-of-cios-say-their-enterprise-has-realized-significant-or-transformational-value-from-ai"},
+    {"title": "CIO Planning for 2027: Close the AI Ambition Gap", "publisher": "Gartner", "date": "2026-08-31", "url": "https://www.gartner.com/en/articles/cio-planning-for-2027"},
+    {"title": "Only 13% of CIOs report significant business value from AI", "publisher": "Rockingrobots", "date": "2026-10-20", "url": "https://www.rockingrobots.com/only-13-of-cios-report-significant-business-value-from-ai/"}
+  ]
+}
