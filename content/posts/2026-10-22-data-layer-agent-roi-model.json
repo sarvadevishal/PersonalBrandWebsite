@@ -1,0 +1,19 @@
+{
+  "slug": "data-layer-agent-roi-model",
+  "date": "2026-10-22",
+  "title": "Study models 290% ROI for agents built on a governed data layer",
+  "summary": "A Veqtor8 study announced by Denodo models a 290% three year ROI and a 68% cut in AI operating costs when agents query a governed data layer instead of custom integrations.",
+  "tags": ["Data readiness", "ROI", "Cost"],
+  "body": [
+    "Denodo announced a study on October 20 by research firm Veqtor8 titled \"The ROI of an AI Data Layer for Agentic AI\" [1]. It models a 290% return over three years from deploying a governed data layer for agents, agents reaching production about three times faster by reusing data products, and a 68% reduction in AI operating costs [1]. The cost figure comes from context payloads per task falling from about 18,000 tokens to about 5,760, because queries are pushed down to the data layer and data is filtered before the model sees it [1].",
+    "Read the method before the headline. The numbers come from interviews with banks, telecom groups, manufacturers and logistics firms, turned into a composite financial model that scales from 100 agents in year one to 900 in year three across 100 data sources [1]. The release does not give the number of interviewees or the full model assumptions, and the findings were published by the vendor whose product category is being measured [1].",
+    "Independent survey data points at the same bottleneck. The Modern Data Company found 57.3% of respondents piloting or running agents in data and analytics work, yet only 8.4% said the data feeding their AI systems is trustworthy enough for production [2]. IT Brief UK reported that 75.9% put data quality and trust among their top three barriers, and only 16% deliberately engineer a context layer as a product [3]. So the claimed savings depend on a foundation most teams say they do not have.",
+    "For data teams, the token number is the useful part. If an agent pulls raw tables into its prompt, we pay for that context on every call and lose control of what it saw. Filtering and aggregating in the warehouse, behind views with row level access policies, shrinks payloads, keeps lineage traceable, and makes each agent query show up in query history where cost and access can be audited.",
+    "One step this week: log the context size in tokens for one production agent's typical task, then check how much of it is rows the agent never uses. That gives you your own baseline instead of a modeled one."
+  ],
+  "sources": [
+    {"title": "New Research Reveals Denodo AI Data Layer Delivers 290% ROI and 3x Faster Agent Deployments for Enterprise Agentic AI", "publisher": "Denodo via GlobeNewswire", "date": "2026-10-20", "url": "https://globenewswire.com/news-release/2026/10/20/3384773/0/en/new-research-reveals-denodo-ai-data-layer-delivers-290-roi-and-3x-faster-agent-deployments-for-enterprise-agentic-ai.html"},
+    {"title": "AI Agents Are Advancing Faster Than Enterprise Data Is Ready for Them", "publisher": "The Modern Data Company via Business Wire", "date": "2026-08-19", "url": "https://www.financialcontent.com/article/bizwire-2026-8-19-ai-agents-are-advancing-faster-than-enterprise-data-is-ready-for-them"},
+    {"title": "AI agents outpace trust in enterprise data, survey finds", "publisher": "IT Brief UK", "date": "2026-08-20", "url": "https://itbrief.co.uk/story/ai-agents-outpace-trust-in-enterprise-data-survey-finds"}
+  ]
+}

@@ -6,7 +6,14 @@
   <atom:link href="https://vishal-sarvade.vercel.app/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 21 Oct 2026 17:49:12 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 22 Oct 2026 17:53:30 +0000</lastBuildDate>
+  <item>
+    <title>Study models 290% ROI for agents built on a governed data layer</title>
+    <link>https://vishal-sarvade.vercel.app/blog/data-layer-agent-roi-model/</link>
+    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/data-layer-agent-roi-model/</guid>
+    <pubDate>Thu, 22 Oct 2026 18:00:00 +0000</pubDate>
+    <description>A Veqtor8 study announced by Denodo models a 290% three year ROI and a 68% cut in AI operating costs when agents query a governed data layer instead of custom integrations.</description>
+  </item>
   <item>
     <title>Gartner: only 13% of CIOs report significant value from AI</title>
     <link>https://vishal-sarvade.vercel.app/blog/gartner-cios-ai-value-stopping-rules/</link>
