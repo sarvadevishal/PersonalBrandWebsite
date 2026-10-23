@@ -1,0 +1,19 @@
+{
+  "slug": "customers-bancorp-ai-agents-measurement",
+  "date": "2026-10-23",
+  "title": "Customers Bancorp: agents doubled, but hours saved are self-reported",
+  "summary": "Customers Bancorp reported a 95% cut in loan underwriting cycle time and 76,000 estimated hours saved. Its footnotes show the hours are self-reported and agents include custom GPTs.",
+  "tags": ["Case study", "ROI"],
+  "body": [
+    "Customers Bancorp, a bank based in West Reading, Pennsylvania, reported third quarter results on October 22 with an unusually specific account of its AI program [1]. CEO Sam Sidhu said the team doubled the number of agents deployed in the quarter, that cumulative estimated hours saved reached 76,000, and that the bank estimates it has unlocked over $15 million of annualized capacity [1]. The release puts the efficiency ratio at 47.2%, down from 50.6% in the second quarter [1].",
+    "On the earnings call, Sidhu said cycle time for the AI-powered loan underwriting process is down 95%, and that a rebuilt commercial deposit onboarding process, piloted in 10 weeks, cut cycle time by over 90% [2]. Banking Dive reported in April that the bank, with about $26 billion in assets, had set a target of closing commercial loans in roughly seven days instead of 30 to 45 [3].",
+    "The footnotes are the most useful part. Customers Bancorp counts custom GPTs and similar products used in the last six months as agents, and its hours saved are self-reported estimates from employee surveys [1]. The capacity figure is defined as salary and benefits savings from positions not backfilled and open positions reduced [1]. That is honest disclosure, and it shows how loose the word agent still is. A doubling of agents is not the same as a doubling of automated work.",
+    "For data teams, the gap between the cycle time numbers and the survey numbers is the lesson. Cycle time can be measured from system timestamps if each process step writes an event with a case ID. Hours saved from a survey cannot be audited later. If we want agent results that hold up in front of a CFO or a regulator, we need process event tables, an agent registry that records which tool touched which case, and lineage from those events to the reported metric.",
+    "One step this week: pick one process where an agent or assistant is in use and check whether you can compute its cycle time from logged events alone. If you cannot, add the start and end events before anyone reports a number."
+  ],
+  "sources": [
+    {"title": "Customers Bancorp Reports Results for Third Quarter 2026", "publisher": "Customers Bancorp via SEC Form 8-K", "date": "2026-10-22", "url": "https://www.sec.gov/Archives/edgar/data/0001488813/000148881326000100/q326pressrelease.htm"},
+    {"title": "Customers Bancorp Q3 2026 Earnings Call Transcript", "publisher": "Benzinga", "date": "2026-10-23", "url": "https://benzinga.com/news/26/10/62559762/customers-bancorp-q3-2026-earnings-call-transcript"},
+    {"title": "Customers Bank deepens ties with OpenAI", "publisher": "Banking Dive", "date": "2026-04-27", "url": "https://www.bankingdive.com/news/customers-bank-openai-sidhu-commercial-lending-deposit-payment/818568/"}
+  ]
+}
