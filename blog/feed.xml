@@ -6,7 +6,14 @@
   <atom:link href="https://vishal-sarvade.vercel.app/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 23 Oct 2026 17:50:24 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 24 Oct 2026 17:48:45 +0000</lastBuildDate>
+  <item>
+    <title>AAIF takes in Agent Skills and Open Responses, now hosts 10 projects</title>
+    <link>https://vishal-sarvade.vercel.app/blog/aaif-agent-skills-open-responses-ten-projects/</link>
+    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/aaif-agent-skills-open-responses-ten-projects/</guid>
+    <pubDate>Sat, 24 Oct 2026 18:00:00 +0000</pubDate>
+    <description>The Agentic AI Foundation added four donated projects from Anthropic, OpenAI, Hugging Face and Alibaba, growing from three projects to 10 in its first year. Neutral governance is still unproven.</description>
+  </item>
   <item>
     <title>Customers Bancorp: agents doubled, but hours saved are self-reported</title>
     <link>https://vishal-sarvade.vercel.app/blog/customers-bancorp-ai-agents-measurement/</link>

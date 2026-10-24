@@ -1,0 +1,37 @@
+{
+  "slug": "aaif-agent-skills-open-responses-ten-projects",
+  "date": "2026-10-24",
+  "title": "AAIF takes in Agent Skills and Open Responses, now hosts 10 projects",
+  "summary": "The Agentic AI Foundation added four donated projects from Anthropic, OpenAI, Hugging Face and Alibaba, growing from three projects to 10 in its first year. Neutral governance is still unproven.",
+  "tags": [
+    "Standards",
+    "Governance"
+  ],
+  "body": [
+    "The Agentic AI Foundation (AAIF) announced four new hosted projects on October 22 at AGNTCon + MCPCon North America in San Jose [1]. Anthropic contributed Agent Skills, an open format for packaging instructions, scripts and resources that agents load on demand. OpenAI contributed Open Responses, a specification for multi-provider model interfaces based on its Responses API. Hugging Face added OpenEnv for reinforcement learning environments, and Alibaba added OpenSandbox [1]. The foundation says it grew from three launch projects in December 2025 to 10 in its first year, alongside MCP, A2A, AGENTS.md and agentgateway [1].",
+    "Techstrong's coverage points out that all four are existing projects moving under AAIF governance, not new products [2]. It also notes that Open Responses standardizes request schemas, output schemas and streaming events, but does not make models equal in capability or results [2]. Efficiently Connected analyst Paul Nashawaty cites ECI Research survey data in which 52.5% of respondents said they evaluate lock-in risk but prioritize functionality, and 47.2% ranked developer velocity and ease of integration as the top selection factor [3]. The survey covered government technology buyers [3].",
+    "The tension is that neutral governance is a promise, not yet evidence. A spec donated by one vendor can stay shaped by that vendor, a point Nashawaty raises about Open Responses [3]. Agent Skills only pays off if agent runtimes implement its loader the same way [3]. Standardizing the interface layer is useful, but it pushes the hard questions down to what agents are allowed to touch.",
+    "If skills become portable files and model calls share one schema, the stable contract becomes our data: which tables an agent can read, under which role, and how fresh they are. A skill that queries a warehouse should declare its data dependencies so lineage tools can see them. Sandboxes help contain code, but credentials scoped per agent and query logs tagged with an agent ID are what let us audit access and cost later.",
+    "One step this week: list every agent or assistant that queries your warehouse and record the model provider API it calls, the database role it runs as, and the tables it reads. That inventory shows how much provider-specific code a shared interface could remove, and where access needs tightening first."
+  ],
+  "sources": [
+    {
+      "title": "Agentic AI Foundation Announces Four New Projects: Agent Skills, Open Responses, OpenEnv, and OpenSandbox",
+      "publisher": "Agentic AI Foundation",
+      "date": "2026-10-22",
+      "url": "https://aaif.io/news/agentic-ai-foundation-announces-four-new-projects"
+    },
+    {
+      "title": "Agentic AI Foundation Adds Four New Open Agent Projects",
+      "publisher": "Techstrong.ai",
+      "date": "2026-10-23",
+      "url": "https://techstrong.ai/building-with-ai/featured/agentic-ai-foundation-adds-four-new-open-agent-projects/"
+    },
+    {
+      "title": "AAIF Adds Four Projects: Open Standards for the Agentic Stack",
+      "publisher": "Efficiently Connected",
+      "date": "2026-10-22",
+      "url": "https://www.efficientlyconnected.com/aaif-agentic-ai-open-standards-four-new-projects/"
+    }
+  ]
+}
