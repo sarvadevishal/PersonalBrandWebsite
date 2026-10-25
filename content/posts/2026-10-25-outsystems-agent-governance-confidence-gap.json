@@ -1,0 +1,34 @@
+{
+  "slug": "outsystems-agent-governance-confidence-gap",
+  "date": "2026-10-25",
+  "title": "OutSystems survey: 82% trust their agent governance, 5% automate it",
+  "summary": "In an OutSystems, CIO Dive and KPMG survey of 858 executives, 82% said they can keep pace with governing AI agents, yet only 5% have automated controls, audit trails and formal human review points.",
+  "tags": ["Governance", "Enterprise adoption"],
+  "body": [
+    "OutSystems released research with CIO Dive and KPMG based on an online survey of 858 executives that CIO Dive ran in June 2026 [1]. 82% said their organizations can keep pace with governing AI agents, but only 26% said they are well prepared to resolve conflicts across agents, systems and automated workflows [1]. 83% oversee agents through existing IT, security or compliance processes, and just 5% have automated controls, audit trails and formal human review points in place [1].",
+    "The regional split is wide. According to iTWire's report on the findings, 14% of Asia Pacific respondents have those automated controls, against 3% in Europe and 2% in North America [2]. A separate G2 survey of 1,019 B2B decision makers points the same way: 27% keep a central agent registry, 18% use automated discovery and 14% have real time observability, while 38% of organizations with agents in production run more than 100 agents [3].",
+    "The tension is between confidence and tooling. Oversight built on review boards and existing policies works when a team can count its agents. It gets harder when agents call each other and act between meetings. G2 also found that 45% say oversight and rework consume more than a quarter of the expected productivity gains [3], which is what manual governance costs at scale.",
+    "For data teams, the controls that matter live in the platform. OutSystems found 35% cite data consistency and context sharing as a major orchestration hurdle [1]. An agent with its own database role, query tags that carry an agent ID, and lineage from the tables it reads to the actions it takes gives us an audit trail that does not depend on someone remembering to review it. Freshness checks and cost alerts per agent role turn policy into something a query can verify.",
+    "One step this week: pull the query history from your warehouse for the last 30 days and group it by user or role. Mark every role an agent uses. Any agent sharing a human or service account is a gap to close before you add another one."
+  ],
+  "sources": [
+    {
+      "title": "The Agentic AI Era Is Here, Enterprise Readiness Is Not, New OutSystems Research Finds",
+      "publisher": "OutSystems via PR Newswire (Yahoo Finance)",
+      "date": "2026-10-16",
+      "url": "https://finance.yahoo.com/technology/ai/articles/agentic-ai-era-enterprise-readiness-030000427.html"
+    },
+    {
+      "title": "The Agentic AI Era Is Here, Enterprise Readiness Is Not, New OutSystems Research Finds",
+      "publisher": "iTWire",
+      "date": "2026-10-19",
+      "url": "https://itwire.com/business-it-news/data/the-agentic-ai-era-is-here-enterprise-readiness-is-not-new-outsystems-research-finds"
+    },
+    {
+      "title": "New G2 Research: AI Agents Have Moved From Pilot to Production, But Oversight Comes at a Cost",
+      "publisher": "G2 via PR Newswire",
+      "date": "2026-10-14",
+      "url": "https://www.prnewswire.com/news-releases/new-g2-research-ai-agents-have-moved-from-pilot-to-production-but-oversight-comes-at-a-cost-302908654.html"
+    }
+  ]
+}
