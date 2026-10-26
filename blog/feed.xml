@@ -6,7 +6,14 @@
   <atom:link href="https://vishal-sarvade.vercel.app/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Sun, 25 Oct 2026 17:54:23 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 26 Oct 2026 17:49:40 +0000</lastBuildDate>
+  <item>
+    <title>SK Telecom gives AI agents employee IDs, owners and a retirement path</title>
+    <link>https://vishal-sarvade.vercel.app/blog/sk-telecom-ai-agents-employee-ids-governance/</link>
+    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/sk-telecom-ai-agents-employee-ids-governance/</guid>
+    <pubDate>Mon, 26 Oct 2026 18:00:00 +0000</pubDate>
+    <description>SK Telecom&#x27;s first AI Governance Report gives in-house agents employee IDs and named supervisors, tracks token use and performance, and sets a 2026 to 2028 roadmap toward full lifecycle management.</description>
+  </item>
   <item>
     <title>OutSystems survey: 82% trust their agent governance, 5% automate it</title>
     <link>https://vishal-sarvade.vercel.app/blog/outsystems-agent-governance-confidence-gap/</link>
