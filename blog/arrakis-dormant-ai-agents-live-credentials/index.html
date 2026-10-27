@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" data-site-theme="playful">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>try{var t=localStorage.getItem("site-theme");if(t==="classic"||t==="vibrant"||t==="playful")document.documentElement.setAttribute("data-site-theme",t)}catch(e){}</script>
+<title>Arrakis: 76% of AI agents sat idle 60 days with credentials still live · Vishal Kumar Sarvade</title>
+<meta name="description" content="Arrakis Security telemetry from thousands of production agents found 76% had not run in 60 days while their credentials still worked, and 82% carried at least one exposure.">
+<meta name="author" content="Vishal Kumar Sarvade">
+<meta name="generator" content="build_blog.py">
+<link rel="canonical" href="https://vishal-sarvade.vercel.app/blog/arrakis-dormant-ai-agents-live-credentials/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Arrakis: 76% of AI agents sat idle 60 days with credentials still live · Vishal Kumar Sarvade">
+<meta property="og:description" content="Arrakis Security telemetry from thousands of production agents found 76% had not run in 60 days while their credentials still worked, and 82% carried at least one exposure.">
+<meta property="og:url" content="https://vishal-sarvade.vercel.app/blog/arrakis-dormant-ai-agents-live-credentials/">
+<meta property="og:image" content="https://vishal-sarvade.vercel.app/assets/vishal-headshot.jpg?v=2">
+<meta name="theme-color" content="#FFFBF2">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%230F1B2D%22/%3E%3Ctext x=%2216%22 y=%2221%22 font-family=%22monospace%22 font-size=%2213%22 fill=%22%23F8F6F1%22 text-anchor=%22middle%22%3EVS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;family=Instrument+Serif:ital@0;1&amp;family=Space+Mono:wght@400;700&amp;display=swap">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800,900&amp;display=swap">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="alternate" type="application/rss+xml" title="Field notes on data and AI agents" href="../../blog/feed.xml">
+<meta property="article:published_time" content="2026-10-27">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Arrakis: 76% of AI agents sat idle 60 days with credentials still live", "description": "Arrakis Security telemetry from thousands of production agents found 76% had not run in 60 days while their credentials still worked, and 82% carried at least one exposure.", "datePublished": "2026-10-27", "dateModified": "2026-10-27", "author": {"@type": "Person", "name": "Vishal Kumar Sarvade", "url": "https://vishal-sarvade.vercel.app/"}, "mainEntityOfPage": "https://vishal-sarvade.vercel.app/blog/arrakis-dormant-ai-agents-live-credentials/", "keywords": "Security, Governance", "citation": ["https://cioinfluence.com/security/arrakis-security-report-finds-76-of-ai-agents-are-dormant-but-keep-their-credentials-and-connections/", "https://www.helpnetsecurity.com/2026/10/26/arrakis-dormant-ai-agent-risks-report/"]}</script>
+<style>body{margin:0}[hidden]{display:none!important}</style>
+</head>
+<body>
+<span id="top"></span>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../../index.html" aria-label="Vishal Kumar Sarvade, home"><span class="mark" aria-hidden="true">VS</span>Vishal Kumar Sarvade</a>
+    <nav class="links" aria-label="Sections">
+      <a href="../../index.html#work">Work</a>
+      <a href="../../index.html#platform">Platform</a>
+      <a href="../../index.html#ai">AI</a>
+      <a href="../../blog/index.html" aria-current="true">Blog</a>
+      <a href="../../index.html#experience">Experience</a>
+      <a href="../../index.html#writing">Writing</a>
+      <a href="../../index.html#about">About</a>
+      <a href="../../index.html#contact">Contact</a>
+    </nav>
+    <div class="nav-tools">
+      <div class="theme-pick">
+        <button class="theme-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Design theme"><span class="theme-dot" aria-hidden="true"></span><span class="theme-name">Playful</span><svg class="theme-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <div class="theme-menu" role="menu" aria-label="Choose a design theme" hidden>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme="vibrant"><span class="sw sw-vibrant" aria-hidden="true"></span>Vibrant<small>Modern · emerald and orange</small></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme="classic"><span class="sw sw-classic" aria-hidden="true"></span>Classic<small>Editorial · navy and cobalt</small></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme="playful"><span class="sw sw-playful" aria-hidden="true"></span>Playful<small>Default · teal, sun and coral</small></button>
+        </div>
+      </div>
+      <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="wrap mobile-menu" id="mobileMenu" hidden>
+    <a href="../../index.html#work">Work</a><a href="../../index.html#platform">Platform</a><a href="../../index.html#ai">AI</a><a href="../../blog/index.html">Blog</a><a href="../../index.html#experience">Experience</a><a href="../../index.html#writing">Writing</a><a href="../../index.html#about">About</a><a href="../../index.html#contact">Contact</a>
+  </div>
+</header>
+<main id="main">
+<section class="section" style="padding-top:56px">
+  <div class="wrap">
+    <article class="post">
+      <div class="eyebrow"><a href="../../blog/index.html" style="color:inherit;text-decoration:none">Blog</a> · <time datetime="2026-10-27">Oct 27, 2026</time> · 2 min read</div>
+      <h1>Arrakis: 76% of AI agents sat idle 60 days with credentials still live</h1>
+      <p class="dek">Arrakis Security telemetry from thousands of production agents found 76% had not run in 60 days while their credentials still worked, and 82% carried at least one exposure.</p>
+      <div class="bl-tags"><span>Security</span><span>Governance</span></div>
+      <div class="post-body">
+        <p>Arrakis Security released its 2026 Autonomous Agents Threat Report this week, based on anonymized production telemetry from thousands of AI agents in its customers&#x27; environments, collected over 12 weeks<sup><a href="#src-1" aria-label="Source 1">1</a></sup>. The headline: 76% of active agents had not run in 60 days, yet their credentials still worked and their triggers still fired, and 44% had not run in 180 days<sup><a href="#src-1" aria-label="Source 1">1</a></sup>. Arrakis also found that 24% of dormant agents could be started by an unsigned webhook from outside the organization, and that 82% of agents carried at least one exposure, with 46% of those carrying more than one<sup><a href="#src-1" aria-label="Source 1">1</a></sup>.</p>
+        <p>Help Net Security&#x27;s coverage adds detail on what those idle agents can reach<sup><a href="#src-2" aria-label="Source 2">2</a></sup>. Seventy percent of agents connected to at least one integration classified as sensitive, and 99.4% of those had no verified data loss prevention coverage on that connection<sup><a href="#src-2" aria-label="Source 2">2</a></sup>. Nineteen percent used API keys and tokens that never expired and were embedded in their configurations<sup><a href="#src-2" aria-label="Source 2">2</a></sup>. Tal Baron, Arrakis CEO, put the cause plainly: when an agent stops being used, nobody removes anything, because in most companies nobody owns it<sup><a href="#src-2" aria-label="Source 2">2</a></sup>.</p>
+        <p>This is vendor data from a security company that sells agent posture tools, and the sample is its own customers, so treat the percentages as a signal rather than an industry baseline. Still, the pattern is familiar. Teams are quick to grant an agent access to ship a pilot and slow to take it back when the pilot ends. An idle agent with live keys is an unused service account with a trigger attached.</p>
+        <p>For data teams, the warehouse is often where that access lands. An agent&#x27;s database role, its stored credentials and its scheduled triggers should all have a last used date we can query. Access logs and query history already show which identities have gone quiet. Long lived keys belong in a secrets manager with expiry, and lineage should show which tables a dormant agent could still read or write if someone woke it up.</p>
+        <p>One step this week: pull the last login or last query time for every non human identity with warehouse access. Any agent idle for 60 days gets its grants revoked and its keys rotated, and the owner can ask to restore access if it still has a job.</p>
+      </div>
+      <section class="sources" aria-labelledby="src-title">
+        <div class="eyebrow" id="src-title">Sources</div>
+        <ol>
+        <li id="src-1"><b>Arrakis Security via GlobeNewswire (CIO Influence)</b> · Oct 22, 2026<br><a href="https://cioinfluence.com/security/arrakis-security-report-finds-76-of-ai-agents-are-dormant-but-keep-their-credentials-and-connections/" target="_blank" rel="noopener">Arrakis Security Report Finds 76% of AI Agents Are Dormant but Keep Their Credentials and Connections</a></li>
+        <li id="src-2"><b>Help Net Security</b> · Oct 26, 2026<br><a href="https://www.helpnetsecurity.com/2026/10/26/arrakis-dormant-ai-agent-risks-report/" target="_blank" rel="noopener">Forgotten AI agents may still access sensitive company data</a></li>
+        </ol>
+      </section>
+      <aside class="author" aria-label="About the author">
+        <img src="../../assets/vishal-headshot.jpg?v=2" width="64" height="64" alt="">
+        <p><b>Vishal Kumar Sarvade</b> is a Technical Architect in the San Francisco Bay Area with 12+ years building cloud data platforms on Amazon Redshift. <a href="../../index.html">More about him</a> · <a href="https://www.linkedin.com/in/vishalkumarsarvade/" target="_blank" rel="noopener">LinkedIn</a></p>
+      </aside>
+      <nav class="post-nav" aria-label="More posts"><a href="../../blog/sk-telecom-ai-agents-employee-ids-governance/index.html">← SK Telecom gives AI agents employee IDs, owners and a retirement path</a></nav>
+      <div class="bl-foot"><a href="../../blog/index.html">All posts</a><a href="../../blog/feed.xml">RSS feed</a></div>
+    </article>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Vishal Kumar Sarvade · Building data platforms since 2014</span>
+    <span><a href="../../blog/feed.xml">RSS</a> · <a href="#top">Back to top</a></span>
+  </div>
+</footer>
+<script>
+(function(){var b=document.getElementById('menuBtn'),m=document.getElementById('mobileMenu');
+b.addEventListener('click',function(){var o=m.hidden;m.hidden=!o;b.setAttribute('aria-expanded',String(o));b.setAttribute('aria-label',o?'Close menu':'Open menu');});})();
+</script>
+<script src="../../assets/theme.js?v=3" defer></script>
+</body>
+</html>
