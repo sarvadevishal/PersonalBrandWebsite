@@ -1,0 +1,31 @@
+{
+  "slug": "mckinsey-agent-cost-human-oversight-kyc",
+  "date": "2026-10-28",
+  "title": "McKinsey: oversight was 70 to 75% of a bank agent's run costs",
+  "summary": "McKinsey's review of agentic AI in financial-crime work finds tokens are 20 to 25 percent of variable run costs in one banking task, while human oversight is 70 to 75 percent.",
+  "tags": [
+    "Cost",
+    "Enterprise adoption"
+  ],
+  "body": [
+    "McKinsey published a review of how banks are using agentic AI for know-your-customer and anti-money-laundering work on October 26 [1]. It estimates agents are cutting KYC handling time by 30 to 70 percent, in a function where banks often assign 10 to 15 percent of employees [1]. The cost detail is the useful part. For a customer service task in banking, McKinsey says token costs were only 20 to 25 percent of variable run costs, and human oversight was 70 to 75 percent [1]. At one large European bank, running a transaction monitoring case through its agent setup cost about 2.50 euros before optimization, and roughly half of that was the automated quality control around the analysis [1].",
+    "ANI's report on the study, published the next day, highlights the reliability side [2]. One bank ran ten evaluations across its customer onboarding process and set sign-off gates of 80 percent accuracy and 70 percent consistency [2]. Across published evaluations, measured consistency ranged from 72 to 100 percent, so on the weakest about one run in four gave a different answer to the same input [2].",
+    "The tension is clear. Teams budget for model spend, yet the bigger bill is people and checks that exist because outputs vary. McKinsey says about 60 percent of an agentic task's cost is tied to refining answers, and that optimization can remove more than half of that through cheaper models for simple steps, caching, trimming data passed between agents, and sampling quality control [1]. In a regulated function, moving to sampled review is a control decision, not only an engineering one [1].",
+    "For data teams, consistency is a data problem as much as a model problem. McKinsey recommends tagging sources with sensitivity labels at ingest and keeping an append-only audit trail across systems [1]. We can add run IDs, input snapshots and output hashes to that trail, so repeated runs on the same input can be compared and the review cost per case shows up next to the token cost.",
+    "One step this week: pick one agent workflow and rerun 50 past inputs twice. Record the share of identical answers and the minutes of human review per case. Those two numbers will tell you more about its real cost than the model invoice."
+  ],
+  "sources": [
+    {
+      "title": "Agentic AI in financial-crime prevention: Lessons from winners",
+      "publisher": "McKinsey & Company",
+      "date": "2026-10-26",
+      "url": "https://www.mckinsey.com/capabilities/risk-and-resilience/our-insights/agentic-ai-in-financial-crime-prevention-lessons-from-winners"
+    },
+    {
+      "title": "Agentic AI could strengthen financial-crime prevention, but governance, cost hurdles limit adoption: McKinsey",
+      "publisher": "The Tribune (ANI)",
+      "date": "2026-10-27",
+      "url": "https://www.tribuneindia.com/news/business/agentic-ai-could-strengthen-financial-crime-prevention-but-governance-cost-hurdles-limit-adoption-mckinsey"
+    }
+  ]
+}

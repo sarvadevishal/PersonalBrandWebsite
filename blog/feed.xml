@@ -6,7 +6,14 @@
   <atom:link href="https://vishal-sarvade.vercel.app/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 27 Oct 2026 17:50:40 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 28 Oct 2026 17:50:37 +0000</lastBuildDate>
+  <item>
+    <title>McKinsey: oversight was 70 to 75% of a bank agent&#x27;s run costs</title>
+    <link>https://vishal-sarvade.vercel.app/blog/mckinsey-agent-cost-human-oversight-kyc/</link>
+    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/mckinsey-agent-cost-human-oversight-kyc/</guid>
+    <pubDate>Wed, 28 Oct 2026 18:00:00 +0000</pubDate>
+    <description>McKinsey&#x27;s review of agentic AI in financial-crime work finds tokens are 20 to 25 percent of variable run costs in one banking task, while human oversight is 70 to 75 percent.</description>
+  </item>
   <item>
     <title>Arrakis: 76% of AI agents sat idle 60 days with credentials still live</title>
     <link>https://vishal-sarvade.vercel.app/blog/arrakis-dormant-ai-agents-live-credentials/</link>
