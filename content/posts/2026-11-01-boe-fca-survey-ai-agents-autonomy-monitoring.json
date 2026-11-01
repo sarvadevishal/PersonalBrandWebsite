@@ -1,0 +1,32 @@
+{
+  "slug": "boe-fca-survey-ai-agents-autonomy-monitoring",
+  "date": "2026-11-01",
+  "title": "UK regulators: 80% of finance firms run agents, 2% with broad autonomy",
+  "summary": "The Bank of England and FCA found 80% of fully surveyed UK financial firms have AI agents deployed, but only 2% give them broad autonomy and about half monitor them after launch.",
+  "tags": [
+    "Regulation",
+    "Governance",
+    "Enterprise adoption"
+  ],
+  "body": [
+    "The Bank of England and the FCA published their 2026 survey of AI in UK financial services on October 26 [1]. Of 196 firms that responded, 105 completed the full survey, and 80 percent of those reported having AI agents deployed, with another 14 percent planning to deploy within 12 months [1]. Autonomy is limited. The regulators found 80 percent using agents for decision support, 46 percent for constrained execution, 22 percent for conditional autonomy and only 2 percent with broad autonomy [1]. Overall AI use rose to 86 percent of respondents, from 75 percent in 2024 [1].",
+    "Law firm Lewis Silkin's review of the survey on October 30 adds detail [2]. Fewer than 10 percent of respondents expect agents to handle high-impact work such as approving customer outcomes, executing trades or initiating payments [2]. It also points to a gap between built and bought systems: 77 percent rely on deep technical understanding of systems developed in house, against 24 percent for third-party systems, where most firms lean on vendor assurances and contracts [2].",
+    "The tension sits in the controls. Human approval, pre-deployment review and vendor due diligence were each reported by more than 90 percent of respondents, while ongoing monitoring, leakage testing and periodic review or recertification were reported by only around half [1]. Just 39 percent monitored customer impact [1]. Firms check agents carefully at the gate and much less once they are running, even as third-party implementations grew to 39 percent of reported AI systems, up from 33 percent in 2024 [1].",
+    "For data teams, much of that post-deployment gap is ours to close. An agent in a decision-support role still reads tables, and drift in those inputs changes its advice without any change to the model. We can log agent queries against lineage, alert on freshness and quality checks for the tables agents read, and record which data and model version sat behind each recommendation. That gives risk teams ongoing evidence, and it works for vendor agents too, where we often cannot inspect the model but can inspect the data we send it.",
+    "One step this week: list each agent in production, mark it as internal or third party, and write down the one metric you check after deployment. Any agent with nothing in that last column is where to start."
+  ],
+  "sources": [
+    {
+      "title": "Artificial intelligence in UK financial services: 2026",
+      "publisher": "Bank of England and Financial Conduct Authority",
+      "date": "2026-10-26",
+      "url": "https://www.bankofengland.co.uk/report/2026/artificial-intelligence-in-uk-financial-services-2026"
+    },
+    {
+      "title": "Key lessons from the Bank of England and FCA's 2026 survey",
+      "publisher": "Lewis Silkin",
+      "date": "2026-10-30",
+      "url": "https://www.lewissilkin.com/insights/2026/10/30/key-lessons-from-the-bank-of-england-and-fcas-2026-survey-102o6yl"
+    }
+  ]
+}

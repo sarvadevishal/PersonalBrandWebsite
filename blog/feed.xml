@@ -6,7 +6,14 @@
   <atom:link href="https://vishal-sarvade.vercel.app/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 28 Oct 2026 17:50:37 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 01 Nov 2026 18:53:36 +0000</lastBuildDate>
+  <item>
+    <title>UK regulators: 80% of finance firms run agents, 2% with broad autonomy</title>
+    <link>https://vishal-sarvade.vercel.app/blog/boe-fca-survey-ai-agents-autonomy-monitoring/</link>
+    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/boe-fca-survey-ai-agents-autonomy-monitoring/</guid>
+    <pubDate>Sun, 01 Nov 2026 18:00:00 +0000</pubDate>
+    <description>The Bank of England and FCA found 80% of fully surveyed UK financial firms have AI agents deployed, but only 2% give them broad autonomy and about half monitor them after launch.</description>
+  </item>
   <item>
     <title>McKinsey: oversight was 70 to 75% of a bank agent&#x27;s run costs</title>
     <link>https://vishal-sarvade.vercel.app/blog/mckinsey-agent-cost-human-oversight-kyc/</link>
