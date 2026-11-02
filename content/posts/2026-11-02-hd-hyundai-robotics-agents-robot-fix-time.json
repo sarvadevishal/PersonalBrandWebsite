@@ -1,0 +1,19 @@
+{
+  "slug": "hd-hyundai-robotics-agents-robot-fix-time",
+  "date": "2026-11-02",
+  "title": "HD Hyundai Robotics: agents cut robot fix time from 21.5 to 7.9 days",
+  "summary": "HD Hyundai Robotics says AI agents that review robot programs before engineers refine them cut average problem resolution from 21.5 days to 7.9 days since August. The baseline and case count are not public.",
+  "tags": ["Case study", "ROI", "Workforce"],
+  "body": [
+    "HD Hyundai Robotics presented results from its work with Palantir at Palantir's Sovereignty Bootcamp in New York, according to The Korea Times [1]. AI agents now analyze existing robot programs and propose improvements, and engineers refine them using field experience [1]. The previous process relied on skilled engineers watching robots on site and repeatedly adjusting sequences, paths and speeds, which made it hard to standardize [1]. The companies said average task completion time fell from 21.5 days to 7.9 days since the agents were introduced in August, and the company aims to cut robot programming costs by more than half [1].",
+    "Seoul Economic Daily reported the same figures as average time to resolve robot program problems, and described the August start as a pilot [2]. CTO Ahn Sung-hwan said the company plans to identify tasks where on-site problems can be solved faster [2]. Tech Times put the drop at 63 percent and noted that the result comes from the companies themselves [3].",
+    "This is a useful kind of evidence because it measures a cycle time on a real operational task, not hours saved by a survey. It is also thin. The reports do not say how many problems the average covers or how the 21.5-day baseline was measured, and the cost reduction is a target, not a result. The workforce change is the other half of the story: field engineers are meant to shift from basic programming to defining problems and directing AI-based fixes [1].",
+    "For data teams, the lesson is that a claim like this is only as strong as the ticket data behind it. If we want to report a resolution time, we need consistent open and close timestamps, a stable definition of a problem, and a record of which cases an agent touched and which it did not. Without that, a before and after average can mix in changes in case mix, staffing or definitions.",
+    "One step this week: pick one workflow where an agent assists, and confirm you can split its cycle time into agent-assisted and unassisted cases from your own tables, with a baseline period defined the same way."
+  ],
+  "sources": [
+    {"title": "HD Hyundai Robotics, Palantir to slash robot programming costs with AI", "publisher": "The Korea Times", "date": "2026-11-01", "url": "https://www.koreatimes.co.kr/business/tech-science/20261101/hd-hyundai-robotics-palantir-to-slash-robot-programming-costs-with-ai"},
+    {"title": "HD Hyundai Robotics Cuts Problem-Solving Time by 63% With Palantir AI", "publisher": "Seoul Economic Daily", "date": "2026-11-01", "url": "https://en.sedaily.com/finance/2026/11/01/hd-hyundai-robotics-shares-physical-ai-results-at-palantir"},
+    {"title": "AI Agents Cut Industrial Robot Programming 63%: HD Hyundai, Palantir Compress 21-Day Cycle", "publisher": "Tech Times", "date": "2026-11-02", "url": "https://www.techtimes.com/articles/329869/20261102/ai-agents-cut-industrial-robot-programming-63-hd-hyundai-palantir-compress-21-day-cycle.htm"}
+  ]
+}
