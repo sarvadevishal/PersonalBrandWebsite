@@ -6,7 +6,14 @@
   <atom:link href="https://vishal-sarvade.vercel.app/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 02 Nov 2026 18:54:46 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 03 Nov 2026 18:50:11 +0000</lastBuildDate>
+  <item>
+    <title>DoorDash: third-party AI agents placed only several hundred orders</title>
+    <link>https://vishal-sarvade.vercel.app/blog/doordash-ai-agents-several-hundred-orders/</link>
+    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/doordash-ai-agents-several-hundred-orders/</guid>
+    <pubDate>Tue, 03 Nov 2026 18:00:00 +0000</pubDate>
+    <description>DoorDash CEO Tony Xu said third-party AI agents have placed maybe several hundred orders in total, in a quarter when DoorDash reported 993 million orders, up 28% year over year.</description>
+  </item>
   <item>
     <title>HD Hyundai Robotics: agents cut robot fix time from 21.5 to 7.9 days</title>
     <link>https://vishal-sarvade.vercel.app/blog/hd-hyundai-robotics-agents-robot-fix-time/</link>

@@ -1,0 +1,18 @@
+{
+  "slug": "doordash-ai-agents-several-hundred-orders",
+  "date": "2026-11-03",
+  "title": "DoorDash: third-party AI agents placed only several hundred orders",
+  "summary": "DoorDash CEO Tony Xu said third-party AI agents have placed maybe several hundred orders in total, in a quarter when DoorDash reported 993 million orders, up 28% year over year.",
+  "tags": ["Enterprise adoption", "Standards"],
+  "body": [
+    "On its third-quarter earnings call, DoorDash said it has seen several hundred orders from third-party agents such as Muse, Instinct and Fo, TechCrunch reported [1]. CEO Tony Xu put it as \"maybe several hundred orders in total from some of these third-party agents,\" and added that you \"don't want to be delusional\" about where the technology is today [1]. TechCrunch noted that DoorDash's 2025 report said it completes an average of 3 million deliveries per day, and that users still mostly order through the DoorDash app [1].",
+    "The same quarter was a record. PPC Land reported that DoorDash had 993 million total orders, up 28% year over year, and that net income rose 91% to $466 million [2]. DoorDash is not ignoring agents. It has shipped Ask DoorDash, Text DoorDash and a Model Context Protocol connection that works with external AI agents, including ones companies use for corporate ordering [2].",
+    "The tension is plain. The protocols and connectors exist, and the demand has not shown up yet. Agent shopping is one of the most discussed consumer use cases, but at a delivery network of this size it is a small number so far. Xu's figure is also loose: an approximate total, not a reported metric. Access is unsettled too, with Amazon blocking personal agents and Walmart welcoming them [1].",
+    "For data teams, the lesson is that agent traffic is only measurable if the channel is captured when the order is written. An order that arrives through an MCP connector should carry a source channel, the calling agent's identity and the user who authorized it, recorded at ingestion rather than rebuilt later from gateway logs. Without that lineage, nobody can say whether agent orders are growing, what they cost to serve, or whether they behave differently on refunds and fraud. Each agent acting for a user also needs scoped credentials that can be audited and revoked.",
+    "One step this week: check whether your order or transaction tables can separate agent-originated activity from app and web activity. If they cannot, add a channel field and an agent identifier to the event schema now, while volumes are small and backfill is cheap."
+  ],
+  "sources": [
+    {"title": "DoorDash said it's only received 'several hundred' orders from AI agents", "publisher": "TechCrunch", "date": "2026-10-30", "url": "https://techcrunch.com/?p=3183579"},
+    {"title": "DoorDash net income gains 91% to $466m in a record quarter", "publisher": "PPC Land", "date": "2026-10-29", "url": "https://ppc.land/doordash-net-income-gains-91-to-466m-in-a-record-quarter/"}
+  ]
+}
