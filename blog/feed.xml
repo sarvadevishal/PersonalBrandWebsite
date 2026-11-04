@@ -6,7 +6,14 @@
   <atom:link href="https://vishal-sarvade.vercel.app/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 03 Nov 2026 18:50:11 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 04 Nov 2026 18:48:24 +0000</lastBuildDate>
+  <item>
+    <title>Komodor: nearly 84% run 10+ ops agents, guardrails top challenge</title>
+    <link>https://vishal-sarvade.vercel.app/blog/komodor-agent-fleets-guardrails-spend-visibility/</link>
+    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/komodor-agent-fleets-guardrails-spend-visibility/</guid>
+    <pubDate>Wed, 04 Nov 2026 18:00:00 +0000</pubDate>
+    <description>In a Komodor survey of 1,000+ engineering leaders, nearly 84% run 10 or more operational agents, 53.6% cite safe guardrails as the top challenge and 5.8% cannot say what agents cost.</description>
+  </item>
   <item>
     <title>DoorDash: third-party AI agents placed only several hundred orders</title>
     <link>https://vishal-sarvade.vercel.app/blog/doordash-ai-agents-several-hundred-orders/</link>

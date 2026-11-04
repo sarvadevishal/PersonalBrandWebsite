@@ -1,0 +1,18 @@
+{
+  "slug": "komodor-agent-fleets-guardrails-spend-visibility",
+  "date": "2026-11-04",
+  "title": "Komodor: nearly 84% run 10+ ops agents, guardrails top challenge",
+  "summary": "In a Komodor survey of 1,000+ engineering leaders, nearly 84% run 10 or more operational agents, 53.6% cite safe guardrails as the top challenge and 5.8% cannot say what agents cost.",
+  "tags": ["Governance", "Cost", "Enterprise adoption"],
+  "body": [
+    "Komodor released its 2026 Agentic Operations Survey today, based on responses from more than 1,000 engineering and technology leaders [1]. Nearly 84% of respondents run fleets of 10 or more operational agents, and 75.7% keep some restrictions on autonomous operations [1]. The most cited challenge was building safe guardrails, at 53.6%, followed by governance and security at 50.4% and insufficient visibility into agent permissions at 42.7% [1]. The agents are doing real work: Komodor reported routine task automation at 49.1%, support ticket triage at 47.1% and self-remediation or AI SRE at 44.2% [1].",
+    "Spending is already material. According to Komodor, 68.4% spend at least $10,000 a month on AI agents, 38.4% spend $50,000 or more and 12% spend at least $250,000 [1]. Yet 5.8% cannot say how much their organization spends, and 25.8% rank weak cost visibility, budgeting or spending limits among their top three challenges [1]. Komodor sells an agentic operations platform, so the framing deserves some caution. The governance gap matches independent work, though: Deloitte's State of AI in the Enterprise survey of 3,235 leaders found only 21% have a mature governance model for agentic AI [2].",
+    "The tension is that agents are moving into production remediation faster than teams can see what those agents are allowed to touch. A fleet of ten agents with unclear permissions is ten service accounts nobody has fully reviewed, and some of them can change production systems.",
+    "For data teams, the same pattern shows up when agents query the warehouse or run pipeline fixes. Each agent needs its own identity and role, not a shared service account, so access control and audit logs can tell agents apart. Query tags or session labels that name the agent make cost attribution possible in system tables, which is how you answer the spend question that 5.8% of respondents could not [1]. Lineage should record when an agent, not a person or a scheduler, wrote or changed a table.",
+    "One step this week: list every agent that can connect to your data platform, the role each one uses and who owns it. Any agent sharing credentials with a human or another agent gets its own role before it gets more work."
+  ],
+  "sources": [
+    {"title": "Komodor Survey Finds More Than 50% of Engineering Organizations Face Control and Governance Issues as They Scale Agentic Operations", "publisher": "Komodor via GlobeNewswire", "date": "2026-11-04", "url": "https://www.globenewswire.com/news-release/2026/11/04/3395406/0/en/komodor-survey-finds-more-than-50-of-engineering-organizations-face-control-and-governance-issues-as-they-scale-agentic-operations.html"},
+    {"title": "Business and IT leaders report AI agents are scaling faster than their guardrails", "publisher": "Deloitte Insights", "date": "2026-04-24", "url": "https://www.deloitte.com/us/en/insights/topics/emerging-technologies/ai-agents-scaling-faster.html"}
+  ]
+}
