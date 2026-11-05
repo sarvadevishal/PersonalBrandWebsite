@@ -1,0 +1,18 @@
+{
+  "slug": "capgemini-multi-agent-ai-financial-firms-orchestration-gap",
+  "date": "2026-11-05",
+  "title": "Capgemini: 59% of finance firms try multi-agent AI, 10% orchestrate it",
+  "summary": "In a Capgemini survey of 1,100 financial services executives, 59% are piloting or deploying multi-agent AI, but only 10% have enterprise-wide orchestration and about half cannot consistently show a return.",
+  "tags": ["Enterprise adoption", "ROI", "Cost"],
+  "body": [
+    "The Capgemini Research Institute published its World Cloud Report for Financial Services 2027 today [1]. It is based on a survey of 1,100 financial services leaders across 14 markets, run from June to July 2026, plus interviews with senior leaders at financial institutions and hyperscalers [1]. Capgemini found that 59% of firms are piloting or deploying multi-agent AI systems, yet only 10% have achieved enterprise-wide orchestration [1]. Roughly half cannot consistently demonstrate a return on their agentic AI initiatives, and just 5% have institutionalized the capabilities needed to run agentic AI at enterprise scale [1].",
+    "Cost is shaping the architecture. Capgemini reports that 90% of firms are using or planning intelligent model routing to manage token costs, and 52% of banks and insurers prefer hyperscalers as the partner to govern multi-agent deployments [1]. Compare the Cloud's independent write-up describes routing as sending each task to the cheapest model that can handle it, and notes that eight in ten executives see cutting tech debt as a prerequisite [2]. Capgemini sells cloud and transformation services, so read the hyperscaler finding with that in mind.",
+    "The gap between 59% and 10% is the real story. Running several agents in a pilot is one thing. Coordinating them across account servicing, underwriting and product recommendations, with shared identity, policy and audit, is a different engineering problem, and most firms have not solved it. Without that layer, a return is hard to prove because nobody can trace which agent did what.",
+    "For data teams, orchestration lands on the platform. Each agent needs its own identity and least privilege role so access control and audit logs can tell agents apart. Lineage should record which agent read or wrote a table. If routing sends work to different models, log the model and token count per request next to the query history, so cost can be tied back to a business outcome instead of averaged away.",
+    "One step this week: pick one agent workflow already in production and check whether you can answer three questions from logs alone: which data it touched, which model it called and what that cost. Any gap is the first item on your orchestration backlog."
+  ],
+  "sources": [
+    {"title": "Financial institutions accelerate transition to multi-agent AI in drive for bottom-line value", "publisher": "Capgemini via GlobeNewswire", "date": "2026-11-05", "url": "https://uk.finance.yahoo.com/news/financial-institutions-accelerate-transition-multi-050000000.html"},
+    {"title": "Capgemini survey finds 59% of financial firms are piloting or running multi-agent AI", "publisher": "Compare the Cloud", "date": "2026-11-05", "url": "https://www.comparethecloud.net/news/capgemini-survey-finds-59-of-financial-firms-are-piloting-or-running-multi-agent-ai"}
+  ]
+}

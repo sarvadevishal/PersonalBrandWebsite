@@ -6,7 +6,14 @@
   <atom:link href="https://vishal-sarvade.vercel.app/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 04 Nov 2026 18:48:24 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 05 Nov 2026 18:53:58 +0000</lastBuildDate>
+  <item>
+    <title>Capgemini: 59% of finance firms try multi-agent AI, 10% orchestrate it</title>
+    <link>https://vishal-sarvade.vercel.app/blog/capgemini-multi-agent-ai-financial-firms-orchestration-gap/</link>
+    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/capgemini-multi-agent-ai-financial-firms-orchestration-gap/</guid>
+    <pubDate>Thu, 05 Nov 2026 18:00:00 +0000</pubDate>
+    <description>In a Capgemini survey of 1,100 financial services executives, 59% are piloting or deploying multi-agent AI, but only 10% have enterprise-wide orchestration and about half cannot consistently show a return.</description>
+  </item>
   <item>
     <title>Komodor: nearly 84% run 10+ ops agents, guardrails top challenge</title>
     <link>https://vishal-sarvade.vercel.app/blog/komodor-agent-fleets-guardrails-spend-visibility/</link>
