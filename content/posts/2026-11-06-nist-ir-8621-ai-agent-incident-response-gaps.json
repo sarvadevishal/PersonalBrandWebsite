@@ -1,0 +1,19 @@
+{
+  "slug": "nist-ir-8621-ai-agent-incident-response-gaps",
+  "date": "2026-11-06",
+  "title": "NIST IR 8621: incident response playbooks are not ready for AI agents",
+  "summary": "NIST published IR 8621 on November 2, summarizing a workshop of more than 400 participants, and plans to update SP 800-61 and form a task group on agent monitoring and containment.",
+  "tags": ["Governance", "Security", "Standards"],
+  "body": [
+    "NIST published IR 8621 on November 2, a report summarizing a May 14, 2026 workshop on incident management for advanced AI systems [1]. NIST says more than 400 participants from government, industry and academia took part, and the report covers monitoring and evidence collection, incident information sharing, and who is responsible across model developers, deployers and users [1]. Its main next step is updating NIST's incident response guidelines, including SP 800-61 [1].",
+    "MeriTalk's coverage adds the agent detail. NIST plans to convene Task Group 8 through the NIST AI Consortium, focused on agent capabilities, monitoring and containment, and to develop guidance for incidents involving autonomous agents [2]. Participants warned that automated attacks and agent failures may unfold faster than human responders can react [2]. ExecutiveGov reports the report finds that traditional network, endpoint and identity monitoring can miss prompt injection and unauthorized agent actions, and that isolating one host may not stop an agent that can reach several tools [3]. MeriTalk notes the road map sets no deadlines [2].",
+    "The tension is plain. Most incident playbooks assume a compromised machine you can unplug. An agent is closer to a compromised identity with a list of tools and tables it can touch. Containing it means revoking what it is authorized to do, and investigating it means having records of what it did, which many teams do not keep today.",
+    "For data teams, much of that evidence lives on the platform. Give each agent its own service identity so query history and audit logs separate it from humans and other agents. Keep prompts, tool calls and the SQL an agent ran long enough to support a review, and decide up front how to protect sensitive values in those logs, a tension MeriTalk says participants raised [2]. Lineage that records which agent wrote a table tells you what to roll back.",
+    "One step this week: run a short tabletop for one production agent. Ask how you would revoke its access in minutes, and whether your logs alone could show every table it read or changed in the last day."
+  ],
+  "sources": [
+    {"title": "Workshop on SI Incident Management: NIST Publishes IR 8621", "publisher": "NIST Computer Security Resource Center", "date": "2026-11-02", "url": "https://csrc.nist.gov/News/2026/nist-releases-ir-8621"},
+    {"title": "NIST Outlines AI Incident-Response Road Map", "publisher": "MeriTalk", "date": "2026-11-03", "url": "https://www.meritalk.com/articles/nist-outlines-ai-incident-response-road-map/"},
+    {"title": "NIST Report Identifies AI Incident Response Gaps, Plans for New Cybersecurity Guidance", "publisher": "ExecutiveGov", "date": "2026-11-05", "url": "https://www.executivegov.com/articles/nist-ai-incident-response-cybersecurity-gaps"}
+  ]
+}
