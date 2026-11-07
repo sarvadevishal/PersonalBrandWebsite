@@ -6,7 +6,14 @@
   <atom:link href="https://vishal-sarvade.vercel.app/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 06 Nov 2026 18:51:26 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 07 Nov 2026 18:49:33 +0000</lastBuildDate>
+  <item>
+    <title>Okta: 22.4% of agent builders give each agent its own scoped identity</title>
+    <link>https://vishal-sarvade.vercel.app/blog/okta-agent-identity-scoped-credentials-gap/</link>
+    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/okta-agent-identity-scoped-credentials-gap/</guid>
+    <pubDate>Sat, 07 Nov 2026 18:00:00 +0000</pubDate>
+    <description>Okta&#x27;s 2026 Customer Identity Trends Report finds only 22.4% of organizations building agents give each one a unique identity with scoped, time-limited credentials, while 80% say AI work runs behind schedule.</description>
+  </item>
   <item>
     <title>NIST IR 8621: incident response playbooks are not ready for AI agents</title>
     <link>https://vishal-sarvade.vercel.app/blog/nist-ir-8621-ai-agent-incident-response-gaps/</link>
