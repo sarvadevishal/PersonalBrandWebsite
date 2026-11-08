@@ -1,0 +1,37 @@
+{
+  "slug": "occ-bulletin-2026-54-ai-agent-risk-tiers",
+  "date": "2026-11-08",
+  "title": "OCC Bulletin 2026-54 tiers bank AI agents by consequence, not skill",
+  "summary": "The OCC's Bulletin 2026-54 gives examiners 16 components in six pillars and four illustrative risk tiers for bank AI. An autonomous payment agent sits in the top tier however well it tests.",
+  "tags": [
+    "Regulation",
+    "Governance"
+  ],
+  "body": [
+    "On November 4 the Office of the Comptroller of the Currency released Bulletin 2026-54, a framework examiners will use to assess how national banks use AI and agentic systems, according to Forvis Mazars [1]. The OCC treats AI as something that adds to or changes risk inside existing categories, not as a new category, and groups 16 components into six pillars with an illustrative control risk tiering method [1]. Forvis Mazars also notes the OCC says the framework sets no new supervisory expectations or enforceable standards [1].",
+    "American Banker reports that a bank's control intensity could increase for autonomous systems, and that the guidance separates AI whose actions humans preapprove from AI that is monitored but can act without preapproval [2]. It quotes the OCC saying human involvement \"may be calibrated to the potential consequences, autonomy, reversibility and operating volume,\" and that banks using a provider's agents may define their \"scope of authority, identity, permitted tool use\" [2]. Forbes describes four illustrative tiers, with autonomous payment agents in Tier 1 and internal productivity tools that touch no customer or financial data in Tier 4 [3].",
+    "The tension is in the label. This is examiner guidance, not a rule, yet it spells out what an examiner will look for. Classification turns on consequences rather than technical sophistication [1], so a payment agent with excellent test results still lands in the top tier [3]. Strong evaluation scores do not buy lighter oversight.",
+    "For data teams, an agent's tier depends on what data it can reach and what it can change. If the lowest tier is reserved for tools with no customer or financial data [3], then access grants become the evidence. That means an inventory linking each agent to its approved purpose, the tables it can read or write, and whether its writes can be reversed. Query logs tied to a dedicated agent identity also give a reviewer outside the building team, which the OCC suggests where appropriate [2], something concrete to check.",
+    "One step this week: for every agent that touches your warehouse, write down its purpose, data scope, write access and how you would undo its changes. Assign a draft tier using the four tier logic, then pick the highest tier agent and confirm a person can pause it today."
+  ],
+  "sources": [
+    {
+      "title": "OCC AI Framework: Consequences, Not Sophistication, Drive Scrutiny",
+      "publisher": "Forvis Mazars US",
+      "date": "2026-11-05",
+      "url": "https://www.forvismazars.us/forsights/2026/11/occ-ai-framework-consequences-not-sophistication-drive-scrutiny"
+    },
+    {
+      "title": "OCC: Banks need strong controls when delegating to AI agents",
+      "publisher": "American Banker",
+      "date": "2026-11-05",
+      "url": "https://www.americanbanker.com/news/occ-banks-need-strong-controls-when-delegating-to-ai-agents"
+    },
+    {
+      "title": "OCC Gives Examiners A Playbook For Bank Use Of \"Super Intelligence\"",
+      "publisher": "Forbes",
+      "date": "2026-11-05",
+      "url": "https://www.forbes.com/sites/ajdhaliwal/2026/11/05/occ-gives-examiners-a-playbook-for-bank-use-of-super-intelligence/"
+    }
+  ]
+}

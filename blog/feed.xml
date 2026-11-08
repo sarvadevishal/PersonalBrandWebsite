@@ -6,7 +6,14 @@
   <atom:link href="https://vishal-sarvade.vercel.app/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 07 Nov 2026 18:49:33 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 08 Nov 2026 18:51:20 +0000</lastBuildDate>
+  <item>
+    <title>OCC Bulletin 2026-54 tiers bank AI agents by consequence, not skill</title>
+    <link>https://vishal-sarvade.vercel.app/blog/occ-bulletin-2026-54-ai-agent-risk-tiers/</link>
+    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/occ-bulletin-2026-54-ai-agent-risk-tiers/</guid>
+    <pubDate>Sun, 08 Nov 2026 18:00:00 +0000</pubDate>
+    <description>The OCC&#x27;s Bulletin 2026-54 gives examiners 16 components in six pillars and four illustrative risk tiers for bank AI. An autonomous payment agent sits in the top tier however well it tests.</description>
+  </item>
   <item>
     <title>Okta: 22.4% of agent builders give each agent its own scoped identity</title>
     <link>https://vishal-sarvade.vercel.app/blog/okta-agent-identity-scoped-credentials-gap/</link>
