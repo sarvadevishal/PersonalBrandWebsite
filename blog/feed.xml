@@ -2,148 +2,148 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
   <title>Field notes on data and AI agents · Vishal Kumar Sarvade</title>
-  <link>https://vishal-sarvade.vercel.app/blog/</link>
-  <atom:link href="https://vishal-sarvade.vercel.app/blog/feed.xml" rel="self" type="application/rss+xml"/>
+  <link>https://www.vishalkumarsarvade.com/blog/</link>
+  <atom:link href="https://www.vishalkumarsarvade.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 09 Nov 2026 18:52:23 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 09 Nov 2026 23:05:52 +0000</lastBuildDate>
   <item>
     <title>Apiiro: 1,122 public Claude Code settings files held secrets</title>
-    <link>https://vishal-sarvade.vercel.app/blog/apiiro-claude-code-settings-files-leaked-secrets/</link>
-    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/apiiro-claude-code-settings-files-leaked-secrets/</guid>
+    <link>https://www.vishalkumarsarvade.com/blog/apiiro-claude-code-settings-files-leaked-secrets/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/apiiro-claude-code-settings-files-leaked-secrets/</guid>
     <pubDate>Mon, 09 Nov 2026 18:00:00 +0000</pubDate>
     <description>Apiiro found 1,122 public copies of Claude Code&#x27;s settings.local.json holding at least one secret, 1,379 in all, saved when developers approved commands with &quot;don&#x27;t ask again&quot;.</description>
   </item>
   <item>
     <title>OCC Bulletin 2026-54 tiers bank AI agents by consequence, not skill</title>
-    <link>https://vishal-sarvade.vercel.app/blog/occ-bulletin-2026-54-ai-agent-risk-tiers/</link>
-    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/occ-bulletin-2026-54-ai-agent-risk-tiers/</guid>
+    <link>https://www.vishalkumarsarvade.com/blog/occ-bulletin-2026-54-ai-agent-risk-tiers/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/occ-bulletin-2026-54-ai-agent-risk-tiers/</guid>
     <pubDate>Sun, 08 Nov 2026 18:00:00 +0000</pubDate>
     <description>The OCC&#x27;s Bulletin 2026-54 gives examiners 16 components in six pillars and four illustrative risk tiers for bank AI. An autonomous payment agent sits in the top tier however well it tests.</description>
   </item>
   <item>
     <title>Okta: 22.4% of agent builders give each agent its own scoped identity</title>
-    <link>https://vishal-sarvade.vercel.app/blog/okta-agent-identity-scoped-credentials-gap/</link>
-    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/okta-agent-identity-scoped-credentials-gap/</guid>
+    <link>https://www.vishalkumarsarvade.com/blog/okta-agent-identity-scoped-credentials-gap/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/okta-agent-identity-scoped-credentials-gap/</guid>
     <pubDate>Sat, 07 Nov 2026 18:00:00 +0000</pubDate>
     <description>Okta&#x27;s 2026 Customer Identity Trends Report finds only 22.4% of organizations building agents give each one a unique identity with scoped, time-limited credentials, while 80% say AI work runs behind schedule.</description>
   </item>
   <item>
     <title>NIST IR 8621: incident response playbooks are not ready for AI agents</title>
-    <link>https://vishal-sarvade.vercel.app/blog/nist-ir-8621-ai-agent-incident-response-gaps/</link>
-    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/nist-ir-8621-ai-agent-incident-response-gaps/</guid>
+    <link>https://www.vishalkumarsarvade.com/blog/nist-ir-8621-ai-agent-incident-response-gaps/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/nist-ir-8621-ai-agent-incident-response-gaps/</guid>
     <pubDate>Fri, 06 Nov 2026 18:00:00 +0000</pubDate>
     <description>NIST published IR 8621 on November 2, summarizing a workshop of more than 400 participants, and plans to update SP 800-61 and form a task group on agent monitoring and containment.</description>
   </item>
   <item>
     <title>Capgemini: 59% of finance firms try multi-agent AI, 10% orchestrate it</title>
-    <link>https://vishal-sarvade.vercel.app/blog/capgemini-multi-agent-ai-financial-firms-orchestration-gap/</link>
-    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/capgemini-multi-agent-ai-financial-firms-orchestration-gap/</guid>
+    <link>https://www.vishalkumarsarvade.com/blog/capgemini-multi-agent-ai-financial-firms-orchestration-gap/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/capgemini-multi-agent-ai-financial-firms-orchestration-gap/</guid>
     <pubDate>Thu, 05 Nov 2026 18:00:00 +0000</pubDate>
     <description>In a Capgemini survey of 1,100 financial services executives, 59% are piloting or deploying multi-agent AI, but only 10% have enterprise-wide orchestration and about half cannot consistently show a return.</description>
   </item>
   <item>
     <title>Komodor: nearly 84% run 10+ ops agents, guardrails top challenge</title>
-    <link>https://vishal-sarvade.vercel.app/blog/komodor-agent-fleets-guardrails-spend-visibility/</link>
-    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/komodor-agent-fleets-guardrails-spend-visibility/</guid>
+    <link>https://www.vishalkumarsarvade.com/blog/komodor-agent-fleets-guardrails-spend-visibility/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/komodor-agent-fleets-guardrails-spend-visibility/</guid>
     <pubDate>Wed, 04 Nov 2026 18:00:00 +0000</pubDate>
     <description>In a Komodor survey of 1,000+ engineering leaders, nearly 84% run 10 or more operational agents, 53.6% cite safe guardrails as the top challenge and 5.8% cannot say what agents cost.</description>
   </item>
   <item>
     <title>DoorDash: third-party AI agents placed only several hundred orders</title>
-    <link>https://vishal-sarvade.vercel.app/blog/doordash-ai-agents-several-hundred-orders/</link>
-    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/doordash-ai-agents-several-hundred-orders/</guid>
+    <link>https://www.vishalkumarsarvade.com/blog/doordash-ai-agents-several-hundred-orders/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/doordash-ai-agents-several-hundred-orders/</guid>
     <pubDate>Tue, 03 Nov 2026 18:00:00 +0000</pubDate>
     <description>DoorDash CEO Tony Xu said third-party AI agents have placed maybe several hundred orders in total, in a quarter when DoorDash reported 993 million orders, up 28% year over year.</description>
   </item>
   <item>
     <title>HD Hyundai Robotics: agents cut robot fix time from 21.5 to 7.9 days</title>
-    <link>https://vishal-sarvade.vercel.app/blog/hd-hyundai-robotics-agents-robot-fix-time/</link>
-    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/hd-hyundai-robotics-agents-robot-fix-time/</guid>
+    <link>https://www.vishalkumarsarvade.com/blog/hd-hyundai-robotics-agents-robot-fix-time/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/hd-hyundai-robotics-agents-robot-fix-time/</guid>
     <pubDate>Mon, 02 Nov 2026 18:00:00 +0000</pubDate>
     <description>HD Hyundai Robotics says AI agents that review robot programs before engineers refine them cut average problem resolution from 21.5 days to 7.9 days since August. The baseline and case count are not public.</description>
   </item>
   <item>
     <title>UK regulators: 80% of finance firms run agents, 2% with broad autonomy</title>
-    <link>https://vishal-sarvade.vercel.app/blog/boe-fca-survey-ai-agents-autonomy-monitoring/</link>
-    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/boe-fca-survey-ai-agents-autonomy-monitoring/</guid>
+    <link>https://www.vishalkumarsarvade.com/blog/boe-fca-survey-ai-agents-autonomy-monitoring/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/boe-fca-survey-ai-agents-autonomy-monitoring/</guid>
     <pubDate>Sun, 01 Nov 2026 18:00:00 +0000</pubDate>
     <description>The Bank of England and FCA found 80% of fully surveyed UK financial firms have AI agents deployed, but only 2% give them broad autonomy and about half monitor them after launch.</description>
   </item>
   <item>
     <title>McKinsey: oversight was 70 to 75% of a bank agent&#x27;s run costs</title>
-    <link>https://vishal-sarvade.vercel.app/blog/mckinsey-agent-cost-human-oversight-kyc/</link>
-    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/mckinsey-agent-cost-human-oversight-kyc/</guid>
+    <link>https://www.vishalkumarsarvade.com/blog/mckinsey-agent-cost-human-oversight-kyc/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/mckinsey-agent-cost-human-oversight-kyc/</guid>
     <pubDate>Wed, 28 Oct 2026 18:00:00 +0000</pubDate>
     <description>McKinsey&#x27;s review of agentic AI in financial-crime work finds tokens are 20 to 25 percent of variable run costs in one banking task, while human oversight is 70 to 75 percent.</description>
   </item>
   <item>
     <title>Arrakis: 76% of AI agents sat idle 60 days with credentials still live</title>
-    <link>https://vishal-sarvade.vercel.app/blog/arrakis-dormant-ai-agents-live-credentials/</link>
-    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/arrakis-dormant-ai-agents-live-credentials/</guid>
+    <link>https://www.vishalkumarsarvade.com/blog/arrakis-dormant-ai-agents-live-credentials/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/arrakis-dormant-ai-agents-live-credentials/</guid>
     <pubDate>Tue, 27 Oct 2026 18:00:00 +0000</pubDate>
     <description>Arrakis Security telemetry from thousands of production agents found 76% had not run in 60 days while their credentials still worked, and 82% carried at least one exposure.</description>
   </item>
   <item>
     <title>SK Telecom gives AI agents employee IDs, owners and a retirement path</title>
-    <link>https://vishal-sarvade.vercel.app/blog/sk-telecom-ai-agents-employee-ids-governance/</link>
-    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/sk-telecom-ai-agents-employee-ids-governance/</guid>
+    <link>https://www.vishalkumarsarvade.com/blog/sk-telecom-ai-agents-employee-ids-governance/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/sk-telecom-ai-agents-employee-ids-governance/</guid>
     <pubDate>Mon, 26 Oct 2026 18:00:00 +0000</pubDate>
     <description>SK Telecom&#x27;s first AI Governance Report gives in-house agents employee IDs and named supervisors, tracks token use and performance, and sets a 2026 to 2028 roadmap toward full lifecycle management.</description>
   </item>
   <item>
     <title>OutSystems survey: 82% trust their agent governance, 5% automate it</title>
-    <link>https://vishal-sarvade.vercel.app/blog/outsystems-agent-governance-confidence-gap/</link>
-    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/outsystems-agent-governance-confidence-gap/</guid>
+    <link>https://www.vishalkumarsarvade.com/blog/outsystems-agent-governance-confidence-gap/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/outsystems-agent-governance-confidence-gap/</guid>
     <pubDate>Sun, 25 Oct 2026 18:00:00 +0000</pubDate>
     <description>In an OutSystems, CIO Dive and KPMG survey of 858 executives, 82% said they can keep pace with governing AI agents, yet only 5% have automated controls, audit trails and formal human review points.</description>
   </item>
   <item>
     <title>AAIF takes in Agent Skills and Open Responses, now hosts 10 projects</title>
-    <link>https://vishal-sarvade.vercel.app/blog/aaif-agent-skills-open-responses-ten-projects/</link>
-    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/aaif-agent-skills-open-responses-ten-projects/</guid>
+    <link>https://www.vishalkumarsarvade.com/blog/aaif-agent-skills-open-responses-ten-projects/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/aaif-agent-skills-open-responses-ten-projects/</guid>
     <pubDate>Sat, 24 Oct 2026 18:00:00 +0000</pubDate>
     <description>The Agentic AI Foundation added four donated projects from Anthropic, OpenAI, Hugging Face and Alibaba, growing from three projects to 10 in its first year. Neutral governance is still unproven.</description>
   </item>
   <item>
     <title>Customers Bancorp: agents doubled, but hours saved are self-reported</title>
-    <link>https://vishal-sarvade.vercel.app/blog/customers-bancorp-ai-agents-measurement/</link>
-    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/customers-bancorp-ai-agents-measurement/</guid>
+    <link>https://www.vishalkumarsarvade.com/blog/customers-bancorp-ai-agents-measurement/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/customers-bancorp-ai-agents-measurement/</guid>
     <pubDate>Fri, 23 Oct 2026 18:00:00 +0000</pubDate>
     <description>Customers Bancorp reported a 95% cut in loan underwriting cycle time and 76,000 estimated hours saved. Its footnotes show the hours are self-reported and agents include custom GPTs.</description>
   </item>
   <item>
     <title>Study models 290% ROI for agents built on a governed data layer</title>
-    <link>https://vishal-sarvade.vercel.app/blog/data-layer-agent-roi-model/</link>
-    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/data-layer-agent-roi-model/</guid>
+    <link>https://www.vishalkumarsarvade.com/blog/data-layer-agent-roi-model/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/data-layer-agent-roi-model/</guid>
     <pubDate>Thu, 22 Oct 2026 18:00:00 +0000</pubDate>
     <description>A Veqtor8 study announced by Denodo models a 290% three year ROI and a 68% cut in AI operating costs when agents query a governed data layer instead of custom integrations.</description>
   </item>
   <item>
     <title>Gartner: only 13% of CIOs report significant value from AI</title>
-    <link>https://vishal-sarvade.vercel.app/blog/gartner-cios-ai-value-stopping-rules/</link>
-    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/gartner-cios-ai-value-stopping-rules/</guid>
+    <link>https://www.vishalkumarsarvade.com/blog/gartner-cios-ai-value-stopping-rules/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/gartner-cios-ai-value-stopping-rules/</guid>
     <pubDate>Wed, 21 Oct 2026 18:00:00 +0000</pubDate>
     <description>A Gartner survey of 2,002 CIOs found only 13% have realized significant or transformational value from AI, and just 17% have rules for shutting down low-value AI work already in production.</description>
   </item>
   <item>
     <title>Nylas: 54% of companies saw an AI agent error in the last 90 days</title>
-    <link>https://vishal-sarvade.vercel.app/blog/nylas-ai-agent-errors-identity-audit/</link>
-    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/nylas-ai-agent-errors-identity-audit/</guid>
+    <link>https://www.vishalkumarsarvade.com/blog/nylas-ai-agent-errors-identity-audit/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/nylas-ai-agent-errors-identity-audit/</guid>
     <pubDate>Tue, 20 Oct 2026 18:00:00 +0000</pubDate>
     <description>A Nylas survey of 1,030 US professionals found 54% had an AI agent make a mistake in the past 90 days, rising to 70% among teams running more than 20 agents.</description>
   </item>
   <item>
     <title>CERT-In: agents under test reached live systems through exposed keys</title>
-    <link>https://vishal-sarvade.vercel.app/blog/cert-in-ai-agents-exposed-credentials/</link>
-    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/cert-in-ai-agents-exposed-credentials/</guid>
+    <link>https://www.vishalkumarsarvade.com/blog/cert-in-ai-agents-exposed-credentials/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/cert-in-ai-agents-exposed-credentials/</guid>
     <pubDate>Mon, 19 Oct 2026 18:00:00 +0000</pubDate>
     <description>India&#x27;s CERT-In says AI agents under evaluation read live business records through exposed credentials, and no affected organisation noticed. Its advisory asks for logs kept at least 180 days.</description>
   </item>
   <item>
     <title>Redshift data sharing: what producer and consumer clusters really share</title>
-    <link>https://vishal-sarvade.vercel.app/blog/redshift-data-sharing-producer-consumer/</link>
-    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/redshift-data-sharing-producer-consumer/</guid>
+    <link>https://www.vishalkumarsarvade.com/blog/redshift-data-sharing-producer-consumer/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/redshift-data-sharing-producer-consumer/</guid>
     <pubDate>Sun, 18 Oct 2026 18:00:00 +0000</pubDate>
     <description>Data sharing let us retire the sync jobs between four Redshift clusters. It isolates compute well. It does not make the producer invisible, and that is the part worth planning for.</description>
   </item>

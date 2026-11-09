@@ -3,49 +3,64 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<script>try{var t=localStorage.getItem("site-theme");if(t==="classic"||t==="vibrant"||t==="playful")document.documentElement.setAttribute("data-site-theme",t)}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script>
+/* Sets the saved theme before first paint and loads only that theme's fonts. */
+(function(){var d=document,t="playful",F={classic:["https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap"],playful:["https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap"],vibrant:["https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800,900&f[]=satoshi@400,500,700&display=swap","https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap"]},L={};
+try{var s=localStorage.getItem("site-theme");if(F[s])t=s}catch(e){}
+d.documentElement.setAttribute("data-site-theme",t);
+window.__themeFonts=function(n){(F[n]||[]).forEach(function(u){if(L[u])return;L[u]=1;var l=d.createElement("link");l.rel="stylesheet";l.href=u;d.head.appendChild(l)})};
+window.__themeFonts(t)})();
+</script>
+<noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;family=Instrument+Serif:ital@0;1&amp;family=Space+Mono:wght@400;700&amp;display=swap">
+<style>@media (max-width:980px){#mobileMenu[hidden]{display:block!important;position:static;max-height:none;box-shadow:none}}.menu-btn,.theme-pick{display:none!important}</style>
+</noscript>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%2312263A%22/%3E%3Ctext x=%2216%22 y=%2221%22 font-family=%22monospace%22 font-weight=%22700%22 font-size=%2213%22 fill=%22%23F4D35E%22 text-anchor=%22middle%22%3EVS%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <title>Blog · Vishal Kumar Sarvade</title>
 <meta name="description" content="A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.">
 <meta name="author" content="Vishal Kumar Sarvade">
 <meta name="generator" content="build_blog.py">
-<link rel="canonical" href="https://vishal-sarvade.vercel.app/blog/">
+<link rel="canonical" href="https://www.vishalkumarsarvade.com/blog/">
+<meta property="og:url" content="https://www.vishalkumarsarvade.com/blog/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Vishal Kumar Sarvade">
 <meta property="og:title" content="Blog · Vishal Kumar Sarvade">
 <meta property="og:description" content="A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.">
-<meta property="og:url" content="https://vishal-sarvade.vercel.app/blog/">
-<meta property="og:image" content="https://vishal-sarvade.vercel.app/assets/vishal-headshot.jpg?v=2">
+<meta property="og:image" content="https://www.vishalkumarsarvade.com/assets/og-card.png?v=1">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog · Vishal Kumar Sarvade">
+<meta name="twitter:description" content="A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.">
+<meta name="twitter:image" content="https://www.vishalkumarsarvade.com/assets/og-card.png?v=1">
 <meta name="theme-color" content="#FFFBF2">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%230F1B2D%22/%3E%3Ctext x=%2216%22 y=%2221%22 font-family=%22monospace%22 font-size=%2213%22 fill=%22%23F8F6F1%22 text-anchor=%22middle%22%3EVS%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;family=Instrument+Serif:ital@0;1&amp;family=Space+Mono:wght@400;700&amp;display=swap">
-<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800,900&amp;display=swap">
-<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;display=swap">
-<link rel="stylesheet" href="../assets/site.css">
-<link rel="alternate" type="application/rss+xml" title="Field notes on data and AI agents" href="../blog/feed.xml">
-<style>body{margin:0}[hidden]{display:none!important}</style>
+<link rel="stylesheet" href="/assets/site.css?v=2e4858c269">
+<link rel="alternate" type="application/rss+xml" title="Field notes on data and AI agents" href="/blog/feed.xml">
 </head>
 <body>
 <span id="top"></span>
 <a class="skip" href="#main">Skip to content</a>
 <header class="nav">
   <div class="wrap nav-in">
-    <a class="brand" href="../index.html" aria-label="Vishal Kumar Sarvade, home"><span class="mark" aria-hidden="true">VS</span>Vishal Kumar Sarvade</a>
+    <a class="brand" href="/" aria-label="Vishal Kumar Sarvade, home"><span class="mark" aria-hidden="true">VS</span><span class="brand-name">Vishal Kumar Sarvade</span></a>
     <nav class="links" aria-label="Sections">
-      <a href="../index.html#work">Work</a>
-      <a href="../index.html#platform">Platform</a>
-      <a href="../index.html#ai">AI</a>
-      <a href="../blog/index.html" aria-current="true">Blog</a>
-      <a href="../index.html#experience">Experience</a>
-      <a href="../index.html#writing">Writing</a>
-      <a href="../index.html#about">About</a>
-      <a href="../index.html#contact">Contact</a>
+      <a href="/#work">Work</a>
+      <a href="/#platform">Platform</a>
+      <a href="/#ai">AI</a>
+      <a href="/blog/" aria-current="true">Blog</a>
+      <a href="/#experience">Experience</a>
+      <a href="/#writing">Writing</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
     </nav>
     <div class="nav-tools">
       <div class="theme-pick">
-        <button class="theme-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Design theme"><span class="theme-dot" aria-hidden="true"></span><span class="theme-name">Playful</span><svg class="theme-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <button class="theme-btn" type="button" title="Change the design theme" aria-haspopup="true" aria-expanded="false" aria-label="Design theme"><span class="theme-dot" aria-hidden="true"></span><span class="theme-name">Playful</span><svg class="theme-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
         <div class="theme-menu" role="menu" aria-label="Choose a design theme" hidden>
           <button type="button" role="menuitemradio" aria-checked="false" data-theme="vibrant"><span class="sw sw-vibrant" aria-hidden="true"></span>Vibrant<small>Modern · emerald and orange</small></button>
           <button type="button" role="menuitemradio" aria-checked="false" data-theme="classic"><span class="sw sw-classic" aria-hidden="true"></span>Classic<small>Editorial · navy and cobalt</small></button>
@@ -58,7 +73,7 @@
     </div>
   </div>
   <div class="wrap mobile-menu" id="mobileMenu" hidden>
-    <a href="../index.html#work">Work</a><a href="../index.html#platform">Platform</a><a href="../index.html#ai">AI</a><a href="../blog/index.html">Blog</a><a href="../index.html#experience">Experience</a><a href="../index.html#writing">Writing</a><a href="../index.html#about">About</a><a href="../index.html#contact">Contact</a>
+    <a href="/#work">Work</a><a href="/#platform">Platform</a><a href="/#ai">AI</a><a href="/blog/">Blog</a><a href="/#experience">Experience</a><a href="/#writing">Writing</a><a href="/#about">About</a><a href="/#contact">Contact</a>
   </div>
 </header>
 <main id="main">
@@ -67,16 +82,21 @@
     <div class="eyebrow">Blog</div>
     <h1 id="blog-title">Field notes on data and AI agents</h1>
     <p>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked. Written for data and engineering leaders deciding where agents belong in their stack.</p>
-    <div class="bl-foot" style="margin-top:18px"><a href="../blog/feed.xml">Subscribe with RSS</a><a href="../index.html">About Vishal Kumar Sarvade</a></div>
+    <div class="bl-foot" style="margin-top:18px"><a href="/blog/feed.xml">Subscribe with RSS</a><a href="/">About Vishal Kumar Sarvade</a></div>
   </div>
 </section>
 <section class="section" style="padding-top:8px">
   <div class="wrap">
+    <form class="bl-search" role="search" onsubmit="return false">
+      <label class="sr-only" for="blogSearch">Search posts</label>
+      <input id="blogSearch" type="search" placeholder="Search 20 posts by topic, company or tag" autocomplete="off" enterkeyhint="search">
+      <span id="blogCount" role="status">20 posts</span>
+    </form>
     <div class="bl-list">
       <article class="bl-row">
         <time datetime="2026-11-09">Nov 9, 2026</time>
         <div>
-          <h2><a href="../blog/apiiro-claude-code-settings-files-leaked-secrets/index.html">Apiiro: 1,122 public Claude Code settings files held secrets</a></h2>
+          <h2><a href="/blog/apiiro-claude-code-settings-files-leaked-secrets/">Apiiro: 1,122 public Claude Code settings files held secrets</a></h2>
           <p>Apiiro found 1,122 public copies of Claude Code&#x27;s settings.local.json holding at least one secret, 1,379 in all, saved when developers approved commands with &quot;don&#x27;t ask again&quot;.</p>
           <div class="bl-meta"><span>Security</span><span>Governance</span><span>2 min read</span><span>3 sources</span></div>
         </div>
@@ -84,7 +104,7 @@
       <article class="bl-row">
         <time datetime="2026-11-08">Nov 8, 2026</time>
         <div>
-          <h2><a href="../blog/occ-bulletin-2026-54-ai-agent-risk-tiers/index.html">OCC Bulletin 2026-54 tiers bank AI agents by consequence, not skill</a></h2>
+          <h2><a href="/blog/occ-bulletin-2026-54-ai-agent-risk-tiers/">OCC Bulletin 2026-54 tiers bank AI agents by consequence, not skill</a></h2>
           <p>The OCC&#x27;s Bulletin 2026-54 gives examiners 16 components in six pillars and four illustrative risk tiers for bank AI. An autonomous payment agent sits in the top tier however well it tests.</p>
           <div class="bl-meta"><span>Regulation</span><span>Governance</span><span>2 min read</span><span>3 sources</span></div>
         </div>
@@ -92,7 +112,7 @@
       <article class="bl-row">
         <time datetime="2026-11-07">Nov 7, 2026</time>
         <div>
-          <h2><a href="../blog/okta-agent-identity-scoped-credentials-gap/index.html">Okta: 22.4% of agent builders give each agent its own scoped identity</a></h2>
+          <h2><a href="/blog/okta-agent-identity-scoped-credentials-gap/">Okta: 22.4% of agent builders give each agent its own scoped identity</a></h2>
           <p>Okta&#x27;s 2026 Customer Identity Trends Report finds only 22.4% of organizations building agents give each one a unique identity with scoped, time-limited credentials, while 80% say AI work runs behind schedule.</p>
           <div class="bl-meta"><span>Security</span><span>Governance</span><span>Enterprise adoption</span><span>2 min read</span><span>3 sources</span></div>
         </div>
@@ -100,7 +120,7 @@
       <article class="bl-row">
         <time datetime="2026-11-06">Nov 6, 2026</time>
         <div>
-          <h2><a href="../blog/nist-ir-8621-ai-agent-incident-response-gaps/index.html">NIST IR 8621: incident response playbooks are not ready for AI agents</a></h2>
+          <h2><a href="/blog/nist-ir-8621-ai-agent-incident-response-gaps/">NIST IR 8621: incident response playbooks are not ready for AI agents</a></h2>
           <p>NIST published IR 8621 on November 2, summarizing a workshop of more than 400 participants, and plans to update SP 800-61 and form a task group on agent monitoring and containment.</p>
           <div class="bl-meta"><span>Governance</span><span>Security</span><span>Standards</span><span>2 min read</span><span>3 sources</span></div>
         </div>
@@ -108,7 +128,7 @@
       <article class="bl-row">
         <time datetime="2026-11-05">Nov 5, 2026</time>
         <div>
-          <h2><a href="../blog/capgemini-multi-agent-ai-financial-firms-orchestration-gap/index.html">Capgemini: 59% of finance firms try multi-agent AI, 10% orchestrate it</a></h2>
+          <h2><a href="/blog/capgemini-multi-agent-ai-financial-firms-orchestration-gap/">Capgemini: 59% of finance firms try multi-agent AI, 10% orchestrate it</a></h2>
           <p>In a Capgemini survey of 1,100 financial services executives, 59% are piloting or deploying multi-agent AI, but only 10% have enterprise-wide orchestration and about half cannot consistently show a return.</p>
           <div class="bl-meta"><span>Enterprise adoption</span><span>ROI</span><span>Cost</span><span>2 min read</span><span>2 sources</span></div>
         </div>
@@ -116,7 +136,7 @@
       <article class="bl-row">
         <time datetime="2026-11-04">Nov 4, 2026</time>
         <div>
-          <h2><a href="../blog/komodor-agent-fleets-guardrails-spend-visibility/index.html">Komodor: nearly 84% run 10+ ops agents, guardrails top challenge</a></h2>
+          <h2><a href="/blog/komodor-agent-fleets-guardrails-spend-visibility/">Komodor: nearly 84% run 10+ ops agents, guardrails top challenge</a></h2>
           <p>In a Komodor survey of 1,000+ engineering leaders, nearly 84% run 10 or more operational agents, 53.6% cite safe guardrails as the top challenge and 5.8% cannot say what agents cost.</p>
           <div class="bl-meta"><span>Governance</span><span>Cost</span><span>Enterprise adoption</span><span>2 min read</span><span>2 sources</span></div>
         </div>
@@ -124,7 +144,7 @@
       <article class="bl-row">
         <time datetime="2026-11-03">Nov 3, 2026</time>
         <div>
-          <h2><a href="../blog/doordash-ai-agents-several-hundred-orders/index.html">DoorDash: third-party AI agents placed only several hundred orders</a></h2>
+          <h2><a href="/blog/doordash-ai-agents-several-hundred-orders/">DoorDash: third-party AI agents placed only several hundred orders</a></h2>
           <p>DoorDash CEO Tony Xu said third-party AI agents have placed maybe several hundred orders in total, in a quarter when DoorDash reported 993 million orders, up 28% year over year.</p>
           <div class="bl-meta"><span>Enterprise adoption</span><span>Standards</span><span>2 min read</span><span>2 sources</span></div>
         </div>
@@ -132,7 +152,7 @@
       <article class="bl-row">
         <time datetime="2026-11-02">Nov 2, 2026</time>
         <div>
-          <h2><a href="../blog/hd-hyundai-robotics-agents-robot-fix-time/index.html">HD Hyundai Robotics: agents cut robot fix time from 21.5 to 7.9 days</a></h2>
+          <h2><a href="/blog/hd-hyundai-robotics-agents-robot-fix-time/">HD Hyundai Robotics: agents cut robot fix time from 21.5 to 7.9 days</a></h2>
           <p>HD Hyundai Robotics says AI agents that review robot programs before engineers refine them cut average problem resolution from 21.5 days to 7.9 days since August. The baseline and case count are not public.</p>
           <div class="bl-meta"><span>Case study</span><span>ROI</span><span>Workforce</span><span>2 min read</span><span>3 sources</span></div>
         </div>
@@ -140,7 +160,7 @@
       <article class="bl-row">
         <time datetime="2026-11-01">Nov 1, 2026</time>
         <div>
-          <h2><a href="../blog/boe-fca-survey-ai-agents-autonomy-monitoring/index.html">UK regulators: 80% of finance firms run agents, 2% with broad autonomy</a></h2>
+          <h2><a href="/blog/boe-fca-survey-ai-agents-autonomy-monitoring/">UK regulators: 80% of finance firms run agents, 2% with broad autonomy</a></h2>
           <p>The Bank of England and FCA found 80% of fully surveyed UK financial firms have AI agents deployed, but only 2% give them broad autonomy and about half monitor them after launch.</p>
           <div class="bl-meta"><span>Regulation</span><span>Governance</span><span>Enterprise adoption</span><span>2 min read</span><span>2 sources</span></div>
         </div>
@@ -148,7 +168,7 @@
       <article class="bl-row">
         <time datetime="2026-10-28">Oct 28, 2026</time>
         <div>
-          <h2><a href="../blog/mckinsey-agent-cost-human-oversight-kyc/index.html">McKinsey: oversight was 70 to 75% of a bank agent&#x27;s run costs</a></h2>
+          <h2><a href="/blog/mckinsey-agent-cost-human-oversight-kyc/">McKinsey: oversight was 70 to 75% of a bank agent&#x27;s run costs</a></h2>
           <p>McKinsey&#x27;s review of agentic AI in financial-crime work finds tokens are 20 to 25 percent of variable run costs in one banking task, while human oversight is 70 to 75 percent.</p>
           <div class="bl-meta"><span>Cost</span><span>Enterprise adoption</span><span>2 min read</span><span>2 sources</span></div>
         </div>
@@ -156,7 +176,7 @@
       <article class="bl-row">
         <time datetime="2026-10-27">Oct 27, 2026</time>
         <div>
-          <h2><a href="../blog/arrakis-dormant-ai-agents-live-credentials/index.html">Arrakis: 76% of AI agents sat idle 60 days with credentials still live</a></h2>
+          <h2><a href="/blog/arrakis-dormant-ai-agents-live-credentials/">Arrakis: 76% of AI agents sat idle 60 days with credentials still live</a></h2>
           <p>Arrakis Security telemetry from thousands of production agents found 76% had not run in 60 days while their credentials still worked, and 82% carried at least one exposure.</p>
           <div class="bl-meta"><span>Security</span><span>Governance</span><span>2 min read</span><span>2 sources</span></div>
         </div>
@@ -164,7 +184,7 @@
       <article class="bl-row">
         <time datetime="2026-10-26">Oct 26, 2026</time>
         <div>
-          <h2><a href="../blog/sk-telecom-ai-agents-employee-ids-governance/index.html">SK Telecom gives AI agents employee IDs, owners and a retirement path</a></h2>
+          <h2><a href="/blog/sk-telecom-ai-agents-employee-ids-governance/">SK Telecom gives AI agents employee IDs, owners and a retirement path</a></h2>
           <p>SK Telecom&#x27;s first AI Governance Report gives in-house agents employee IDs and named supervisors, tracks token use and performance, and sets a 2026 to 2028 roadmap toward full lifecycle management.</p>
           <div class="bl-meta"><span>Governance</span><span>Workforce</span><span>Case study</span><span>2 min read</span><span>3 sources</span></div>
         </div>
@@ -172,7 +192,7 @@
       <article class="bl-row">
         <time datetime="2026-10-25">Oct 25, 2026</time>
         <div>
-          <h2><a href="../blog/outsystems-agent-governance-confidence-gap/index.html">OutSystems survey: 82% trust their agent governance, 5% automate it</a></h2>
+          <h2><a href="/blog/outsystems-agent-governance-confidence-gap/">OutSystems survey: 82% trust their agent governance, 5% automate it</a></h2>
           <p>In an OutSystems, CIO Dive and KPMG survey of 858 executives, 82% said they can keep pace with governing AI agents, yet only 5% have automated controls, audit trails and formal human review points.</p>
           <div class="bl-meta"><span>Governance</span><span>Enterprise adoption</span><span>2 min read</span><span>3 sources</span></div>
         </div>
@@ -180,7 +200,7 @@
       <article class="bl-row">
         <time datetime="2026-10-24">Oct 24, 2026</time>
         <div>
-          <h2><a href="../blog/aaif-agent-skills-open-responses-ten-projects/index.html">AAIF takes in Agent Skills and Open Responses, now hosts 10 projects</a></h2>
+          <h2><a href="/blog/aaif-agent-skills-open-responses-ten-projects/">AAIF takes in Agent Skills and Open Responses, now hosts 10 projects</a></h2>
           <p>The Agentic AI Foundation added four donated projects from Anthropic, OpenAI, Hugging Face and Alibaba, growing from three projects to 10 in its first year. Neutral governance is still unproven.</p>
           <div class="bl-meta"><span>Standards</span><span>Governance</span><span>2 min read</span><span>3 sources</span></div>
         </div>
@@ -188,7 +208,7 @@
       <article class="bl-row">
         <time datetime="2026-10-23">Oct 23, 2026</time>
         <div>
-          <h2><a href="../blog/customers-bancorp-ai-agents-measurement/index.html">Customers Bancorp: agents doubled, but hours saved are self-reported</a></h2>
+          <h2><a href="/blog/customers-bancorp-ai-agents-measurement/">Customers Bancorp: agents doubled, but hours saved are self-reported</a></h2>
           <p>Customers Bancorp reported a 95% cut in loan underwriting cycle time and 76,000 estimated hours saved. Its footnotes show the hours are self-reported and agents include custom GPTs.</p>
           <div class="bl-meta"><span>Case study</span><span>ROI</span><span>2 min read</span><span>3 sources</span></div>
         </div>
@@ -196,7 +216,7 @@
       <article class="bl-row">
         <time datetime="2026-10-22">Oct 22, 2026</time>
         <div>
-          <h2><a href="../blog/data-layer-agent-roi-model/index.html">Study models 290% ROI for agents built on a governed data layer</a></h2>
+          <h2><a href="/blog/data-layer-agent-roi-model/">Study models 290% ROI for agents built on a governed data layer</a></h2>
           <p>A Veqtor8 study announced by Denodo models a 290% three year ROI and a 68% cut in AI operating costs when agents query a governed data layer instead of custom integrations.</p>
           <div class="bl-meta"><span>Data readiness</span><span>ROI</span><span>Cost</span><span>2 min read</span><span>3 sources</span></div>
         </div>
@@ -204,7 +224,7 @@
       <article class="bl-row">
         <time datetime="2026-10-21">Oct 21, 2026</time>
         <div>
-          <h2><a href="../blog/gartner-cios-ai-value-stopping-rules/index.html">Gartner: only 13% of CIOs report significant value from AI</a></h2>
+          <h2><a href="/blog/gartner-cios-ai-value-stopping-rules/">Gartner: only 13% of CIOs report significant value from AI</a></h2>
           <p>A Gartner survey of 2,002 CIOs found only 13% have realized significant or transformational value from AI, and just 17% have rules for shutting down low-value AI work already in production.</p>
           <div class="bl-meta"><span>ROI</span><span>Cost</span><span>Enterprise adoption</span><span>2 min read</span><span>3 sources</span></div>
         </div>
@@ -212,7 +232,7 @@
       <article class="bl-row">
         <time datetime="2026-10-20">Oct 20, 2026</time>
         <div>
-          <h2><a href="../blog/nylas-ai-agent-errors-identity-audit/index.html">Nylas: 54% of companies saw an AI agent error in the last 90 days</a></h2>
+          <h2><a href="/blog/nylas-ai-agent-errors-identity-audit/">Nylas: 54% of companies saw an AI agent error in the last 90 days</a></h2>
           <p>A Nylas survey of 1,030 US professionals found 54% had an AI agent make a mistake in the past 90 days, rising to 70% among teams running more than 20 agents.</p>
           <div class="bl-meta"><span>Governance</span><span>Enterprise adoption</span><span>2 min read</span><span>3 sources</span></div>
         </div>
@@ -220,7 +240,7 @@
       <article class="bl-row">
         <time datetime="2026-10-19">Oct 19, 2026</time>
         <div>
-          <h2><a href="../blog/cert-in-ai-agents-exposed-credentials/index.html">CERT-In: agents under test reached live systems through exposed keys</a></h2>
+          <h2><a href="/blog/cert-in-ai-agents-exposed-credentials/">CERT-In: agents under test reached live systems through exposed keys</a></h2>
           <p>India&#x27;s CERT-In says AI agents under evaluation read live business records through exposed credentials, and no affected organisation noticed. Its advisory asks for logs kept at least 180 days.</p>
           <div class="bl-meta"><span>Security</span><span>Governance</span><span>2 min read</span><span>3 sources</span></div>
         </div>
@@ -228,25 +248,22 @@
       <article class="bl-row">
         <time datetime="2026-10-18">Oct 18, 2026</time>
         <div>
-          <h2><a href="../blog/redshift-data-sharing-producer-consumer/index.html">Redshift data sharing: what producer and consumer clusters really share</a></h2>
+          <h2><a href="/blog/redshift-data-sharing-producer-consumer/">Redshift data sharing: what producer and consumer clusters really share</a></h2>
           <p>Data sharing let us retire the sync jobs between four Redshift clusters. It isolates compute well. It does not make the producer invisible, and that is the part worth planning for.</p>
           <div class="bl-meta"><span>Amazon Redshift</span><span>Data architecture</span><span>4 min read</span><span>4 sources</span></div>
         </div>
       </article>
     </div>
+    <p class="bl-none" id="blogNone" hidden>No posts match that search.</p>
   </div>
 </section>
 </main>
 <footer>
   <div class="wrap foot">
     <span>© 2026 Vishal Kumar Sarvade · Building data platforms since 2014</span>
-    <span><a href="../blog/feed.xml">RSS</a> · <a href="#top">Back to top</a></span>
+    <span><a href="/blog/feed.xml">RSS</a> · <a href="#top">Back to top</a></span>
   </div>
 </footer>
-<script>
-(function(){var b=document.getElementById('menuBtn'),m=document.getElementById('mobileMenu');
-b.addEventListener('click',function(){var o=m.hidden;m.hidden=!o;b.setAttribute('aria-expanded',String(o));b.setAttribute('aria-label',o?'Close menu':'Open menu');});})();
-</script>
-<script src="../assets/theme.js?v=3" defer></script>
+<script src="/assets/theme.js?v=e1292c1ff2" defer></script>
 </body>
 </html>

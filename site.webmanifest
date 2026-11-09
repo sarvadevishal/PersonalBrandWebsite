@@ -1,0 +1,13 @@
+{
+  "name": "Vishal Kumar Sarvade",
+  "short_name": "Vishal S.",
+  "description": "Technical Architect. Data platforms on Amazon Redshift and applied AI.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#FFFBF2",
+  "theme_color": "#FFFBF2",
+  "icons": [
+    { "src": "/assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

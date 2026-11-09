@@ -1,19 +1,25 @@
 #!/usr/bin/env python3
-"""Build the blog for vishal-sarvade.vercel.app.
+"""Build the blog for www.vishalkumarsarvade.com.
 
 Reads content/posts/*.json and writes:
   blog/index.html            list of every post
   blog/<slug>/index.html     one page per post
   blog/feed.xml              RSS feed
-  sitemap.xml                home, blog and every post
-  assets/site.css            the <style> block from index.html, shared by blog pages
-and refreshes the three latest posts on the homepage between
-<!--BLOG:START--> and <!--BLOG:END--> in index.html.
+  sitemap.xml, robots.txt    home, blog and every post
+  404.html                   not-found page with the site navigation
+and refreshes, in index.html, the three latest posts between
+<!--BLOG:START--> and <!--BLOG:END--> plus the ?v= cache keys on
+/assets/site.css and /assets/theme.js.
+
+assets/site.css is the single stylesheet for every page. Edit it directly.
+The theme and font loader in <head> is copied from index.html (between the
+THEME-HEAD and ICONS markers), so the homepage is the source of truth for it.
 
 Standard library only. Run from anywhere:  python3 scripts/build_blog.py
 Use --check to validate posts without writing anything.
 """
 import datetime as dt
+import hashlib
 import html
 import json
 import math
@@ -25,7 +31,8 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 POSTS_DIR = ROOT / "content" / "posts"
 BLOG_DIR = ROOT / "blog"
-SITE_URL = "https://vishal-sarvade.vercel.app"
+SITE_URL = "https://www.vishalkumarsarvade.com"
+OG_IMAGE = SITE_URL + "/assets/og-card.png?v=1"
 AUTHOR = "Vishal Kumar Sarvade"
 BLOG_TITLE = "Field notes on data and AI agents"
 BLOG_DESC = ("A short daily note on how companies are putting AI agents to work, plus longer "
@@ -154,13 +161,19 @@ def tags_html(p):
 
 
 def head_bits(index_html):
-    icon = re.search(r'<link rel="icon"[^>]*>', index_html)
-    fonts = re.findall(r'<link rel="stylesheet" href="https://fonts\.googleapis\.com[^>]*>', index_html)
-    share = re.findall(r'<link rel="stylesheet" href="https://api\.fontshare\.com[^>]*>', index_html)
-    links = "\n".join(fonts)
-    if share:
-        links += '\n<link rel="preconnect" href="https://api.fontshare.com" crossorigin>\n' + "\n".join(share)
-    return (icon.group(0) if icon else ""), links
+    """Theme and font loader plus icon links, copied verbatim from the homepage head."""
+    out = []
+    for name in ("THEME-HEAD", "ICONS"):
+        m = re.search(rf"<!--{name}:START-->\n(.*?)<!--{name}:END-->", index_html, re.S)
+        if not m:
+            raise PostError(f"index.html: {name} markers missing from <head>")
+        out.append(m.group(1).rstrip("\n"))
+    return out[0], out[1]
+
+
+def asset_version(rel):
+    """Short content hash, used as the ?v= cache key so long-lived caching stays safe."""
+    return hashlib.sha1((ROOT / rel).read_bytes()).hexdigest()[:10]
 
 
 NAV_LINKS = [("/#work", "Work"), ("/#platform", "Platform"), ("/#ai", "AI"), ("/blog/", "Blog"),
@@ -174,13 +187,13 @@ def nav_html():
     return f'''<a class="skip" href="#main">Skip to content</a>
 <header class="nav">
   <div class="wrap nav-in">
-    <a class="brand" href="/" aria-label="{AUTHOR}, home"><span class="mark" aria-hidden="true">VS</span>{AUTHOR}</a>
+    <a class="brand" href="/" aria-label="{AUTHOR}, home"><span class="mark" aria-hidden="true">VS</span><span class="brand-name">{AUTHOR}</span></a>
     <nav class="links" aria-label="Sections">
 {desk}
     </nav>
     <div class="nav-tools">
       <div class="theme-pick">
-        <button class="theme-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Design theme"><span class="theme-dot" aria-hidden="true"></span><span class="theme-name">Playful</span><svg class="theme-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <button class="theme-btn" type="button" title="Change the design theme" aria-haspopup="true" aria-expanded="false" aria-label="Design theme"><span class="theme-dot" aria-hidden="true"></span><span class="theme-name">Playful</span><svg class="theme-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
         <div class="theme-menu" role="menu" aria-label="Choose a design theme" hidden>
           <button type="button" role="menuitemradio" aria-checked="false" data-theme="vibrant"><span class="sw sw-vibrant" aria-hidden="true"></span>Vibrant<small>Modern · emerald and orange</small></button>
           <button type="button" role="menuitemradio" aria-checked="false" data-theme="classic"><span class="sw sw-classic" aria-hidden="true"></span>Classic<small>Editorial · navy and cobalt</small></button>
@@ -198,70 +211,63 @@ def nav_html():
 </header>'''
 
 
-FOOTER = f'''<footer>
+def footer_html(js_v):
+    return f'''<footer>
   <div class="wrap foot">
     <span>© {dt.date.today().year} {AUTHOR} · Building data platforms since 2014</span>
     <span><a href="/blog/feed.xml">RSS</a> · <a href="#top">Back to top</a></span>
   </div>
 </footer>
-<script>
-(function(){{var b=document.getElementById('menuBtn'),m=document.getElementById('mobileMenu');
-b.addEventListener('click',function(){{var o=m.hidden;m.hidden=!o;b.setAttribute('aria-expanded',String(o));b.setAttribute('aria-label',o?'Close menu':'Open menu');}});}})();
-</script>
-<script src="/assets/theme.js?v=3" defer></script>'''
+<script src="/assets/theme.js?v={js_v}" defer></script>'''
 
 
-def page(title, description, canonical_path, body, icon, fonts, og_type="website", extra_head=""):
-    url = SITE_URL + canonical_path
+def page(title, description, canonical_path, body, head, og_type="website", extra_head=""):
+    """canonical_path None means the page has no canonical URL and is kept out of search (404)."""
+    theme_head, icons, css_v, js_v = head
+    if canonical_path is None:
+        url_tags = '<meta name="robots" content="noindex">'
+    else:
+        url = SITE_URL + canonical_path
+        url_tags = f'''<link rel="canonical" href="{url}">
+<meta property="og:url" content="{url}">'''
     return f'''<!doctype html>
 <html lang="en" data-site-theme="playful">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<script>try{{var t=localStorage.getItem("site-theme");if(t==="classic"||t==="vibrant"||t==="playful")document.documentElement.setAttribute("data-site-theme",t)}}catch(e){{}}</script>
+{theme_head}
+{icons}
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(description)}">
 <meta name="author" content="{AUTHOR}">
 {GENERATOR}
-<link rel="canonical" href="{url}">
+{url_tags}
 <meta property="og:type" content="{og_type}">
+<meta property="og:site_name" content="{AUTHOR}">
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(description)}">
-<meta property="og:url" content="{url}">
-<meta property="og:image" content="{SITE_URL}/assets/vishal-headshot.jpg?v=2">
+<meta property="og:image" content="{OG_IMAGE}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{esc(title)}">
+<meta name="twitter:description" content="{esc(description)}">
+<meta name="twitter:image" content="{OG_IMAGE}">
 <meta name="theme-color" content="#FFFBF2">
-{icon}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-{fonts}
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css?v={css_v}">
 <link rel="alternate" type="application/rss+xml" title="{esc(BLOG_TITLE)}" href="/blog/feed.xml">
-{extra_head}<style>body{{margin:0}}[hidden]{{display:none!important}}</style>
-</head>
+{extra_head}</head>
 <body>
 <span id="top"></span>
 {nav_html()}
 <main id="main">
 {body}
 </main>
-{FOOTER}
+{footer_html(js_v)}
 </body>
 </html>
 '''
 
-
-
-
-def relativize(text, prefix):
-    """Turn root-relative links into relative ones ending in index.html, so pages
-    work from a local folder (file://) as well as on Vercel."""
-    def fix(m):
-        attr, path = m.group(1), m.group(2)
-        base, sep, frag = path.partition("#")
-        if base == "" or base.endswith("/"):
-            base += "index.html"
-        return f'{attr}="{prefix}{base}{sep}{frag}"'
-    return re.sub(r'(href|src)="/(?!/)([^"]*)"', fix, text)
 
 # ---------- renderers ----------
 
@@ -282,7 +288,7 @@ def home_block(posts):
     return '    <div class="bl-grid">\n' + "\n".join(card_html(p) for p in posts[:3]) + "\n    </div>"
 
 
-def index_page(posts, icon, fonts):
+def index_page(posts, head):
     if posts:
         rows = "\n".join(f'''      <article class="bl-row">
         <time datetime="{p["date"]}">{nice_date(p["date"])}</time>
@@ -292,7 +298,15 @@ def index_page(posts, icon, fonts):
           <div class="bl-meta">{"".join(f"<span>{esc(t)}</span>" for t in p["tags"])}<span>{read_minutes(p)} min read</span><span>{len(p["sources"])} sources</span></div>
         </div>
       </article>''' for p in posts)
-        listing = f'    <div class="bl-list">\n{rows}\n    </div>'
+        listing = f'''    <form class="bl-search" role="search" onsubmit="return false">
+      <label class="sr-only" for="blogSearch">Search posts</label>
+      <input id="blogSearch" type="search" placeholder="Search {len(posts)} posts by topic, company or tag" autocomplete="off" enterkeyhint="search">
+      <span id="blogCount" role="status">{len(posts)} posts</span>
+    </form>
+    <div class="bl-list">
+{rows}
+    </div>
+    <p class="bl-none" id="blogNone" hidden>No posts match that search.</p>'''
     else:
         listing = '    <div class="bl-empty">The first note lands soon.</div>'
     body = f'''<section class="page-head" aria-labelledby="blog-title">
@@ -308,10 +322,10 @@ def index_page(posts, icon, fonts):
 {listing}
   </div>
 </section>'''
-    return page(f"Blog · {AUTHOR}", BLOG_DESC, "/blog/", body, icon, fonts)
+    return page(f"Blog · {AUTHOR}", BLOG_DESC, "/blog/", body, head)
 
 
-def post_page(p, newer, older, icon, fonts):
+def post_page(p, newer, older, head):
     srcs = "\n".join(
         f'''        <li id="src-{i}"><b>{esc(s["publisher"])}</b>{(" · " + nice_date(s["date"])) if s.get("date") else ""}<br><a href="{esc(s["url"])}" target="_blank" rel="noopener">{esc(s["title"])}</a></li>'''
         for i, s in enumerate(p["sources"], 1))
@@ -320,7 +334,7 @@ def post_page(p, newer, older, icon, fonts):
             return f"        <p>{para_html(x)}</p>"
         if "h2" in x:
             return f"        <h2>{esc(x['h2'])}</h2>"
-        return f'        <pre class="post-code"><code>{esc(x["code"])}</code></pre>'
+        return f'        <pre class="post-code"><code>{esc(x["code"])}</code></pre>\n        <p class="scroll-hint" aria-hidden="true">Swipe sideways to read the full block →</p>'
     paras = "\n".join(block_html(x) for x in p["body"])
     nav_bits = []
     if older:
@@ -334,6 +348,7 @@ def post_page(p, newer, older, icon, fonts):
         "headline": p["title"], "description": p["summary"],
         "datePublished": p["date"], "dateModified": p["date"],
         "author": {"@type": "Person", "name": AUTHOR, "url": SITE_URL + "/"},
+        "image": OG_IMAGE,
         "mainEntityOfPage": f"{SITE_URL}/blog/{p['slug']}/",
         "keywords": ", ".join(p["tags"]),
         "citation": [s["url"] for s in p["sources"]],
@@ -356,7 +371,7 @@ def post_page(p, newer, older, icon, fonts):
         </ol>
       </section>
       <aside class="author" aria-label="About the author">
-        <img src="/assets/vishal-headshot.jpg?v=2" width="64" height="64" alt="">
+        <img src="/assets/vishal-headshot-160.jpg?v=3" width="64" height="64" alt="" loading="lazy" decoding="async">
         <p><b>{AUTHOR}</b> is a Technical Architect in the San Francisco Bay Area with 12+ years building cloud data platforms on Amazon Redshift. <a href="/">More about him</a> · <a href="https://www.linkedin.com/in/vishalkumarsarvade/" target="_blank" rel="noopener">LinkedIn</a></p>
       </aside>
       <nav class="post-nav" aria-label="More posts">{"".join(nav_bits)}</nav>
@@ -364,7 +379,19 @@ def post_page(p, newer, older, icon, fonts):
     </article>
   </div>
 </section>'''
-    return page(f"{p['title']} · {AUTHOR}", p["summary"], f"/blog/{p['slug']}/", body, icon, fonts, "article", extra)
+    return page(f"{p['title']} · {AUTHOR}", p["summary"], f"/blog/{p['slug']}/", body, head, "article", extra)
+
+
+def not_found_page(head):
+    body = f'''<section class="nf" aria-labelledby="nf-title">
+  <div class="wrap">
+    <div class="eyebrow">404</div>
+    <h1 id="nf-title">That page is not here</h1>
+    <p>The link may be old or mistyped. The homepage and the blog are both a tap away.</p>
+    <div class="cta-row"><a class="btn btn-primary" href="/">Go to the homepage</a><a class="btn btn-line" href="/blog/">Read the blog</a></div>
+  </div>
+</section>'''
+    return page(f"Page not found · {AUTHOR}", "This page does not exist.", None, body, head)
 
 
 def rss(posts):
@@ -415,12 +442,10 @@ def main():
 
     index_path = ROOT / "index.html"
     index_html = index_path.read_text(encoding="utf-8")
-    style = re.search(r"<style>\n?(.*?)</style>", index_html, re.S)
-    if not style:
-        print("Build failed: no <style> block in index.html", file=sys.stderr)
+    if not (ROOT / "assets" / "site.css").exists():
+        print("Build failed: assets/site.css is missing", file=sys.stderr)
         return 1
-    (ROOT / "assets").mkdir(exist_ok=True)
-    (ROOT / "assets" / "site.css").write_text(style.group(1), encoding="utf-8")
+    css_v, js_v = asset_version("assets/site.css"), asset_version("assets/theme.js")
 
     start, end = "<!--BLOG:START-->", "<!--BLOG:END-->"
     if start not in index_html or end not in index_html:
@@ -428,22 +453,34 @@ def main():
         return 1
     a, rest = index_html.split(start, 1)
     _, b = rest.split(end, 1)
-    index_html = relativize(a + start + "\n" + home_block(posts) + "\n" + end + b, "")
+    index_html = a + start + "\n" + home_block(posts) + "\n" + end + b
+    index_html, n1 = re.subn(r'(/assets/site\.css\?v=)[0-9a-f]+', r"\g<1>" + css_v, index_html)
+    index_html, n2 = re.subn(r'(/assets/theme\.js\?v=)[0-9a-f]+', r"\g<1>" + js_v, index_html)
+    if n1 != 1 or n2 != 1:
+        print("Build failed: index.html must link /assets/site.css?v= and /assets/theme.js?v= exactly once each", file=sys.stderr)
+        return 1
     index_path.write_text(index_html, encoding="utf-8")
 
-    icon, fonts = head_bits(index_html)
+    try:
+        theme_head, icons = head_bits(index_html)
+    except PostError as e:
+        print(f"Build failed: {e}", file=sys.stderr)
+        return 1
+    head = (theme_head, icons, css_v, js_v)
     BLOG_DIR.mkdir(exist_ok=True)
     live = {p["slug"] for p in posts}
     for d in BLOG_DIR.iterdir():
         if d.is_dir() and d.name not in live and (d / "index.html").exists() and GENERATOR in (d / "index.html").read_text(encoding="utf-8"):
             shutil.rmtree(d)
-    (BLOG_DIR / "index.html").write_text(relativize(index_page(posts, icon, fonts), "../"), encoding="utf-8")
+    (BLOG_DIR / "index.html").write_text(index_page(posts, head), encoding="utf-8")
     for i, p in enumerate(posts):
         newer = posts[i - 1] if i > 0 else None
         older = posts[i + 1] if i + 1 < len(posts) else None
         out = BLOG_DIR / p["slug"]
         out.mkdir(exist_ok=True)
-        (out / "index.html").write_text(relativize(post_page(p, newer, older, icon, fonts), "../../"), encoding="utf-8")
+        (out / "index.html").write_text(post_page(p, newer, older, head), encoding="utf-8")
+    (ROOT / "404.html").write_text(not_found_page(head), encoding="utf-8")
+    (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n", encoding="utf-8")
     (BLOG_DIR / "feed.xml").write_text(rss(posts), encoding="utf-8")
     (ROOT / "sitemap.xml").write_text(sitemap(posts), encoding="utf-8")
     print(f"Built {len(posts)} posts. Latest: {posts[0]['date']} {posts[0]['title']!r}" if posts else "Built 0 posts.")
