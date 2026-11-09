@@ -72,7 +72,7 @@
     doc.addEventListener("keydown", function (e) { if (e.key === "Escape" && !menu.hidden) { setMenu(false); btn.focus(); } });
     doc.addEventListener("click", function (e) { if (!menu.hidden && !menu.contains(e.target) && !btn.contains(e.target)) setMenu(false); });
     if (window.matchMedia) {
-      var wide = matchMedia("(min-width:981px)"), onWide = function () { if (wide.matches && !menu.hidden) setMenu(false); };
+      var wide = matchMedia("(min-width:1101px)"), onWide = function () { if (wide.matches && !menu.hidden) setMenu(false); };
       if (wide.addEventListener) wide.addEventListener("change", onWide); else if (wide.addListener) wide.addListener(onWide);
     }
   }

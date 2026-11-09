@@ -6,7 +6,7 @@
   <atom:link href="https://www.vishalkumarsarvade.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 09 Nov 2026 23:05:52 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 09 Nov 2026 23:09:56 +0000</lastBuildDate>
   <item>
     <title>Apiiro: 1,122 public Claude Code settings files held secrets</title>
     <link>https://www.vishalkumarsarvade.com/blog/apiiro-claude-code-settings-files-leaked-secrets/</link>
