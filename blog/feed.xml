@@ -6,7 +6,14 @@
   <atom:link href="https://vishal-sarvade.vercel.app/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Sun, 08 Nov 2026 18:51:20 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 09 Nov 2026 18:52:23 +0000</lastBuildDate>
+  <item>
+    <title>Apiiro: 1,122 public Claude Code settings files held secrets</title>
+    <link>https://vishal-sarvade.vercel.app/blog/apiiro-claude-code-settings-files-leaked-secrets/</link>
+    <guid isPermaLink="true">https://vishal-sarvade.vercel.app/blog/apiiro-claude-code-settings-files-leaked-secrets/</guid>
+    <pubDate>Mon, 09 Nov 2026 18:00:00 +0000</pubDate>
+    <description>Apiiro found 1,122 public copies of Claude Code&#x27;s settings.local.json holding at least one secret, 1,379 in all, saved when developers approved commands with &quot;don&#x27;t ask again&quot;.</description>
+  </item>
   <item>
     <title>OCC Bulletin 2026-54 tiers bank AI agents by consequence, not skill</title>
     <link>https://vishal-sarvade.vercel.app/blog/occ-bulletin-2026-54-ai-agent-risk-tiers/</link>
