@@ -6,7 +6,7 @@
   <atom:link href="https://www.vishalkumarsarvade.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 10 Nov 2026 18:55:34 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 10 Nov 2026 18:55:44 +0000</lastBuildDate>
   <item>
     <title>Gravitee: only 6% can revoke a rogue AI agent&#x27;s access within an hour</title>
     <link>https://www.vishalkumarsarvade.com/blog/gravitee-ai-agent-accountability-revoke-within-hour/</link>
