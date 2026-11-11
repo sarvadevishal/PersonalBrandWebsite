@@ -6,7 +6,14 @@
   <atom:link href="https://www.vishalkumarsarvade.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 10 Nov 2026 18:55:44 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 11 Nov 2026 18:54:23 +0000</lastBuildDate>
+  <item>
+    <title>TCS: 84% see AI productivity gains, only 10% let agents act alone</title>
+    <link>https://www.vishalkumarsarvade.com/blog/tcs-ai-productivity-gains-agent-autonomy-gap/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/tcs-ai-productivity-gains-agent-autonomy-gap/</guid>
+    <pubDate>Wed, 11 Nov 2026 18:00:00 +0000</pubDate>
+    <description>A TCS survey of 1,333 leaders found 84% rank productivity as AI&#x27;s top benefit, yet only 10% let agents make decisions without human approval across functions.</description>
+  </item>
   <item>
     <title>Gravitee: only 6% can revoke a rogue AI agent&#x27;s access within an hour</title>
     <link>https://www.vishalkumarsarvade.com/blog/gravitee-ai-agent-accountability-revoke-within-hour/</link>

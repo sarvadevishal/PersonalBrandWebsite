@@ -1,0 +1,19 @@
+{
+  "slug": "tcs-ai-productivity-gains-agent-autonomy-gap",
+  "date": "2026-11-11",
+  "title": "TCS: 84% see AI productivity gains, only 10% let agents act alone",
+  "summary": "A TCS survey of 1,333 leaders found 84% rank productivity as AI's top benefit, yet only 10% let agents make decisions without human approval across functions.",
+  "tags": ["Enterprise adoption", "Data readiness", "Cost"],
+  "body": [
+    "On November 4, Tata Consultancy Services released its Enterprise AI Study, a survey of 1,333 senior business and technology leaders across 25 countries and 12 industries [1]. Productivity was the clear payoff: 84% ranked it as the leading source of value from AI investments [1]. Autonomy did not follow. Only 10% of enterprises let AI agents execute decisions without human approval across multiple functions, and 9% report agents that can securely orchestrate workflows across enterprise applications [1]. TCS sells AI services, so read its framing with care, though the gaps it measures are specific.",
+    "Analytics India Magazine's coverage adds that respondents work at organizations with revenue from $500 million to more than $20 billion [2]. Two findings matter most for agents. 39% of enterprises are still assessing whether AI initiatives generate enough value relative to token and compute costs, and 44% say important business knowledge stays with employees or in fragmented documentation [2]. The Daily Tribune's report on the study also notes that leaders saying it is too early to judge AI's effect on jobs rose from 4% in 2024 to 19% in 2026 [3].",
+    "Read together, the numbers suggest most measured gains come from work where a person still approves the output. Moving past that needs a cost case that holds up per task and knowledge an agent can actually read. An agent cannot act on context that lives in someone's head.",
+    "Both gaps land on data teams. The knowledge finding is a data readiness problem: definitions, business rules and exceptions that never reached a catalog or a documented model. Before an agent is trusted to act, the tables it reads need named owners, documented meaning and quality checks it can see. The cost finding is an observability problem. If agent queries and model calls are not tagged by agent and use case, nobody can tie token and warehouse spend to the outcome it produced, and the value question stays open.",
+    "One step this week: pick one agent workflow that still needs human approval. List the rules the approver applies, check which ones are written down in your catalog or semantic layer, and add query tags so its compute cost shows up per run. The missing rules are your gap to autonomy."
+  ],
+  "sources": [
+    {"title": "TCS Enterprise AI Study: 84% say productivity is AI's top benefit; just 10% let AI act without human oversight", "publisher": "Tata Consultancy Services", "date": "2026-11-04", "url": "https://www.tcs.com/who-we-are/newsroom/press-release/productivity-top-benefit-tcs-enterprise-ai-study"},
+    {"title": "84% See AI Productivity Gains, but Only 10% Allow Agent Autonomy: TCS Study", "publisher": "Analytics India Magazine", "date": "2026-11-04", "url": "https://analyticsindiamag.com/ai-news/84-see-ai-productivity-gains-but-only-10-allow-agent-autonomy-tcs-study"},
+    {"title": "84% see productivity gains, but few trust autonomy", "publisher": "Daily Tribune", "date": "2026-11-11", "url": "https://tribune.net.ph/2026/11/10/84-see-productivity-gains-but-few-trust-autonomy"}
+  ]
+}
