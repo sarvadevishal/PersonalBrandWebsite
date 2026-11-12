@@ -6,7 +6,14 @@
   <atom:link href="https://www.vishalkumarsarvade.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 11 Nov 2026 18:54:23 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 12 Nov 2026 18:49:06 +0000</lastBuildDate>
+  <item>
+    <title>Genpact: 79% run AI agents in production, 15% tie AI spend to P&amp;L</title>
+    <link>https://www.vishalkumarsarvade.com/blog/genpact-79-percent-agents-production-15-percent-pl/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/genpact-79-percent-agents-production-15-percent-pl/</guid>
+    <pubDate>Thu, 12 Nov 2026 18:00:00 +0000</pubDate>
+    <description>A Genpact survey of more than 2,000 executives found 79% have AI agents in production, but only 20% use them broadly and just 15% have fully tied AI investment to P&amp;L outcomes.</description>
+  </item>
   <item>
     <title>TCS: 84% see AI productivity gains, only 10% let agents act alone</title>
     <link>https://www.vishalkumarsarvade.com/blog/tcs-ai-productivity-gains-agent-autonomy-gap/</link>
