@@ -6,7 +6,14 @@
   <atom:link href="https://www.vishalkumarsarvade.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 12 Nov 2026 18:49:06 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 13 Nov 2026 18:49:02 +0000</lastBuildDate>
+  <item>
+    <title>Microsoft 365 outage: email agents face a 48-hour backlog replay</title>
+    <link>https://www.vishalkumarsarvade.com/blog/microsoft-365-outage-agents-delayed-email-replay/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/microsoft-365-outage-agents-delayed-email-replay/</guid>
+    <pubDate>Fri, 13 Nov 2026 18:00:00 +0000</pubDate>
+    <description>Exchange Online failed on November 12 and Outlook reports peaked near 140,000, per CX Today. Microsoft held delayed mail for 48 hours, so agents that act on email may now process requests people already handled.</description>
+  </item>
   <item>
     <title>Genpact: 79% run AI agents in production, 15% tie AI spend to P&amp;L</title>
     <link>https://www.vishalkumarsarvade.com/blog/genpact-79-percent-agents-production-15-percent-pl/</link>

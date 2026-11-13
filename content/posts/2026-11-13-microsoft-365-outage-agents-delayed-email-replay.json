@@ -1,0 +1,18 @@
+{
+  "slug": "microsoft-365-outage-agents-delayed-email-replay",
+  "date": "2026-11-13",
+  "title": "Microsoft 365 outage: email agents face a 48-hour backlog replay",
+  "summary": "Exchange Online failed on November 12 and Outlook reports peaked near 140,000, per CX Today. Microsoft held delayed mail for 48 hours, so agents that act on email may now process requests people already handled.",
+  "tags": ["Governance", "Enterprise adoption"],
+  "body": [
+    "On Thursday, November 12, Exchange Online began failing at 16:17 GMT and was still in service degradation on Friday morning, CX Today reports [1]. Dynamics 365 Contact Center went down for just under eight hours, and Microsoft restored agent access at 00:57 GMT on Friday [1]. The BBC, citing Downdetector, put Outlook problem reports at nearly 140,000 at the peak, according to CX Today [1]. Microsoft extended its email timeout window to 48 hours to preserve delayed messages and has promised a post incident report [1].",
+    "The disruption reached AI tools too. Forbes reports that Anthropic's status page showed the mail, calendar and search tools in Claude's Microsoft 365 connection failing for most requests, and that OpenAI reported errors with ChatGPT's Microsoft 365 connection [2]. Maersk warned customers that the outage could hold up its emails and updates [2].",
+    "The harder problem starts when mail flows again. As the Forbes piece puts it, an empty inbox and a stuck one look exactly alike from the inside [2]. An agent that reads email and acts on it cannot tell that a message is a day late. If a person already handled the request by phone, the agent can redo or reverse that work when the delayed message lands [2]. Microsoft's choice to keep mail for 48 hours protects messages, and it also means a large backlog may arrive at once.",
+    "For data teams this is a freshness and idempotency question. An agent should treat the inbox as a source with an expected arrival rate, and alert when it goes quiet, the same way we alert on a stale table. Before acting, it should compare the message timestamp with the current state of the record and with a log of who changed it last. Every action needs a case key so a replayed request is detected instead of applied twice. Those checks belong in the data layer, not in the prompt.",
+    "One step this week: pick one agent that acts on email or tickets and replay a delayed message against a record a person has already updated. If the agent changes the record without flagging the conflict, add a last modified check and route conflicts to a named owner before the next outage."
+  ],
+  "sources": [
+    {"title": "Microsoft Outage Cut Agents Off From the Contact Center", "publisher": "CX Today", "date": "2026-11-13", "url": "https://cxtoday.com/microsoft-outage-cut-agents-off-from-the-contact-center"},
+    {"title": "Microsoft Outage Exposes A Blind Spot In Your AI Agents", "publisher": "Forbes", "date": "2026-11-13", "url": "https://www.forbes.com/sites/robertszczerba/2026/11/13/microsoft-outage-exposes-a-blind-spot-in-your-ai-agents/"}
+  ]
+}

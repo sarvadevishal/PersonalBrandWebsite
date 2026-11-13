@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" data-site-theme="playful">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script>
+/* Sets the saved theme before first paint and loads only that theme's fonts. */
+(function(){var d=document,t="playful",F={classic:["https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap"],playful:["https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap"],vibrant:["https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800,900&f[]=satoshi@400,500,700&display=swap","https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap"]},L={};
+try{var s=localStorage.getItem("site-theme");if(F[s])t=s}catch(e){}
+d.documentElement.setAttribute("data-site-theme",t);
+window.__themeFonts=function(n){(F[n]||[]).forEach(function(u){if(L[u])return;L[u]=1;var l=d.createElement("link");l.rel="stylesheet";l.href=u;d.head.appendChild(l)})};
+window.__themeFonts(t)})();
+</script>
+<noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;family=Instrument+Serif:ital@0;1&amp;family=Space+Mono:wght@400;700&amp;display=swap">
+<style>@media (max-width:1100px){#mobileMenu[hidden]{display:block!important;position:static;max-height:none;box-shadow:none}}.menu-btn,.theme-pick{display:none!important}</style>
+</noscript>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%2312263A%22/%3E%3Ctext x=%2216%22 y=%2221%22 font-family=%22monospace%22 font-weight=%22700%22 font-size=%2213%22 fill=%22%23F4D35E%22 text-anchor=%22middle%22%3EVS%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<title>Microsoft 365 outage: email agents face a 48-hour backlog replay · Vishal Kumar Sarvade</title>
+<meta name="description" content="Exchange Online failed on November 12 and Outlook reports peaked near 140,000, per CX Today. Microsoft held delayed mail for 48 hours, so agents that act on email may now process requests people already handled.">
+<meta name="author" content="Vishal Kumar Sarvade">
+<meta name="generator" content="build_blog.py">
+<link rel="canonical" href="https://www.vishalkumarsarvade.com/blog/microsoft-365-outage-agents-delayed-email-replay/">
+<meta property="og:url" content="https://www.vishalkumarsarvade.com/blog/microsoft-365-outage-agents-delayed-email-replay/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Vishal Kumar Sarvade">
+<meta property="og:title" content="Microsoft 365 outage: email agents face a 48-hour backlog replay · Vishal Kumar Sarvade">
+<meta property="og:description" content="Exchange Online failed on November 12 and Outlook reports peaked near 140,000, per CX Today. Microsoft held delayed mail for 48 hours, so agents that act on email may now process requests people already handled.">
+<meta property="og:image" content="https://www.vishalkumarsarvade.com/assets/og-card.png?v=1">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Microsoft 365 outage: email agents face a 48-hour backlog replay · Vishal Kumar Sarvade">
+<meta name="twitter:description" content="Exchange Online failed on November 12 and Outlook reports peaked near 140,000, per CX Today. Microsoft held delayed mail for 48 hours, so agents that act on email may now process requests people already handled.">
+<meta name="twitter:image" content="https://www.vishalkumarsarvade.com/assets/og-card.png?v=1">
+<meta name="theme-color" content="#FFFBF2">
+<link rel="stylesheet" href="/assets/site.css?v=6536894c2e">
+<link rel="alternate" type="application/rss+xml" title="Field notes on data and AI agents" href="/blog/feed.xml">
+<meta property="article:published_time" content="2026-11-13">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Microsoft 365 outage: email agents face a 48-hour backlog replay", "description": "Exchange Online failed on November 12 and Outlook reports peaked near 140,000, per CX Today. Microsoft held delayed mail for 48 hours, so agents that act on email may now process requests people already handled.", "datePublished": "2026-11-13", "dateModified": "2026-11-13", "author": {"@type": "Person", "name": "Vishal Kumar Sarvade", "url": "https://www.vishalkumarsarvade.com/"}, "image": "https://www.vishalkumarsarvade.com/assets/og-card.png?v=1", "mainEntityOfPage": "https://www.vishalkumarsarvade.com/blog/microsoft-365-outage-agents-delayed-email-replay/", "keywords": "Governance, Enterprise adoption", "citation": ["https://cxtoday.com/microsoft-outage-cut-agents-off-from-the-contact-center", "https://www.forbes.com/sites/robertszczerba/2026/11/13/microsoft-outage-exposes-a-blind-spot-in-your-ai-agents/"]}</script>
+</head>
+<body>
+<span id="top"></span>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/" aria-label="Vishal Kumar Sarvade, home"><span class="mark" aria-hidden="true">VS</span><span class="brand-name">Vishal Kumar Sarvade</span></a>
+    <nav class="links" aria-label="Sections">
+      <a href="/#work">Work</a>
+      <a href="/#platform">Platform</a>
+      <a href="/#ai">AI</a>
+      <a href="/blog/" aria-current="true">Blog</a>
+      <a href="/#experience">Experience</a>
+      <a href="/#writing">Writing</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="nav-tools">
+      <div class="theme-pick">
+        <button class="theme-btn" type="button" title="Change the design theme" aria-haspopup="true" aria-expanded="false" aria-label="Design theme"><span class="theme-dot" aria-hidden="true"></span><span class="theme-name">Playful</span><svg class="theme-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <div class="theme-menu" role="menu" aria-label="Choose a design theme" hidden>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme="vibrant"><span class="sw sw-vibrant" aria-hidden="true"></span>Vibrant<small>Modern · emerald and orange</small></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme="classic"><span class="sw sw-classic" aria-hidden="true"></span>Classic<small>Editorial · navy and cobalt</small></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme="playful"><span class="sw sw-playful" aria-hidden="true"></span>Playful<small>Default · teal, sun and coral</small></button>
+        </div>
+      </div>
+      <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="wrap mobile-menu" id="mobileMenu" hidden>
+    <a href="/#work">Work</a><a href="/#platform">Platform</a><a href="/#ai">AI</a><a href="/blog/">Blog</a><a href="/#experience">Experience</a><a href="/#writing">Writing</a><a href="/#about">About</a><a href="/#contact">Contact</a>
+  </div>
+</header>
+<main id="main">
+<section class="section" style="padding-top:56px">
+  <div class="wrap">
+    <article class="post">
+      <div class="eyebrow"><a href="/blog/" style="color:inherit;text-decoration:none">Blog</a> · <time datetime="2026-11-13">Nov 13, 2026</time> · 2 min read</div>
+      <h1>Microsoft 365 outage: email agents face a 48-hour backlog replay</h1>
+      <p class="dek">Exchange Online failed on November 12 and Outlook reports peaked near 140,000, per CX Today. Microsoft held delayed mail for 48 hours, so agents that act on email may now process requests people already handled.</p>
+      <div class="bl-tags"><span>Governance</span><span>Enterprise adoption</span></div>
+      <div class="post-body">
+        <p>On Thursday, November 12, Exchange Online began failing at 16:17 GMT and was still in service degradation on Friday morning, CX Today reports<sup><a href="#src-1" aria-label="Source 1">1</a></sup>. Dynamics 365 Contact Center went down for just under eight hours, and Microsoft restored agent access at 00:57 GMT on Friday<sup><a href="#src-1" aria-label="Source 1">1</a></sup>. The BBC, citing Downdetector, put Outlook problem reports at nearly 140,000 at the peak, according to CX Today<sup><a href="#src-1" aria-label="Source 1">1</a></sup>. Microsoft extended its email timeout window to 48 hours to preserve delayed messages and has promised a post incident report<sup><a href="#src-1" aria-label="Source 1">1</a></sup>.</p>
+        <p>The disruption reached AI tools too. Forbes reports that Anthropic&#x27;s status page showed the mail, calendar and search tools in Claude&#x27;s Microsoft 365 connection failing for most requests, and that OpenAI reported errors with ChatGPT&#x27;s Microsoft 365 connection<sup><a href="#src-2" aria-label="Source 2">2</a></sup>. Maersk warned customers that the outage could hold up its emails and updates<sup><a href="#src-2" aria-label="Source 2">2</a></sup>.</p>
+        <p>The harder problem starts when mail flows again. As the Forbes piece puts it, an empty inbox and a stuck one look exactly alike from the inside<sup><a href="#src-2" aria-label="Source 2">2</a></sup>. An agent that reads email and acts on it cannot tell that a message is a day late. If a person already handled the request by phone, the agent can redo or reverse that work when the delayed message lands<sup><a href="#src-2" aria-label="Source 2">2</a></sup>. Microsoft&#x27;s choice to keep mail for 48 hours protects messages, and it also means a large backlog may arrive at once.</p>
+        <p>For data teams this is a freshness and idempotency question. An agent should treat the inbox as a source with an expected arrival rate, and alert when it goes quiet, the same way we alert on a stale table. Before acting, it should compare the message timestamp with the current state of the record and with a log of who changed it last. Every action needs a case key so a replayed request is detected instead of applied twice. Those checks belong in the data layer, not in the prompt.</p>
+        <p>One step this week: pick one agent that acts on email or tickets and replay a delayed message against a record a person has already updated. If the agent changes the record without flagging the conflict, add a last modified check and route conflicts to a named owner before the next outage.</p>
+      </div>
+      <section class="sources" aria-labelledby="src-title">
+        <div class="eyebrow" id="src-title">Sources</div>
+        <ol>
+        <li id="src-1"><b>CX Today</b> · Nov 13, 2026<br><a href="https://cxtoday.com/microsoft-outage-cut-agents-off-from-the-contact-center" target="_blank" rel="noopener">Microsoft Outage Cut Agents Off From the Contact Center</a></li>
+        <li id="src-2"><b>Forbes</b> · Nov 13, 2026<br><a href="https://www.forbes.com/sites/robertszczerba/2026/11/13/microsoft-outage-exposes-a-blind-spot-in-your-ai-agents/" target="_blank" rel="noopener">Microsoft Outage Exposes A Blind Spot In Your AI Agents</a></li>
+        </ol>
+      </section>
+      <aside class="author" aria-label="About the author">
+        <img src="/assets/vishal-headshot-160.jpg?v=3" width="64" height="64" alt="" loading="lazy" decoding="async">
+        <p><b>Vishal Kumar Sarvade</b> is a Technical Architect in the San Francisco Bay Area with 12+ years building cloud data platforms on Amazon Redshift. <a href="/">More about him</a> · <a href="https://www.linkedin.com/in/vishalkumarsarvade/" target="_blank" rel="noopener">LinkedIn</a></p>
+      </aside>
+      <nav class="post-nav" aria-label="More posts"><a href="/blog/genpact-79-percent-agents-production-15-percent-pl/">← Genpact: 79% run AI agents in production, 15% tie AI spend to P&amp;L</a></nav>
+      <div class="bl-foot"><a href="/blog/">All posts</a><a href="/blog/feed.xml">RSS feed</a></div>
+    </article>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Vishal Kumar Sarvade · Building data platforms since 2014</span>
+    <span><a href="/blog/feed.xml">RSS</a> · <a href="#top">Back to top</a></span>
+  </div>
+</footer>
+<script src="/assets/theme.js?v=2c72460e5f" defer></script>
+</body>
+</html>
