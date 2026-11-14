@@ -1,0 +1,32 @@
+{
+  "slug": "red-hat-cio-survey-agent-confidence-data-flow-visibility",
+  "date": "2026-11-14",
+  "title": "Red Hat: 93% of SA CIOs trust their agents, 61% can trace data flows",
+  "summary": "Red Hat's survey of South African CIOs found 93% confident their AI agents run securely, yet 61% understand their data flows and 44% see their full software supply chain, Business Day reports.",
+  "tags": [
+    "Security",
+    "Data readiness",
+    "Governance"
+  ],
+  "body": [
+    "Red Hat has released South African results from its survey of 1,400 CIOs in 14 countries, Business Day reported on November 12 [1]. Among South African CIOs, 93% report high confidence that their AI agents operate securely and in compliance with regulations [1]. Only 61% say they have a precise understanding of where data is stored and processed, 44% have a comprehensive view of their software supply chain, and 48% keep assessing AI provider risk after onboarding [1]. Dion Harvey, Red Hat's general manager for sub-Saharan Africa, told the paper there is \"too broad a disconnect\" between those numbers [1].",
+    "The gap is not local. Red Hat's own release for Switzerland, from the same Censuswide survey run between August 24 and September 1, 2026, found 95% of Swiss CIOs believe their agents operate securely while only 45% can trace where data is stored and processed [2]. The release itself sets South Africa's 61% on data flow visibility against 31% in France [2]. In Switzerland, every company surveyed said it already runs agents in production [2].",
+    "So confidence is tracking deployment, not visibility. A CIO can be sure an agent is secure only if someone can show what data it reads, where that data came from, and which third party components sit underneath it. When fewer than half can see the full supply chain, the confidence figure measures belief in guardrails more than evidence.",
+    "For data teams this is a lineage problem first. An agent's blast radius is the set of tables, files and APIs its credentials can reach, plus everything downstream of them. If our catalog cannot answer which agent read which dataset and where the output landed, security reviews rest on assumptions. Column level lineage, access logs tied to a named agent identity, and a vendor inventory for every model and tool an agent calls are the controls that turn confidence into something auditable.",
+    "One step this week: pick your most used production agent and try to draw its data flow end to end from access logs alone. Every hop you cannot fill in from logs or lineage is a gap to close before you call that agent secure."
+  ],
+  "sources": [
+    {
+      "title": "93% of SA tech bosses trust their AI agents, but should they?",
+      "publisher": "Business Day",
+      "date": "2026-11-12",
+      "url": "https://www.businessday.co.za/companies/2026-11-12-93-of-sa-tech-bosses-trust-their-ai-agents-but-should-they/"
+    },
+    {
+      "title": "Red Hat Survey Shows Blind Spots in Swiss Enterprise Software Supply Chains",
+      "publisher": "Red Hat",
+      "date": "2026-10-27",
+      "url": "https://www.redhat.com/en/about/press-releases/red-hat-survey-shows-blind-spots-swiss-enterprise-software-supply-chains"
+    }
+  ]
+}

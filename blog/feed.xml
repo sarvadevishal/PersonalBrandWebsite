@@ -6,7 +6,14 @@
   <atom:link href="https://www.vishalkumarsarvade.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 13 Nov 2026 18:49:02 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 14 Nov 2026 18:56:53 +0000</lastBuildDate>
+  <item>
+    <title>Red Hat: 93% of SA CIOs trust their agents, 61% can trace data flows</title>
+    <link>https://www.vishalkumarsarvade.com/blog/red-hat-cio-survey-agent-confidence-data-flow-visibility/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/red-hat-cio-survey-agent-confidence-data-flow-visibility/</guid>
+    <pubDate>Sat, 14 Nov 2026 18:00:00 +0000</pubDate>
+    <description>Red Hat&#x27;s survey of South African CIOs found 93% confident their AI agents run securely, yet 61% understand their data flows and 44% see their full software supply chain, Business Day reports.</description>
+  </item>
   <item>
     <title>Microsoft 365 outage: email agents face a 48-hour backlog replay</title>
     <link>https://www.vishalkumarsarvade.com/blog/microsoft-365-outage-agents-delayed-email-replay/</link>
