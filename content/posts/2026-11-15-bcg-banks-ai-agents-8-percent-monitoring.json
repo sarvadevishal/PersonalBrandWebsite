@@ -1,0 +1,28 @@
+{
+  "slug": "bcg-banks-ai-agents-8-percent-monitoring",
+  "date": "2026-11-15",
+  "title": "BCG: 73% of big banks permit AI agents, 8% can monitor them fully",
+  "summary": "BCG's benchmark of 26 systemically important banks found 73% permit AI agents in production for select uses, but only 8% have a standardized framework to monitor and control them.",
+  "tags": ["Governance", "Enterprise adoption", "Data readiness"],
+  "body": [
+    "Boston Consulting Group published its AI Safety and Governance in Banking 2026 benchmark on November 13, covering 26 systemically important banks [1]. BCG found 73% of those banks permit AI agents in production for select use cases, yet only 8% have a comprehensive, standardized framework to monitor and control them [1]. No bank in the sample permits broad production use of agents, and at 88% of banks agents make up 10% or less of the AI portfolio [1].",
+    "An independent write up of the report adds detail on the controls banks are using instead [2]. According to BCG's figures as reported there, 54% have written restrictions or prohibitions on agents into their risk appetite, fewer than half have a centralized, tool based AI inventory, and 46% reported an AI related issue or incident in the past 12 months [2]. BCG also found banks using previously approved patterns for lower risk applications were about twice as likely to move them from idea to production in under six months [2].",
+    "Banks are saying yes to agents faster than they are building the means to watch them, and are leaning on written limits to cover the gap. That works while agents are a small slice of the portfolio. It gets harder as use cases stack up, because a prohibition in a policy document does not tell anyone what an agent actually did on a given day.",
+    "For data teams, the missing pieces are mostly ours to build. An AI inventory is a catalog problem: every agent needs an owner, a purpose and a list of the datasets and tools it can reach. Monitoring needs query and access logs tied to a named agent identity, not a shared service account, plus lineage so we can trace what an agent's output fed downstream. Preapproved patterns are the same idea as a paved road for pipelines: a standard access role, a standard logging setup and standard data quality checks that a new agent inherits by default.",
+    "One step this week: list every agent or agent pilot that touches your warehouse, and for each one check whether you can name its owner and pull its last 30 days of queries from logs. Any agent that fails either check goes on the list for your next governance review."
+  ],
+  "sources": [
+    {
+      "title": "AI Agents Reach 73% of Major Banks, Only 8% Have Full Controls",
+      "publisher": "FairsOnline",
+      "date": "2026-11-13",
+      "url": "https://www.fairsonline.org/ai-agents-reach-73-major-banks-only-8-have-full-controls"
+    },
+    {
+      "title": "Banks Permit AI Agents, but Few Have Standard Monitoring, BCG Finds",
+      "publisher": "The D*AI*LY Brief",
+      "date": "2026-11-15",
+      "url": "https://www.beri.net/article/bcg-ai-governance-banking-benchmark-2026-26-systemically-important-banks-agents-production-8-percent-agent-monitoring-preapproved-patterns"
+    }
+  ]
+}

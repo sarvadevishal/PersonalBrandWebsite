@@ -6,7 +6,14 @@
   <atom:link href="https://www.vishalkumarsarvade.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 14 Nov 2026 18:56:53 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 15 Nov 2026 18:54:35 +0000</lastBuildDate>
+  <item>
+    <title>BCG: 73% of big banks permit AI agents, 8% can monitor them fully</title>
+    <link>https://www.vishalkumarsarvade.com/blog/bcg-banks-ai-agents-8-percent-monitoring/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/bcg-banks-ai-agents-8-percent-monitoring/</guid>
+    <pubDate>Sun, 15 Nov 2026 18:00:00 +0000</pubDate>
+    <description>BCG&#x27;s benchmark of 26 systemically important banks found 73% permit AI agents in production for select uses, but only 8% have a standardized framework to monitor and control them.</description>
+  </item>
   <item>
     <title>Red Hat: 93% of SA CIOs trust their agents, 61% can trace data flows</title>
     <link>https://www.vishalkumarsarvade.com/blog/red-hat-cio-survey-agent-confidence-data-flow-visibility/</link>
