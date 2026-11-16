@@ -6,7 +6,14 @@
   <atom:link href="https://www.vishalkumarsarvade.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Sun, 15 Nov 2026 18:54:35 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 16 Nov 2026 18:55:46 +0000</lastBuildDate>
+  <item>
+    <title>United bars AI agents from booking tickets, even with human approval</title>
+    <link>https://www.vishalkumarsarvade.com/blog/united-airlines-bars-ai-agents-booking-tickets/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/united-airlines-bars-ai-agents-booking-tickets/</guid>
+    <pubDate>Mon, 16 Nov 2026 18:00:00 +0000</pubDate>
+    <description>United&#x27;s November 11 contract of carriage revision bars AI agents from making, changing or servicing tickets, even under supervision, and backs the rule with eight remedies, from voided tickets to deleted miles.</description>
+  </item>
   <item>
     <title>BCG: 73% of big banks permit AI agents, 8% can monitor them fully</title>
     <link>https://www.vishalkumarsarvade.com/blog/bcg-banks-ai-agents-8-percent-monitoring/</link>

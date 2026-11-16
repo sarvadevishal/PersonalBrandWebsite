@@ -1,0 +1,28 @@
+{
+  "slug": "united-airlines-bars-ai-agents-booking-tickets",
+  "date": "2026-11-16",
+  "title": "United bars AI agents from booking tickets, even with human approval",
+  "summary": "United's November 11 contract of carriage revision bars AI agents from making, changing or servicing tickets, even under supervision, and backs the rule with eight remedies, from voided tickets to deleted miles.",
+  "tags": ["Governance", "Enterprise adoption"],
+  "body": [
+    "United Airlines revised its contract of carriage on November 11 to prohibit the use of AI agents to make, modify or service a ticket, or to buy any service or product [1]. The new definition covers an AI assistant, AI agent or AI enabled browser, including semi autonomous ones, whether or not a person supervises or approves what it does [1]. It also reaches third party assistants that connect to United through a travel agency's tools, and reservations made by agents can be cancelled without notice [1].",
+    "A roundup from Industry.co.id reports that agents may still search United flights and fares, and that United's FAQ cites data exposure, unwanted purchases and misuse of MileagePlus miles as its reasons [2]. PPC Land lists eight remedies the contract allows for violations, including invalidating tickets, deleting miles and terminating MileagePlus membership, and notes that View from the Wing describes agent bookings as still rare [1].",
+    "The tension is that the rule depends on United knowing an agent was involved. PPC Land cites Arkose Labs reporting in October that 97.7% of legitimate AI agent sessions had no verified ID [1]. A contract can forbid agents, but enforcement needs a way to tell agent traffic from human traffic, and most agents do not identify themselves today.",
+    "For data teams, this is a reminder that the businesses our agents call into can change the rules without warning. If an internal agent books travel, files tickets or places orders, we need an inventory of which external services each agent touches and under what terms. We also need request logs that record whether a person or an agent took the action, tied to a named agent identity. Without that lineage, a counterparty's policy change becomes a hunt through shared service account logs.",
+    "One step this week: pick one agent that acts on an outside service, and check whether your logs can show, for its last 30 actions, which ones the agent took on its own and which ones a person approved."
+  ],
+  "sources": [
+    {
+      "title": "United bans AI agents from buying its tickets, seats and upgrades",
+      "publisher": "PPC Land",
+      "date": "2026-11-11",
+      "url": "https://ppc.land/united-bans-ai-agents-from-buying-its-tickets-seats-and-upgrades/"
+    },
+    {
+      "title": "Global AI Roundup, Nov. 16, 2026: AI Agents Hit Resistance",
+      "publisher": "Industry.co.id",
+      "date": "2026-11-16",
+      "url": "https://men.industry.co.id/read/9835/global-ai-roundup-nov-16-2026-ai-agents-hit-resistance"
+    }
+  ]
+}
