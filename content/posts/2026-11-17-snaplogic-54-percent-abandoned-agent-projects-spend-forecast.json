@@ -1,0 +1,18 @@
+{
+  "slug": "snaplogic-54-percent-abandoned-agent-projects-spend-forecast",
+  "date": "2026-11-17",
+  "title": "SnapLogic: 54% dropped AI projects, only 42% can forecast agent spend",
+  "summary": "A SnapLogic survey of 1,000 IT decision makers found 54% have abandoned AI projects over unclear value, 89% have seen agent overspend, and only 42% can accurately forecast AI and token spending.",
+  "tags": ["ROI", "Cost", "Enterprise adoption"],
+  "body": [
+    "SnapLogic released its 2026 Agentic Enterprise Readiness Index on November 17, based on a survey of 1,000 IT decision makers in the United States, United Kingdom and Germany, fielded by 3GEM between July 21 and August 4 [1]. The headline finding: 54% have abandoned AI projects because business value was unclear, even though 85% say they are already deploying agentic AI at scale or are fully prepared to [1]. Half feel pressure to keep investing in agents when value is hard to prove, and 48% struggle, or expect to struggle, to measure ROI [1].",
+    "The cost numbers are sharper. In the SnapLogic survey, 89% have experienced some AI agent overspend and 64% report moderate or significant overspending [1]. Yet 81% say they can accurately measure the cost of individual agents, while only 42% can accurately forecast future AI and token spending [1]. Capgemini research covered by CFO Dive points the same way: among organizations that overspent on AI in the past year, spending averaged 24% above expectations, and six in 10 respondents said they lack a comprehensive view of AI expenses [2].",
+    "The tension is between confidence and control. SnapLogic found 93% have a comprehensive or broad AI agent policy, and 77% say agents have, or would have, full or extensive access to the data and systems they need [1]. Policies and access are in place, but the ability to predict what agents will cost, and to show what they return, lags behind. Capgemini also found only a quarter of CFOs are fully confident estimating indirect costs such as human oversight and governance [2].",
+    "For data teams, measuring cost per agent after the fact is not the same as forecasting it. Forecasting needs usage telemetry joined to business context: which agent, which workflow, which data it queried, and what outcome followed. That means tagging every model call and warehouse query with an agent identity, landing those events in the same platform as the business metrics, and treating token spend as a first class cost center with lineage back to the workflow that caused it.",
+    "One step this week: pick your highest volume agent and build a table of its last 30 days of token and compute cost by workflow, next to one outcome metric that workflow is supposed to move."
+  ],
+  "sources": [
+    {"title": "New Research Reveals 54% of Enterprises Have Abandoned Agentic AI Projects Due to Unclear Business Value", "publisher": "SnapLogic via GlobeNewswire", "date": "2026-11-17", "url": "https://www.globenewswire.com/news-release/2026/11/17/3404301/0/en/new-research-reveals-54-of-enterprises-have-abandoned-agentic-ai-projects-due-to-unclear-business-value.html"},
+    {"title": "CFOs confront cash-flow risks as AI costs rise", "publisher": "CFO Dive", "date": "2026-11-12", "url": "https://www.cfodive.com/news/cfos-confront-cash-flow-risks-ai-costs-rise/874554/"}
+  ]
+}

@@ -6,7 +6,14 @@
   <atom:link href="https://www.vishalkumarsarvade.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 16 Nov 2026 18:55:46 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 17 Nov 2026 18:53:11 +0000</lastBuildDate>
+  <item>
+    <title>SnapLogic: 54% dropped AI projects, only 42% can forecast agent spend</title>
+    <link>https://www.vishalkumarsarvade.com/blog/snaplogic-54-percent-abandoned-agent-projects-spend-forecast/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/snaplogic-54-percent-abandoned-agent-projects-spend-forecast/</guid>
+    <pubDate>Tue, 17 Nov 2026 18:00:00 +0000</pubDate>
+    <description>A SnapLogic survey of 1,000 IT decision makers found 54% have abandoned AI projects over unclear value, 89% have seen agent overspend, and only 42% can accurately forecast AI and token spending.</description>
+  </item>
   <item>
     <title>United bars AI agents from booking tickets, even with human approval</title>
     <link>https://www.vishalkumarsarvade.com/blog/united-airlines-bars-ai-agents-booking-tickets/</link>
