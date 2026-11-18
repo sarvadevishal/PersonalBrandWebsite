@@ -6,7 +6,14 @@
   <atom:link href="https://www.vishalkumarsarvade.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 17 Nov 2026 18:53:11 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 18 Nov 2026 18:54:37 +0000</lastBuildDate>
+  <item>
+    <title>AT&amp;T keeps humans on 500 agent workflows until accuracy hits mid 90s</title>
+    <link>https://www.vishalkumarsarvade.com/blog/att-500-agent-workflows-human-oversight-accuracy-gate/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/att-500-agent-workflows-human-oversight-accuracy-gate/</guid>
+    <pubDate>Wed, 18 Nov 2026 18:00:00 +0000</pubDate>
+    <description>AT&amp;T runs nearly 500 agentic workflows in production and keeps a human on each one until accuracy reaches the mid to high 90% range, according to SiliconANGLE.</description>
+  </item>
   <item>
     <title>SnapLogic: 54% dropped AI projects, only 42% can forecast agent spend</title>
     <link>https://www.vishalkumarsarvade.com/blog/snaplogic-54-percent-abandoned-agent-projects-spend-forecast/</link>

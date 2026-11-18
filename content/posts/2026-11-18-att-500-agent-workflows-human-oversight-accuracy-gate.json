@@ -1,0 +1,19 @@
+{
+  "slug": "att-500-agent-workflows-human-oversight-accuracy-gate",
+  "date": "2026-11-18",
+  "title": "AT&T keeps humans on 500 agent workflows until accuracy hits mid 90s",
+  "summary": "AT&T runs nearly 500 agentic workflows in production and keeps a human on each one until accuracy reaches the mid to high 90% range, according to SiliconANGLE.",
+  "tags": ["Case study", "Governance", "Cost"],
+  "body": [
+    "SiliconANGLE reported on November 14 that AT&T has nearly 500 agentic workflows in production and plans to triple that number next year [1]. The platform handles more than 1 million transactions a month, and Luke Corbin, assistant vice president of digital transformation and AI at AT&T Business, said the company processes about 45 billion AI tokens a day [1]. The rule that stands out: every production workflow starts with human oversight, and agents run on their own only after accuracy reaches the mid to high 90% range within a permissible risk profile [1]. One measured result: AT&T halved the time to provision dedicated internet connections in buildings that already had fiber [1].",
+    "AT&T's own numbers on cost come from Andy Markus, its chief data and AI officer. Writing in July, he described an AI Gateway that uses cache aware routing to pick a model per task, and said AT&T is reducing AI costs by as much as 90% [2]. He also confirmed the average of 45 billion tokens per day [2].",
+    "The accuracy gate is the useful part, and also the part with open questions. Rajesh Beri's analysis notes that AT&T has not published how it scores risk, and that the return figures the company cites are unaudited [3]. He also points out that per step accuracy compounds: a five step workflow at 97% per step finishes cleanly about 86% of the time [3]. A threshold set per workflow can hide that if nobody measures the end to end outcome.",
+    "For data teams, an accuracy gate is only as good as the evaluation data behind it. Someone has to label outcomes, store them with the workflow version and model that produced them, and keep measuring after the human steps away so drift shows up. That is a data product: an outcomes table with lineage to each agent run, joined to cost per run so the routing savings and the error rate sit in one place.",
+    "One step this week: pick one agent workflow and write down its promotion rule. What accuracy, measured on which labeled sample, over what period, lets it run without review, and what number sends it back."
+  ],
+  "sources": [
+    {"title": "AT&T uses agentic AI to reinvent business processes from the ground up", "publisher": "SiliconANGLE", "date": "2026-11-14", "url": "https://siliconangle.com/2026/11/14/att-uses-agentic-ai-to-reinvent-business-processes-from-the-ground-up/"},
+    {"title": "The Tokenomics Equation: Balancing Cost and Performance", "publisher": "AT&T", "date": "2026-07-23", "url": "https://about.att.com/blogs/2026/the-tokenomics-equation.html"},
+    {"title": "AT&T Keeps Human Review on Nearly 500 AI Workflows", "publisher": "THE D*AI*LY BRIEF", "date": "2026-11-15", "url": "https://www.beri.net/article/att-500-agentic-workflows-business-agent-foundry-human-oversight-high-90s-accuracy-threshold-45-billion-tokens-ai-gateway-open-models"}
+  ]
+}
