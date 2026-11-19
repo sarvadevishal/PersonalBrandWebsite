@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en" data-site-theme="playful">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script>
+/* Sets the saved theme before first paint and loads only that theme's fonts. */
+(function(){var d=document,t="playful",F={classic:["https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap"],playful:["https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap"],vibrant:["https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800,900&f[]=satoshi@400,500,700&display=swap","https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap"]},L={};
+try{var s=localStorage.getItem("site-theme");if(F[s])t=s}catch(e){}
+d.documentElement.setAttribute("data-site-theme",t);
+window.__themeFonts=function(n){(F[n]||[]).forEach(function(u){if(L[u])return;L[u]=1;var l=d.createElement("link");l.rel="stylesheet";l.href=u;d.head.appendChild(l)})};
+window.__themeFonts(t)})();
+</script>
+<noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;family=Instrument+Serif:ital@0;1&amp;family=Space+Mono:wght@400;700&amp;display=swap">
+<style>@media (max-width:1100px){#mobileMenu[hidden]{display:block!important;position:static;max-height:none;box-shadow:none}}.menu-btn,.theme-pick{display:none!important}</style>
+</noscript>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%2312263A%22/%3E%3Ctext x=%2216%22 y=%2221%22 font-family=%22monospace%22 font-weight=%22700%22 font-size=%2213%22 fill=%22%23F4D35E%22 text-anchor=%22middle%22%3EVS%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<title>CVS runs computer-use agents on tens of thousands of consults a day · Vishal Kumar Sarvade</title>
+<meta name="description" content="CVS Health has OpenAI computer-use agents in production handling the system steps for tens of thousands of consults a day, checked through screenshots and action logs, according to Becker&#x27;s and The Decoder.">
+<meta name="author" content="Vishal Kumar Sarvade">
+<meta name="generator" content="build_blog.py">
+<link rel="canonical" href="https://www.vishalkumarsarvade.com/blog/cvs-computer-use-agents-daily-consults-audit-logs/">
+<meta property="og:url" content="https://www.vishalkumarsarvade.com/blog/cvs-computer-use-agents-daily-consults-audit-logs/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Vishal Kumar Sarvade">
+<meta property="og:title" content="CVS runs computer-use agents on tens of thousands of consults a day · Vishal Kumar Sarvade">
+<meta property="og:description" content="CVS Health has OpenAI computer-use agents in production handling the system steps for tens of thousands of consults a day, checked through screenshots and action logs, according to Becker&#x27;s and The Decoder.">
+<meta property="og:image" content="https://www.vishalkumarsarvade.com/assets/og-card.png?v=1">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CVS runs computer-use agents on tens of thousands of consults a day · Vishal Kumar Sarvade">
+<meta name="twitter:description" content="CVS Health has OpenAI computer-use agents in production handling the system steps for tens of thousands of consults a day, checked through screenshots and action logs, according to Becker&#x27;s and The Decoder.">
+<meta name="twitter:image" content="https://www.vishalkumarsarvade.com/assets/og-card.png?v=1">
+<meta name="theme-color" content="#FFFBF2">
+<link rel="stylesheet" href="/assets/site.css?v=6536894c2e">
+<link rel="alternate" type="application/rss+xml" title="Field notes on data and AI agents" href="/blog/feed.xml">
+<meta property="article:published_time" content="2026-11-19">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "CVS runs computer-use agents on tens of thousands of consults a day", "description": "CVS Health has OpenAI computer-use agents in production handling the system steps for tens of thousands of consults a day, checked through screenshots and action logs, according to Becker's and The Decoder.", "datePublished": "2026-11-19", "dateModified": "2026-11-19", "author": {"@type": "Person", "name": "Vishal Kumar Sarvade", "url": "https://www.vishalkumarsarvade.com/"}, "image": "https://www.vishalkumarsarvade.com/assets/og-card.png?v=1", "mainEntityOfPage": "https://www.vishalkumarsarvade.com/blog/cvs-computer-use-agents-daily-consults-audit-logs/", "keywords": "Case study, Governance", "citation": ["https://www.beckershospitalreview.com/healthcare-information-technology/ai/openai-builds-healthcare-ai-agents-with-cvs-cigna-abridge-ambience/", "https://hitconsultant.net/2026/11/16/openai-launches-healthcare-computer-use-agents-clinical-search-20-plugins/", "https://the-decoder.com/ai-agents-are-starting-to-fill-out-medical-forms-and-file-insurance-requests-in-place-of-human-staff/"]}</script>
+</head>
+<body>
+<span id="top"></span>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/" aria-label="Vishal Kumar Sarvade, home"><span class="mark" aria-hidden="true">VS</span><span class="brand-name">Vishal Kumar Sarvade</span></a>
+    <nav class="links" aria-label="Sections">
+      <a href="/#work">Work</a>
+      <a href="/#platform">Platform</a>
+      <a href="/#ai">AI</a>
+      <a href="/blog/" aria-current="true">Blog</a>
+      <a href="/#experience">Experience</a>
+      <a href="/#writing">Writing</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="nav-tools">
+      <div class="theme-pick">
+        <button class="theme-btn" type="button" title="Change the design theme" aria-haspopup="true" aria-expanded="false" aria-label="Design theme"><span class="theme-dot" aria-hidden="true"></span><span class="theme-name">Playful</span><svg class="theme-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <div class="theme-menu" role="menu" aria-label="Choose a design theme" hidden>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme="vibrant"><span class="sw sw-vibrant" aria-hidden="true"></span>Vibrant<small>Modern · emerald and orange</small></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme="classic"><span class="sw sw-classic" aria-hidden="true"></span>Classic<small>Editorial · navy and cobalt</small></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme="playful"><span class="sw sw-playful" aria-hidden="true"></span>Playful<small>Default · teal, sun and coral</small></button>
+        </div>
+      </div>
+      <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="wrap mobile-menu" id="mobileMenu" hidden>
+    <a href="/#work">Work</a><a href="/#platform">Platform</a><a href="/#ai">AI</a><a href="/blog/">Blog</a><a href="/#experience">Experience</a><a href="/#writing">Writing</a><a href="/#about">About</a><a href="/#contact">Contact</a>
+  </div>
+</header>
+<main id="main">
+<section class="section" style="padding-top:56px">
+  <div class="wrap">
+    <article class="post">
+      <div class="eyebrow"><a href="/blog/" style="color:inherit;text-decoration:none">Blog</a> · <time datetime="2026-11-19">Nov 19, 2026</time> · 2 min read</div>
+      <h1>CVS runs computer-use agents on tens of thousands of consults a day</h1>
+      <p class="dek">CVS Health has OpenAI computer-use agents in production handling the system steps for tens of thousands of consults a day, checked through screenshots and action logs, according to Becker&#x27;s and The Decoder.</p>
+      <div class="bl-tags"><span>Case study</span><span>Governance</span></div>
+      <div class="post-body">
+        <p>OpenAI announced computer-use agents for healthcare on November 16, built with CVS Health, Cigna Healthcare, Abridge and Ambience Healthcare for work like referrals, prior authorizations and discharge planning<sup><a href="#src-1" aria-label="Source 1">1</a></sup>. CVS is the one with agents in production. Becker&#x27;s Hospital Review reports that one CVS agent cleared a monthslong document backlog over a weekend, and another handles the system steps for tens of thousands of consults each day<sup><a href="#src-1" aria-label="Source 1">1</a></sup>. Cigna&#x27;s case managers used to move between more than 10 clinical and administrative systems, and its CIO Madhu Nutakki said the work went from concept to deployment in under eight weeks<sup><a href="#src-1" aria-label="Source 1">1</a></sup>.</p>
+        <p>The controls matter as much as the throughput. HIT Consultant describes the CVS consult agent as running under human oversight and screenshot verification, and lists human in the loop checkpoints and action by action audit logs as part of the design<sup><a href="#src-2" aria-label="Source 2">2</a></sup>. The Decoder adds that CVS keeps the data inside infrastructure it controls and reviews the agents&#x27; work through screenshots and action logs<sup><a href="#src-3" aria-label="Source 3">3</a></sup>. Ambience showed an agent that stops and asks a clinician when a record is ambiguous, though that was a demonstration, not a live deployment<sup><a href="#src-1" aria-label="Source 1">1</a></sup>.</p>
+        <p>The headline safety number needs care. Reviewers rated 99% of 325 EHR inbox tasks handled by GPT-6 Astra as clinically safe<sup><a href="#src-1" aria-label="Source 1">1</a></sup>, but that is OpenAI&#x27;s own evaluation relayed by the press, not a measure of patient outcomes. The CVS backlog and consult figures are also company claims without a published error rate.</p>
+        <p>For data teams, computer-use agents click through the same screens people do, so the audit trail is screenshots and action logs rather than clean API calls. That trail is only useful if it lands somewhere queryable: each action tied to an agent version, a source record, the human who approved it and the outcome. Access control also moves up a level, since the agent can reach whatever the configured application allows<sup><a href="#src-3" aria-label="Source 3">3</a></sup>.</p>
+        <p>One step this week: for any agent that drives a user interface, check whether its action logs are retained, joined to the records it touched, and sampled by a person on a fixed schedule.</p>
+      </div>
+      <section class="sources" aria-labelledby="src-title">
+        <div class="eyebrow" id="src-title">Sources</div>
+        <ol>
+        <li id="src-1"><b>Becker&#x27;s Hospital Review</b> · Nov 16, 2026<br><a href="https://www.beckershospitalreview.com/healthcare-information-technology/ai/openai-builds-healthcare-ai-agents-with-cvs-cigna-abridge-ambience/" target="_blank" rel="noopener">OpenAI builds healthcare AI agents with CVS, Cigna, Abridge, Ambience</a></li>
+        <li id="src-2"><b>HIT Consultant</b> · Nov 16, 2026<br><a href="https://hitconsultant.net/2026/11/16/openai-launches-healthcare-computer-use-agents-clinical-search-20-plugins/" target="_blank" rel="noopener">HLTH26: OpenAI Expands ChatGPT for Healthcare: Computer-Use Agents, 99% Clinical Safety Benchmarks, and 20+ Integrated Health Tech Plugins</a></li>
+        <li id="src-3"><b>The Decoder</b> · Nov 17, 2026<br><a href="https://the-decoder.com/ai-agents-are-starting-to-fill-out-medical-forms-and-file-insurance-requests-in-place-of-human-staff/" target="_blank" rel="noopener">AI agents are starting to fill out medical forms and file insurance requests in place of human staff</a></li>
+        </ol>
+      </section>
+      <aside class="author" aria-label="About the author">
+        <img src="/assets/vishal-headshot-160.jpg?v=3" width="64" height="64" alt="" loading="lazy" decoding="async">
+        <p><b>Vishal Kumar Sarvade</b> is a Technical Architect in the San Francisco Bay Area with 12+ years building cloud data platforms on Amazon Redshift. <a href="/">More about him</a> · <a href="https://www.linkedin.com/in/vishalkumarsarvade/" target="_blank" rel="noopener">LinkedIn</a></p>
+      </aside>
+      <nav class="post-nav" aria-label="More posts"><a href="/blog/att-500-agent-workflows-human-oversight-accuracy-gate/">← AT&amp;T keeps humans on 500 agent workflows until accuracy hits mid 90s</a></nav>
+      <div class="bl-foot"><a href="/blog/">All posts</a><a href="/blog/feed.xml">RSS feed</a></div>
+    </article>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Vishal Kumar Sarvade · Building data platforms since 2014</span>
+    <span><a href="/blog/feed.xml">RSS</a> · <a href="#top">Back to top</a></span>
+  </div>
+</footer>
+<script src="/assets/theme.js?v=2c72460e5f" defer></script>
+</body>
+</html>

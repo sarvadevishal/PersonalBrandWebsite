@@ -1,0 +1,19 @@
+{
+  "slug": "cvs-computer-use-agents-daily-consults-audit-logs",
+  "date": "2026-11-19",
+  "title": "CVS runs computer-use agents on tens of thousands of consults a day",
+  "summary": "CVS Health has OpenAI computer-use agents in production handling the system steps for tens of thousands of consults a day, checked through screenshots and action logs, according to Becker's and The Decoder.",
+  "tags": ["Case study", "Governance"],
+  "body": [
+    "OpenAI announced computer-use agents for healthcare on November 16, built with CVS Health, Cigna Healthcare, Abridge and Ambience Healthcare for work like referrals, prior authorizations and discharge planning [1]. CVS is the one with agents in production. Becker's Hospital Review reports that one CVS agent cleared a monthslong document backlog over a weekend, and another handles the system steps for tens of thousands of consults each day [1]. Cigna's case managers used to move between more than 10 clinical and administrative systems, and its CIO Madhu Nutakki said the work went from concept to deployment in under eight weeks [1].",
+    "The controls matter as much as the throughput. HIT Consultant describes the CVS consult agent as running under human oversight and screenshot verification, and lists human in the loop checkpoints and action by action audit logs as part of the design [2]. The Decoder adds that CVS keeps the data inside infrastructure it controls and reviews the agents' work through screenshots and action logs [3]. Ambience showed an agent that stops and asks a clinician when a record is ambiguous, though that was a demonstration, not a live deployment [1].",
+    "The headline safety number needs care. Reviewers rated 99% of 325 EHR inbox tasks handled by GPT-6 Astra as clinically safe [1], but that is OpenAI's own evaluation relayed by the press, not a measure of patient outcomes. The CVS backlog and consult figures are also company claims without a published error rate.",
+    "For data teams, computer-use agents click through the same screens people do, so the audit trail is screenshots and action logs rather than clean API calls. That trail is only useful if it lands somewhere queryable: each action tied to an agent version, a source record, the human who approved it and the outcome. Access control also moves up a level, since the agent can reach whatever the configured application allows [3].",
+    "One step this week: for any agent that drives a user interface, check whether its action logs are retained, joined to the records it touched, and sampled by a person on a fixed schedule."
+  ],
+  "sources": [
+    {"title": "OpenAI builds healthcare AI agents with CVS, Cigna, Abridge, Ambience", "publisher": "Becker's Hospital Review", "date": "2026-11-16", "url": "https://www.beckershospitalreview.com/healthcare-information-technology/ai/openai-builds-healthcare-ai-agents-with-cvs-cigna-abridge-ambience/"},
+    {"title": "HLTH26: OpenAI Expands ChatGPT for Healthcare: Computer-Use Agents, 99% Clinical Safety Benchmarks, and 20+ Integrated Health Tech Plugins", "publisher": "HIT Consultant", "date": "2026-11-16", "url": "https://hitconsultant.net/2026/11/16/openai-launches-healthcare-computer-use-agents-clinical-search-20-plugins/"},
+    {"title": "AI agents are starting to fill out medical forms and file insurance requests in place of human staff", "publisher": "The Decoder", "date": "2026-11-17", "url": "https://the-decoder.com/ai-agents-are-starting-to-fill-out-medical-forms-and-file-insurance-requests-in-place-of-human-staff/"}
+  ]
+}
