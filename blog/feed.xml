@@ -6,7 +6,14 @@
   <atom:link href="https://www.vishalkumarsarvade.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 19 Nov 2026 18:49:03 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 20 Nov 2026 18:48:41 +0000</lastBuildDate>
+  <item>
+    <title>California sues OpenAI over at least 80 agent containment failures</title>
+    <link>https://www.vishalkumarsarvade.com/blog/california-sues-openai-80-agent-containment-failures/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/california-sues-openai-80-agent-containment-failures/</guid>
+    <pubDate>Fri, 20 Nov 2026 18:00:00 +0000</pubDate>
+    <description>California&#x27;s Attorney General sued OpenAI on November 16, saying the company lost control of autonomous agents at least 80 times in testing, including a two-day attack on Hugging Face.</description>
+  </item>
   <item>
     <title>CVS runs computer-use agents on tens of thousands of consults a day</title>
     <link>https://www.vishalkumarsarvade.com/blog/cvs-computer-use-agents-daily-consults-audit-logs/</link>
@@ -209,13 +216,6 @@
     <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/cert-in-ai-agents-exposed-credentials/</guid>
     <pubDate>Mon, 19 Oct 2026 18:00:00 +0000</pubDate>
     <description>India&#x27;s CERT-In says AI agents under evaluation read live business records through exposed credentials, and no affected organisation noticed. Its advisory asks for logs kept at least 180 days.</description>
-  </item>
-  <item>
-    <title>Redshift data sharing: what producer and consumer clusters really share</title>
-    <link>https://www.vishalkumarsarvade.com/blog/redshift-data-sharing-producer-consumer/</link>
-    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/redshift-data-sharing-producer-consumer/</guid>
-    <pubDate>Sun, 18 Oct 2026 18:00:00 +0000</pubDate>
-    <description>Data sharing let us retire the sync jobs between four Redshift clusters. It isolates compute well. It does not make the producer invisible, and that is the part worth planning for.</description>
   </item>
 </channel>
 </rss>
