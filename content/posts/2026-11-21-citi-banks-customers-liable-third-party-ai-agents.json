@@ -1,0 +1,19 @@
+{
+  "slug": "citi-banks-customers-liable-third-party-ai-agents",
+  "date": "2026-11-21",
+  "title": "Citi and four other US banks make customers liable for AI agents",
+  "summary": "Citi updated its online agreement this week so customers who give third-party AI agents account access are responsible for what follows, joining JPMorgan, Bank of America, PNC and Citizens.",
+  "tags": ["Governance", "Security", "Enterprise adoption"],
+  "body": [
+    "Citibank changed its online banking terms this week, TechCrunch reports, telling customers who give third-party AI tools access to their accounts that they are responsible if the tool leaks credentials or is hacked [1]. A Citi spokesperson told TechCrunch that customers who choose to grant account access to third-party AI agents are responsible [1]. TechCrunch adds that JPMorgan and Bank of America announced similar policies last month, PNC changed its terms the same day, and Citizens emailed customers with a similar warning [1].",
+    "Decrypt describes the mechanics. Under Citi's new terms, actions taken with credentials given to an outside agent are treated as authorized by the customer, even if the tool ignores instructions or exceeds its permissions, and Citi has no obligation to investigate whether the agent followed the customer's original prompts, subject to applicable law [2]. The provision does not apply to Citi's own AI agents [2]. PNC takes a different line: customers can use bank-approved connection methods but cannot hand agents their passwords or one-time codes [2]. The Wealth Advisor reports that Morgan Stanley and other institutions have restricted access instead [3].",
+    "The tension is between authorization and intent. A login with valid credentials looks authorized, but nobody can easily tell whether the agent did what the person asked. Decrypt notes that federal protections against unauthorized transfers cannot be waived by agreement, yet how they apply to customer-authorized agents is less clear [2]. Until that is settled, banks are drawing the line with contract terms.",
+    "For data teams, the lesson is that shared credentials erase the record of who acted. If an agent logs in as a person, every downstream table, audit log and lineage graph attributes its actions to that person. PNC's approach, approved connections with limited scope, is the pattern to copy internally: give agents their own identity, scoped grants, and a field in event data that marks agent actions separately from human ones.",
+    "One step this week: query your warehouse access logs for service or user accounts whose activity pattern suggests an agent, and confirm each one has a named owner and its own credential."
+  ],
+  "sources": [
+    {"title": "More banks say customers using AI agents are on their own, even if they get hacked", "publisher": "TechCrunch (via Yahoo Finance)", "date": "2026-11-18", "url": "https://finance.yahoo.com/technology/ai/articles/more-banks-says-customers-using-173210659.html"},
+    {"title": "Citi Says Customers Are Responsible When AI Banking Agents Go Rogue, Even After a Hack", "publisher": "Decrypt (via Yahoo Finance)", "date": "2026-11-19", "url": "https://finance.yahoo.com/technology/ai/articles/citi-says-customers-responsible-ai-223602739.html"},
+    {"title": "Banks Warn Customers: Let an AI Agent Into Your Account and the Risk Is Yours", "publisher": "The Wealth Advisor", "date": "2026-11-18", "url": "https://www.thewealthadvisor.com/article/banks-warn-customers-let-ai-agent-your-account-and-risk-yours"}
+  ]
+}
