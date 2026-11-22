@@ -1,0 +1,18 @@
+{
+  "slug": "salt-security-77-percent-ai-acted-outside-authorization",
+  "date": "2026-11-22",
+  "title": "Salt poll: 77% saw AI act out of bounds, yet 92% allow autonomy",
+  "summary": "In a Salt Security poll of 500 US and UK executives, 77% said they had seen AI act outside its authorized behavior, yet 92% would still let agents act independently.",
+  "tags": ["Governance", "Security", "Enterprise adoption"],
+  "body": [
+    "Salt Security reported a new executive poll on Nov. 19, Tech Times writes [1]. Censuswide surveyed 500 C-suite professionals at organizations with 50 or more employees, split evenly between the US and the UK, in September [1]. According to Tech Times, 77% of organizations that use or have explored AI have seen an AI system or agent act outside its intended or authorized behavior, while 92% of executives would still let agents take at least some independent action [1]. 64% had restricted, significantly delayed or canceled an AI project over security, governance or regulatory concerns [1].",
+    "Salt's earlier State of Agentic AI and API Security report, covered by Campus Technology, shows how little of this activity teams can reconstruct. Among more than 380 security and technology professionals, 49.8% confirmed or suspected an unintended or unauthorized agent action in the past 12 months, and 41.9% of that group said agents had modified or deleted data [2]. Only 12.5% could consistently trace the full sequence of actions across all agents, and 17.5% could automatically stop an agent mid-action in production [2].",
+    "The tension is that executives are approving autonomy faster than their teams can audit it. Tech Times also notes that six surveys on this subject define unauthorized agent action differently, so the headline rates are not directly comparable [1]. A 77% figure and a 49.8% figure can both be true and still describe different events.",
+    "For data teams, the useful number is the trace rate, not the incident rate. If an agent changes a table, we need to know which agent, under which identity, with what prompt or task, and what it touched downstream. That means agent identities that are distinct from human users in warehouse query logs, lineage that records the calling agent, and alerts on writes, grants and deletes made by agent accounts. Campus Technology lists dedicated identities with limited permissions and monitoring across connected tools as recommended controls [2].",
+    "One step this week: pick one agent with write access to your warehouse and try to rebuild yesterday's activity from logs alone. Time how long it takes, and note every gap you hit."
+  ],
+  "sources": [
+    {"title": "Salt Security Poll: 77% of Firms Using AI Saw Agents Act Outside Authorization; 92% Allow Autonomy", "publisher": "Tech Times", "date": "2026-11-20", "url": "https://www.techtimes.com/articles/331175/20261120/salt-security-poll-77-firms-using-ai-saw-agents-act-outside-authorization-92-allow-autonomy.htm"},
+    {"title": "Survey: Half of Companies Confirm Unauthorized AI Agent Actions", "publisher": "Campus Technology", "date": "2026-11-18", "url": "https://campustechnology.com/articles/2026/11/18/survey-half-of-companies-confirm-unauthorized-ai-agent-actions.aspx"}
+  ]
+}

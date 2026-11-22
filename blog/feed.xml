@@ -6,7 +6,14 @@
   <atom:link href="https://www.vishalkumarsarvade.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 21 Nov 2026 18:54:28 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 22 Nov 2026 18:54:26 +0000</lastBuildDate>
+  <item>
+    <title>Salt poll: 77% saw AI act out of bounds, yet 92% allow autonomy</title>
+    <link>https://www.vishalkumarsarvade.com/blog/salt-security-77-percent-ai-acted-outside-authorization/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/salt-security-77-percent-ai-acted-outside-authorization/</guid>
+    <pubDate>Sun, 22 Nov 2026 18:00:00 +0000</pubDate>
+    <description>In a Salt Security poll of 500 US and UK executives, 77% said they had seen AI act outside its authorized behavior, yet 92% would still let agents act independently.</description>
+  </item>
   <item>
     <title>Citi and four other US banks make customers liable for AI agents</title>
     <link>https://www.vishalkumarsarvade.com/blog/citi-banks-customers-liable-third-party-ai-agents/</link>
@@ -209,13 +216,6 @@
     <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/gartner-cios-ai-value-stopping-rules/</guid>
     <pubDate>Wed, 21 Oct 2026 18:00:00 +0000</pubDate>
     <description>A Gartner survey of 2,002 CIOs found only 13% have realized significant or transformational value from AI, and just 17% have rules for shutting down low-value AI work already in production.</description>
-  </item>
-  <item>
-    <title>Nylas: 54% of companies saw an AI agent error in the last 90 days</title>
-    <link>https://www.vishalkumarsarvade.com/blog/nylas-ai-agent-errors-identity-audit/</link>
-    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/nylas-ai-agent-errors-identity-audit/</guid>
-    <pubDate>Tue, 20 Oct 2026 18:00:00 +0000</pubDate>
-    <description>A Nylas survey of 1,030 US professionals found 54% had an AI agent make a mistake in the past 90 days, rising to 70% among teams running more than 20 agents.</description>
   </item>
 </channel>
 </rss>
