@@ -1,0 +1,18 @@
+{
+  "slug": "bell-canada-agentic-attacker-pre-production-maximo",
+  "date": "2026-11-23",
+  "title": "Bell Canada says an agentic attacker hit a pre-production system",
+  "summary": "Bell Canada confirmed that an agentic threat actor breached its systems on Nov. 17 and took enterprise customer data from a pre-production copy of its circuit ordering system.",
+  "tags": ["Security", "Data readiness", "Governance"],
+  "body": [
+    "Bell Canada has confirmed that an agentic threat actor breached its systems on November 17, 2026, and exfiltrated enterprise customer data, BleepingComputer reports [1]. According to the breach notice Bell sent to customers, the attacker reached a pre-production environment of Bell's Maximo system, which is used to order and provision network connections [1]. The exposed data included business contact details, information in ticket titles and some IP addresses tied to network elements, while Bell said credentials and file attachments were not in the dataset [1]. Bell said it contained the incident, saw no impact to customer services, and does not yet know who was behind it [1].",
+    "BreachNews adds that Bell has not named the AI framework, models or techniques involved, or explained how the attacker got in [2]. Bell declined to say how many enterprise customers were affected or how much data was taken [2]. It is sharing indicators of compromise and threat hunting information with enterprise customers and the Canadian Centre for Cyber Security, and has not published them [1].",
+    "Two details stand out. First, the word agentic came from Bell, but the reading that AI tools drove the intrusion is the press's inference, so this is not yet evidence of how capable attacker agents are [1][2]. Second, the target was a pre-production environment that still held real customer records. Test systems often get weaker monitoring than production, and an automated intruder does not care which label a system carries.",
+    "For data teams, this is a reminder that non-production copies are part of the attack surface. Lower environments that hold production data need the same access reviews, query logging and alerting as production, or the data should be masked or synthetic before it lands there. Lineage helps here: if we can trace which production tables feed each test schema, we can answer what was exposed within hours instead of weeks.",
+    "One step this week: list every non-production database or schema that receives copies of production data, and mark which ones are masked, which are logged, and who owns each one."
+  ],
+  "sources": [
+    {"title": "Bell Canada says 'agentic' hacker stole enterprise customer data", "publisher": "BleepingComputer", "date": "2026-11-20", "url": "https://www.bleepingcomputer.com/news/security/bell-canada-says-agentic-hacker-stole-enterprise-customer-data/"},
+    {"title": "Bell Canada Confirms Agentic Hacker Stole Enterprise Customer Data from Circuit Ordering System", "publisher": "BreachNews", "date": "2026-11-21", "url": "https://breachnews.com/breaches/bell-canada-agentic-hacker-enterprise-customer-data-breach/"}
+  ]
+}
