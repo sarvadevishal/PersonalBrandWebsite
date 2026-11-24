@@ -1,0 +1,38 @@
+{
+  "slug": "walmart-muse-agent-gateway-spending-limits",
+  "date": "2026-11-24",
+  "title": "Walmart lets Meta's Muse agent buy within shopper-set spending limits",
+  "summary": "Walmart switched on its Agent Gateway for Meta's Muse on Nov. 23. Shoppers set a spending limit, with Walmart's examples at $50, $100 or $200, and agent purchases need approval by default.",
+  "tags": [
+    "Enterprise adoption",
+    "Governance",
+    "Standards"
+  ],
+  "body": [
+    "Walmart has switched on its Agent Gateway, and Meta's Muse is the first outside agent using it to search, build carts and buy items, including Black Friday deals, Analytics Insight reports [1]. The first time a shopper adds an item to the cart, Muse sends them to Walmart to sign in and set up an Agent Profile with a spending limit. Shoppers can approve purchases and review a history of what Muse has bought, and the usual return policy applies [1]. Walmart called Muse support just the beginning [1].",
+    "The rules behind it were published on October 21. Digital Commerce 360 reports that agent purchases require customer approval by default, that shoppers can instead allow spending up to a preset limit such as $50, $100 or $200, and that Walmart may still ask for approval inside that limit [2]. Agents cannot receive card details or change payment methods, and agents that break the terms will be blocked [2]. The gateway uses the Model Context Protocol, which Walmart chose because browsing its site the way a person does is slow and error prone [2]. TechCrunch notes the contrast with Amazon, which began blocking AI agents from buying for shoppers [3].",
+    "Walmart is choosing to give outside agents a governed checkout rather than block them. The controls are familiar ones: a scoped identity per agent, a spending cap, approval by default, a purchase log and the option to delete the profile. What is still missing is evidence. No source reports order volumes, error rates or how often the extra approval step fires.",
+    "For data teams, the pattern is worth copying even outside retail. Each agent gets its own profile, so every action can be attributed to one agent and one customer. That only works if the identity travels with the event into the warehouse. If agent orders land in the same tables as human orders with no agent ID, nobody can measure returns caused by agents, audit a disputed purchase or tune the limits later.",
+    "One step this week: check whether your event and order schemas have a field that records which agent, if any, acted for the user, and add one before the first agent integration ships."
+  ],
+  "sources": [
+    {
+      "title": "Meta Muse AI Agent Can do Your Black Friday Shopping at Walmart",
+      "publisher": "Analytics Insight",
+      "date": "2026-11-23",
+      "url": "https://www.analyticsinsight.net/news/meta-muse-ai-agent-can-do-your-black-friday-shopping-at-walmart"
+    },
+    {
+      "title": "Walmart unveils AI agent shopping controls, spending limits",
+      "publisher": "Digital Commerce 360",
+      "date": "2026-10-23",
+      "url": "https://www.digitalcommerce360.com/2026/10/23/walmart-unveils-ai-agent-shopping-controls-spending-limits/amp/"
+    },
+    {
+      "title": "While Amazon blocks AI agents, Walmart rolls out the welcome mat",
+      "publisher": "TechCrunch",
+      "date": "2026-10-21",
+      "url": "https://techcrunch.com/2026/10/21/while-amazon-blocks-ai-agents-walmart-rolls-out-the-welcome-mat/"
+    }
+  ]
+}
