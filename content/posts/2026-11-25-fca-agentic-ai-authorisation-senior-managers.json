@@ -1,0 +1,37 @@
+{
+  "slug": "fca-agentic-ai-authorisation-senior-managers",
+  "date": "2026-11-25",
+  "title": "FCA: AI agents that move money may need authorisation at launch",
+  "summary": "The UK FCA said on Nov. 24 that agents which initiate payments, arrange borrowing or make investment decisions may need authorisation, and named five regulated activities firms should check.",
+  "tags": [
+    "Regulation",
+    "Governance"
+  ],
+  "body": [
+    "The UK Financial Conduct Authority published its approach to agentic AI on November 24 [1]. The point that matters most: once an agent moves from giving information to initiating transactions, moving money, arranging borrowing or making investment decisions, the product may need FCA regulation at launch, or may drift into it as it evolves [1]. The FCA lists five areas to check: payment services, financial promotions, authorised information services, credit broking and financial advice. It adds that calling yourself a technology provider does not remove the need for authorisation, and that it will not hesitate to use its powers [1].",
+    "Accountability stays with the firm. The FCA says senior managers are responsible for AI models deployed in their area, whether built in house or bought from a third party, and must understand the risks, challenge deployment and keep controls and escalation proportionate [1]. Firms are also asked to establish when they are dealing with an agent, what consent is in place and what the agent is allowed to do [1]. A Bratby Law analysis notes the FCA did not cite the legislation, and argues that providers of payment initiation cannot rely on the technical service provider exclusion [2].",
+    "The tension is that the FCA sets no testing standard or record keeping rule here. It points firms to its AI Lab and a planned policy sprint with no date [1]. Firms are expected to prove control of autonomy without a checklist telling them what proof looks like.",
+    "For data teams, that proof is mostly data. A senior manager cannot challenge a deployment they cannot see. That means an inventory of agents with an owner each, an agent identifier on every transaction record, consent and permission scopes stored as queryable data rather than buried in prompts, and lineage from an agent action back to the inputs it used. The FCA's consumer guidance, republished by Mondo Visione, tells people to consider setting limits on what agents do for them [3]. Those limits only help if they are logged and enforced.",
+    "One step this week: pick one agent that touches payments or customer accounts and write down, in a single query, which permissions it holds, who owns it and which records it created last month. If that query cannot be written, start there."
+  ],
+  "sources": [
+    {
+      "title": "Our approach to Agentic AI",
+      "publisher": "Financial Conduct Authority",
+      "date": "2026-11-24",
+      "url": "https://www.fca.org.uk/firms/innovation/ai-approach/agentic-ai"
+    },
+    {
+      "title": "When does an AI agent business need FCA authorisation?",
+      "publisher": "Bratby Law",
+      "date": "2026-11-25",
+      "url": "https://bratby.law/ai-agent-fca-authorisation/"
+    },
+    {
+      "title": "UK Financial Conduct Authority Statement: Our Approach To Agentic AI",
+      "publisher": "Mondo Visione",
+      "date": "2026-11-24",
+      "url": "https://mondovisione.com/media-and-resources/news/uk-financial-conduct-authority-statement-our-approach-to-agentic-ai-20261124/"
+    }
+  ]
+}

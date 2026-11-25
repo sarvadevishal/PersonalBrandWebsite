@@ -6,7 +6,14 @@
   <atom:link href="https://www.vishalkumarsarvade.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 24 Nov 2026 18:54:42 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 25 Nov 2026 18:53:56 +0000</lastBuildDate>
+  <item>
+    <title>FCA: AI agents that move money may need authorisation at launch</title>
+    <link>https://www.vishalkumarsarvade.com/blog/fca-agentic-ai-authorisation-senior-managers/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/fca-agentic-ai-authorisation-senior-managers/</guid>
+    <pubDate>Wed, 25 Nov 2026 18:00:00 +0000</pubDate>
+    <description>The UK FCA said on Nov. 24 that agents which initiate payments, arrange borrowing or make investment decisions may need authorisation, and named five regulated activities firms should check.</description>
+  </item>
   <item>
     <title>Walmart lets Meta&#x27;s Muse agent buy within shopper-set spending limits</title>
     <link>https://www.vishalkumarsarvade.com/blog/walmart-muse-agent-gateway-spending-limits/</link>
@@ -209,13 +216,6 @@
     <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/aaif-agent-skills-open-responses-ten-projects/</guid>
     <pubDate>Sat, 24 Oct 2026 18:00:00 +0000</pubDate>
     <description>The Agentic AI Foundation added four donated projects from Anthropic, OpenAI, Hugging Face and Alibaba, growing from three projects to 10 in its first year. Neutral governance is still unproven.</description>
-  </item>
-  <item>
-    <title>Customers Bancorp: agents doubled, but hours saved are self-reported</title>
-    <link>https://www.vishalkumarsarvade.com/blog/customers-bancorp-ai-agents-measurement/</link>
-    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/customers-bancorp-ai-agents-measurement/</guid>
-    <pubDate>Fri, 23 Oct 2026 18:00:00 +0000</pubDate>
-    <description>Customers Bancorp reported a 95% cut in loan underwriting cycle time and 76,000 estimated hours saved. Its footnotes show the hours are self-reported and agents include custom GPTs.</description>
   </item>
 </channel>
 </rss>
