@@ -6,7 +6,14 @@
   <atom:link href="https://www.vishalkumarsarvade.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 25 Nov 2026 18:53:56 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 26 Nov 2026 18:54:23 +0000</lastBuildDate>
+  <item>
+    <title>LeadDev: 47% of teams let the coding agent review its own code</title>
+    <link>https://www.vishalkumarsarvade.com/blog/leaddev-47-percent-agents-review-own-code/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/leaddev-47-percent-agents-review-own-code/</guid>
+    <pubDate>Thu, 26 Nov 2026 18:00:00 +0000</pubDate>
+    <description>A LeadDev Research survey sponsored by CodeRabbit found 47% of teams use the same AI agents that wrote the code to review it, and only 14% have consistently applied review standards.</description>
+  </item>
   <item>
     <title>FCA: AI agents that move money may need authorisation at launch</title>
     <link>https://www.vishalkumarsarvade.com/blog/fca-agentic-ai-authorisation-senior-managers/</link>
@@ -209,13 +216,6 @@
     <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/outsystems-agent-governance-confidence-gap/</guid>
     <pubDate>Sun, 25 Oct 2026 18:00:00 +0000</pubDate>
     <description>In an OutSystems, CIO Dive and KPMG survey of 858 executives, 82% said they can keep pace with governing AI agents, yet only 5% have automated controls, audit trails and formal human review points.</description>
-  </item>
-  <item>
-    <title>AAIF takes in Agent Skills and Open Responses, now hosts 10 projects</title>
-    <link>https://www.vishalkumarsarvade.com/blog/aaif-agent-skills-open-responses-ten-projects/</link>
-    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/aaif-agent-skills-open-responses-ten-projects/</guid>
-    <pubDate>Sat, 24 Oct 2026 18:00:00 +0000</pubDate>
-    <description>The Agentic AI Foundation added four donated projects from Anthropic, OpenAI, Hugging Face and Alibaba, growing from three projects to 10 in its first year. Neutral governance is still unproven.</description>
   </item>
 </channel>
 </rss>

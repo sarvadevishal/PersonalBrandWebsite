@@ -1,0 +1,37 @@
+{
+  "slug": "leaddev-47-percent-agents-review-own-code",
+  "date": "2026-11-26",
+  "title": "LeadDev: 47% of teams let the coding agent review its own code",
+  "summary": "A LeadDev Research survey sponsored by CodeRabbit found 47% of teams use the same AI agents that wrote the code to review it, and only 14% have consistently applied review standards.",
+  "tags": [
+    "Governance",
+    "Enterprise adoption"
+  ],
+  "body": [
+    "CodeRabbit released a LeadDev Research survey on November 23 that looks at what happens after coding agents write the code [1]. LeadDev surveyed 377 engineers and engineering leaders in the U.S. and Europe between September 29 and October 17, and 325 completed it [1]. The headline number: 47% of teams rely on the same AI coding agents that wrote the code to review it [1]. Only 14% of organizations have clearly defined review standards that are applied consistently, while 42% leave it to each team [1].",
+    "The pressure on reviewers is visible in the rest of the data. In the release, 45% name code review as their single biggest bottleneck, 67% say pull requests have grown in size, and only 26% are very confident they understand an AI-generated change as well as a human-written one [1]. VentureBeat, reporting the same survey, notes that CodeRabbit sells AI code review, so the framing comes from a vendor with a stake in the answer [2]. Data Phoenix adds that 82% still say developers manually review most or all AI-generated code [3].",
+    "The tension is accountability. When an agent writes, reviews and merges a change, 48% would hold the person who requested it responsible and 14% the person who approved it [1]. That spread suggests most teams have not decided who owns an agent's output. An analyst quoted by VentureBeat says he would not rely on the generating agent as the final validator [2].",
+    "Data teams should read this as a pipeline problem, not only an application one. Agents now write dbt models, SQL transforms and DDL. A transform reviewed by its author agent can pass tests and still break lineage or widen access to a sensitive column. Independent checks matter here: schema diff review, data quality tests on real samples, and grant changes flagged for a human. Only 22% track escaped defects at all, according to the release [1].",
+    "One step this week: list which repos let an agent both open and approve a pull request. For any repo that touches warehouse schemas or permissions, require a second reviewer that did not write the change."
+  ],
+  "sources": [
+    {
+      "title": "CodeRabbit Survey Finds AI Is Producing Code Faster Than Humans Can Validate It",
+      "publisher": "Business Wire",
+      "date": "2026-11-23",
+      "url": "https://www.businesswire.com/news/home/20261123770813/en/CodeRabbit-Survey-Finds-AI-Is-Producing-Code-Faster-Than-Humans-Can-Validate-It"
+    },
+    {
+      "title": "Nearly half of surveyed engineers and leaders say the AI agents that write their code also review it",
+      "publisher": "VentureBeat",
+      "date": "2026-11-24",
+      "url": "https://venturebeat.com/technology/nearly-half-of-surveyed-engineers-and-leaders-say-the-ai-agents-that-write-their-code-also-review-it"
+    },
+    {
+      "title": "LeadDev survey finds 47% of respondents say AI coding agents review their own code",
+      "publisher": "Data Phoenix",
+      "date": "2026-11-24",
+      "url": "https://dataphoenix.info/news/leaddev-coderabbit-ai-code-review-survey-2026"
+    }
+  ]
+}
