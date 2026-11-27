@@ -6,7 +6,14 @@
   <atom:link href="https://www.vishalkumarsarvade.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>A short daily note on how companies are putting AI agents to work, plus longer posts on Redshift and data architecture. Every source is linked.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 26 Nov 2026 18:54:23 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 27 Nov 2026 18:48:47 +0000</lastBuildDate>
+  <item>
+    <title>Google: Workspace AI agents must use MCP or CLI from February 1, 2027</title>
+    <link>https://www.vishalkumarsarvade.com/blog/google-workspace-agents-mcp-cli-february-2027/</link>
+    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/google-workspace-agents-mcp-cli-february-2027/</guid>
+    <pubDate>Fri, 27 Nov 2026 18:00:00 +0000</pubDate>
+    <description>Google says AI agents reaching Workspace must move off the REST APIs to its MCP servers or CLI, with enforcement from February 1, 2027 and quota billing from April 1, 2027.</description>
+  </item>
   <item>
     <title>LeadDev: 47% of teams let the coding agent review its own code</title>
     <link>https://www.vishalkumarsarvade.com/blog/leaddev-47-percent-agents-review-own-code/</link>
@@ -209,13 +216,6 @@
     <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/sk-telecom-ai-agents-employee-ids-governance/</guid>
     <pubDate>Mon, 26 Oct 2026 18:00:00 +0000</pubDate>
     <description>SK Telecom&#x27;s first AI Governance Report gives in-house agents employee IDs and named supervisors, tracks token use and performance, and sets a 2026 to 2028 roadmap toward full lifecycle management.</description>
-  </item>
-  <item>
-    <title>OutSystems survey: 82% trust their agent governance, 5% automate it</title>
-    <link>https://www.vishalkumarsarvade.com/blog/outsystems-agent-governance-confidence-gap/</link>
-    <guid isPermaLink="true">https://www.vishalkumarsarvade.com/blog/outsystems-agent-governance-confidence-gap/</guid>
-    <pubDate>Sun, 25 Oct 2026 18:00:00 +0000</pubDate>
-    <description>In an OutSystems, CIO Dive and KPMG survey of 858 executives, 82% said they can keep pace with governing AI agents, yet only 5% have automated controls, audit trails and formal human review points.</description>
   </item>
 </channel>
 </rss>

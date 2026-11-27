@@ -1,0 +1,32 @@
+{
+  "slug": "google-workspace-agents-mcp-cli-february-2027",
+  "date": "2026-11-27",
+  "title": "Google: Workspace AI agents must use MCP or CLI from February 1, 2027",
+  "summary": "Google says AI agents reaching Workspace must move off the REST APIs to its MCP servers or CLI, with enforcement from February 1, 2027 and quota billing from April 1, 2027.",
+  "tags": [
+    "Standards",
+    "Governance",
+    "Security"
+  ],
+  "body": [
+    "Google said on November 25 that AI agents connecting to Google Workspace must use its Workspace MCP servers or the Workspace CLI rather than the existing REST APIs, under a new Workspace AI Tools Addendum [1]. Technical enforcement begins on February 1, 2027 [1]. The MCP servers, now generally available, cover Gmail, Drive, Docs, Sheets, Slides, Calendar, Chat and Tasks, and Google says every call is checked against the organization's permissions, DLP rules and classification labels [1]. Agents must also use dedicated OAuth client IDs with least-privilege scopes and usage quotas, and Google says quota billing begins on April 1, 2027 [1].",
+    "Help Net Security, reporting the change, notes that conventional applications can keep using the REST APIs, so the rule is aimed at agents [2]. Google says the servers and CLI require user confirmation before an agent sends email, changes Drive sharing permissions or makes bulk edits, while drafts and summaries run without a prompt [1]. The addendum rules out permanent raw storage of Workspace data, model training on it and API scraping [1].",
+    "The notable part is where the control sits. Google is putting agent governance in the access path, with its own identity, confirmation and quota rules, instead of leaving it to each customer's policy documents. Help Net Security quotes the Google authors: \"Policy checks, data boundaries, and human confirmation have to live in the request path\" [2]. The cost is a short migration window for any team whose agents call the REST APIs today, plus a new usage bill to plan for.",
+    "For data teams, Workspace is a data source. Sheets and Drive files feed pipelines. A dedicated client ID per agent gives you something lineage has lacked: a record of which agent touched which file. Because access is checked against DLP rules and classification labels, the quality of those labels now decides what an agent can read. Quotas turn agent traffic into a cost line you will want in your observability dashboards.",
+    "One step this week: export the OAuth app list from the Workspace admin console, mark each client as an agent or a conventional app, and give every agent that still calls the REST APIs an owner and a migration date before February 1."
+  ],
+  "sources": [
+    {
+      "title": "Built for trust and control: Powering the next wave of AI agents across Google Workspace and Google Cloud",
+      "publisher": "Google Cloud Blog",
+      "date": "2026-11-25",
+      "url": "https://cloud.google.com/blog/products/identity-security/deploying-agents-safely-in-your-enterprise"
+    },
+    {
+      "title": "Google mandates MCP or CLI access for Workspace AI agents starting February 2027",
+      "publisher": "Help Net Security",
+      "date": "2026-11-26",
+      "url": "https://www.helpnetsecurity.com/2026/11/26/google-ai-agent-security-requirements/"
+    }
+  ]
+}
