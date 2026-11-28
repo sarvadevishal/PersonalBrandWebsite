@@ -1,0 +1,37 @@
+{
+  "slug": "swiss-ncsc-ai-agent-attacks-24-hour-patching",
+  "date": "2026-11-28",
+  "title": "Swiss NCSC: AI agent attacks got in 4 of 5 times, patch within 24h",
+  "summary": "Switzerland's NCSC confirmed five cyberattacks using AI agents, with attackers getting in four times, and told firms to install critical fixes on internet-facing systems within 24 hours.",
+  "tags": [
+    "Security",
+    "Governance"
+  ],
+  "body": [
+    "Switzerland's National Cyber Security Centre has confirmed its first cyberattacks carried out with AI agents. NCSC director Florian Schütz told the broadcaster SRF there were five confirmed cases, all reported in recent days [1]. Three targeted critical infrastructure operators and two of those succeeded, and across all five the attackers got into systems four times [1]. Schütz said there were no major outages, and the agency will not name the victims [1].",
+    "The count has already shifted. The NCSC advisory published on Tuesday said every known attack involving AI agents led to a successful compromise, a claim the later figure of four in five contradicts, and the agency has not explained the gap [2]. The NCSC also says the number of attack agents reachable online, such as ARTEX and CyberStrikeAI, has almost doubled since October, though neither is confirmed in the Swiss cases [1]. In the United States, Malwarebytes reports that the FBI warned on November 13 that some ARTEX intrusions went from target selection to privileged access in under three hours [3].",
+    "The controls on the list are old ones. Schütz said an AI agent cannot get into a system without a vulnerability [1]. The NCSC wants critical security fixes on internet-facing systems installed within 24 hours of release, exposed systems narrowed with geo-blocking and allow lists, multi-factor authentication or passkeys on everything still reachable, and default passwords replaced [2]. What has changed is the clock. A patch cycle measured in weeks assumed a human attacker working at human speed.",
+    "For data teams, the exposed surface is often ours: orchestration consoles, notebook servers, BI portals and warehouse endpoints opened to the internet for a vendor or a demo. The FBI guidance Malwarebytes summarizes adds scanning for exposed passwords and API keys and rotating compromised secrets [3]. Service account keys in pipeline configs are exactly that. Watching for sudden spikes in requests belongs in data platform observability, not only in the security team's tooling [3].",
+    "One step this week: list every data platform component reachable from the internet, record its owner and current patch lag, and either put it behind an allow list with MFA or set a 24-hour patch target for it."
+  ],
+  "sources": [
+    {
+      "title": "Switzerland confirms first AI agent cyberattacks on critical infrastructure",
+      "publisher": "The Next Web",
+      "date": "2026-11-27",
+      "url": "https://thenextweb.com/news/switzerland-ai-agent-cyberattacks-critical-infrastructure"
+    },
+    {
+      "title": "Switzerland Says AI Agent Cyberattacks Breached Four of Five Targets",
+      "publisher": "Startup Fortune",
+      "date": "2026-11-27",
+      "url": "https://startupfortune.com/switzerland-says-ai-agent-cyberattacks-breached-four-of-five-targets/"
+    },
+    {
+      "title": "Kriminelle nutzen ARTEX-KI-Agenten, um Cyberangriffe zu beschleunigen, warnt das FBI",
+      "publisher": "Malwarebytes",
+      "date": "2026-11-16",
+      "url": "https://www.malwarebytes.com/de/blog/ai/2026/11/criminals-are-using-artex-ai-agents-to-speed-up-cyberattacks-fbi-warns"
+    }
+  ]
+}
